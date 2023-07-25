@@ -9,11 +9,24 @@
                         <a href="#"><i class="pi pi-twitter text-white text-2xl"></i></a>
                         <a href="https://www.linkedin.com/in/healysense-as-003816280/"><i class="pi pi-linkedin text-white text-2xl"></i></a>
                     </div>
-                    <p class="m-0 text-base lg:text-sm">
+                    <p class="m-0">
                         DEPARK Nar Grup, Ofis: P2/2 <br />
                         Izmir/Turkiye
                     </p>
-                    <a href="mailto: healysense@gmail.com " class="text-base text-900 underline lg:text-sm">healysense@gmail.com</a>
+                    <a href="mailto:%69%6e%66%6f%40%68%65%61%6c%79%73%65%6e%73%65%2e%61%69" class="text-900 underline">
+                        <span>in</span>
+                        <span>f</span>
+                        <span>o</span>
+                        <span>@</span>
+                        <span>h</span>
+                        <span>e</span>
+                        <span>a</span>
+                        <span>ly</span>
+                        <span>sen</span>
+                        <span>se</span>
+                        <span>@a</span>
+                        <span>i</span>
+                    </a>
                 </div>
             </div>
             <!--  <div class="col-12 lg:col-3">

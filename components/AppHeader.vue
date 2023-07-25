@@ -9,16 +9,16 @@ const navList = ref([
         selector: '#products'
     },
     {
-        label: 'ABOUT US',
-        selector: '#aboutus'
-    },
-    {
         label: 'SOLUTIONS',
         selector: '#solutions'
     },
     {
         label: 'TECHNOLOGY',
         selector: '#technology'
+    },
+    {
+        label: 'ABOUT US',
+        selector: '#aboutus'
     }
 ]);
 
@@ -35,7 +35,7 @@ const scrollToElement = (selector) => {
             <img src="/images/healysense-logo.svg" alt="" />
         </div>
 
-        <a v-ripple class="p-ripple cursor-pointer block lg:hidden text-white" v-styleclass="{ selector: '@next', hideOnOutsideClick: true, enterClass: 'hidden', leaveToClass: 'hidden' }">
+        <a class="cursor-pointer block lg:hidden text-white" v-styleclass="{ selector: '@next', hideOnOutsideClick: true, enterClass: 'hidden', leaveToClass: 'hidden' }">
             <i class="pi pi-bars text-4xl"></i>
         </a>
 
@@ -48,7 +48,7 @@ const scrollToElement = (selector) => {
                 </li>
 
                 <li>
-                    <button @click="scrollToElement('#contactus')" v-ripple class="text-0 contact-btn surface-900 text-0 m-0 mt-3 md:mt-0 md:ml-5">
+                    <button @click="scrollToElement('#contactus')" class="text-0 contact-btn surface-900 text-0 m-0 mt-3 md:mt-0 md:ml-5">
                         <span class="text-0">CONTACT US</span>
                     </button>
                 </li>

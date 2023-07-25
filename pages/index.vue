@@ -17,9 +17,9 @@ const products = ref(null);
                         <AppProducts id="products" />
                         <div class="flex flex-column align-items-center">
                             <AppProductCards />
-                            <AppAboutUs id="aboutus" />
                             <AppSolutions id="solutions" />
                             <AppTechnology id="technology" />
+                            <AppAboutUs id="aboutus" />
                             <AppFooter id="contactus" />
                         </div>
                     </div>
