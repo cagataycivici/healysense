@@ -7,6 +7,6 @@
                 <p class="text-white text-right mt-3">We bring minds together for Breakthroughs: Our Multidisciplinary Team Pioneering AI in Medical Image Analysis.</p>
             </div>
         </div>
-        <img :draggable="false" src="/images/collaboration/collaboration.png" alt="" />
+        <img :draggable="false" src="/images/collaboration/collaboration.png" alt="" class="w-full md:w-30rem" />
     </div>
 </template>
