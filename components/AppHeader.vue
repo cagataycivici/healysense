@@ -1,4 +1,10 @@
 <script setup>
+const props = defineProps({
+    nested: Boolean
+});
+
+const router = useRouter();
+
 const navList = ref([
     {
         label: 'HOME',
@@ -9,30 +15,42 @@ const navList = ref([
         selector: '#products'
     },
     {
+        label: 'ABOUT US',
+        selector: '#aboutus'
+    },
+    {
         label: 'SOLUTIONS',
         selector: '#solutions'
     },
     {
         label: 'TECHNOLOGY',
         selector: '#technology'
-    },
-    {
-        label: 'ABOUT US',
-        selector: '#aboutus'
     }
 ]);
 
-const scrollToElement = (selector) => {
-    const element = document.querySelector(selector);
+const scrollToElement = (selector, nested) => {
+    if (nested) {
+        router.push({ path: "/" });
 
-    element.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => {
+            const element = document.querySelector(selector);
+            element.scrollIntoView({ behavior: 'smooth' });
+        }, 250);
+    }
+    else {
+        const element = document.querySelector(selector);
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
+
 };
 </script>
 
 <template>
     <div style="height: 68px; backdrop-filter: blur(17px)" class="flex justify-content-between align-items-center z-3 px-5 bg-black-alpha-40 top-0 w-full fixed">
         <div>
-            <img src="/images/healysense-logo.svg" alt="" />
+            <NuxtLink to="/">
+                <img src="/images/healysense-logo.svg" alt="" />
+            </NuxtLink>
         </div>
 
         <a class="cursor-pointer block lg:hidden text-white" v-styleclass="{ selector: '@next', hideOnOutsideClick: true, enterClass: 'hidden', leaveToClass: 'hidden' }">
@@ -42,13 +60,15 @@ const scrollToElement = (selector) => {
         <div id="menu" class="align-items-center flex-grow-1 hidden lg:flex absolute lg:static w-full lg:px-0 z-3 shadow-2 lg:shadow-none fadein" style="top: 68px; right: 0%">
             <ul class="list-none p-3 lg:p-0 m-0 ml-auto flex lg:align-items-center select-none flex-column lg:flex-row cursor-pointer surface-0 lg:bg-transparent">
                 <li v-for="list in navList" :key="list">
-                    <a class="flex m-0 md:ml-5 px-0 py-3 text-900 line-height-3" v-styleclass="{ selector: '#menu', enterClass: 'hidden', leaveToClass: 'hidden' }" @click="scrollToElement(list.selector)">
+
+                    <a class="flex m-0 md:ml-5 px-0 py-3 text-900 line-height-3" v-styleclass="{ selector: '#menu', enterClass: 'hidden', leaveToClass: 'hidden' }"
+                        @click="scrollToElement(list.selector, nested)">
                         <span>{{ list.label }}</span>
                     </a>
                 </li>
 
                 <li>
-                    <button @click="scrollToElement('#contactus')" class="text-0 contact-btn surface-900 text-0 m-0 mt-3 md:mt-0 md:ml-5">
+                    <button @click="scrollToElement('#contactus', nested)" class="text-0 contact-btn surface-900 text-0 m-0 mt-3 md:mt-0 md:ml-5">
                         <span class="text-0">CONTACT US</span>
                     </button>
                 </li>
