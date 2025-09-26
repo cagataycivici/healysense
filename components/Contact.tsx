@@ -2,6 +2,7 @@
 import AnimatedContainer from '@/components/AnimatedContainer';
 import { Checkbox } from '@/components/ui/checkbox';
 import { cn } from '@/lib/utils';
+import { useForm } from '@formspree/react';
 import React, { useState } from 'react';
 
 interface FormData {
@@ -23,6 +24,8 @@ interface FormErrors {
 }
 
 const Contact = () => {
+    const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORMSPREE_ID!);
+
     const [formData, setFormData] = useState<FormData>({
         name: '',
         email: '',
@@ -33,8 +36,6 @@ const Contact = () => {
     });
 
     const [errors, setErrors] = useState<FormErrors>({});
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitSuccess, setSubmitSuccess] = useState(false);
 
     const products = ['AortaSense Pro', 'AcutePanaMaster', 'AppendiXpert', 'CholeciAssist', 'DivertiSense', 'UreteralStoneSense'];
 
@@ -112,38 +113,27 @@ const Contact = () => {
         }
     };
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         if (!validateForm()) {
             return;
         }
 
-        setIsSubmitting(true);
+        // Call Formspree's handleSubmit with the form data
+        await handleSubmit(e);
 
-        try {
-            // Simulate API call
-            await new Promise((resolve) => setTimeout(resolve, 1000));
-
-            console.log('Form submitted:', formData);
-            setSubmitSuccess(true);
-
-            // Reset form after successful submission
-            setTimeout(() => {
-                setFormData({
-                    name: '',
-                    email: '',
-                    phone: '',
-                    institution: '',
-                    products: [],
-                    message: ''
-                });
-                setSubmitSuccess(false);
-            }, 3000);
-        } catch (error) {
-            console.error('Form submission error:', error);
-        } finally {
-            setIsSubmitting(false);
+        // Reset form after successful submission
+        if (state.succeeded) {
+            setFormData({
+                name: '',
+                email: '',
+                phone: '',
+                institution: '',
+                products: [],
+                message: ''
+            });
+            setErrors({});
         }
     };
 
@@ -155,35 +145,37 @@ const Contact = () => {
                     <p className="mt-4 text-lg text-white/64 lg:text-xl">Start using the power of artificial intelligence to enrich your radiologic workflow.</p>
                 </div>
                 <AnimatedContainer className="mt-10 h-0 lg:absolute lg:right-14 lg:top-14 lg:mt-0">
-                    <form onSubmit={handleSubmit} className="mx-auto max-w-lg space-y-4 rounded-3xl bg-surface-0 p-6 shadow-blue-card lg:w-[32rem] lg:rounded-4xl lg:p-8">
-                        {submitSuccess && <div className="rounded-lg bg-green-50 p-4 text-center text-green-800">Thank you! Your message has been sent successfully.</div>}
+                    <form onSubmit={onSubmit} className="mx-auto max-w-lg space-y-4 rounded-3xl bg-surface-0 p-6 shadow-blue-card lg:w-[32rem] lg:rounded-4xl lg:p-8">
+                        {state.succeeded && <div className="rounded-lg bg-green-50 p-4 text-center text-green-800">Thank you! Your message has been sent successfully.</div>}
+                        {state.errors && Object.keys(state.errors).length > 0 && <div className="rounded-lg bg-red-50 p-4 text-center text-red-800">There was an error submitting your form. Please try again.</div>}
 
                         <div className="flex flex-col gap-2">
                             <label className="font-medium text-surface-500">Name *</label>
-                            <Input value={formData.name} onChange={(e) => handleInputChange('name', e.target.value)} className={errors.name ? 'border-red-500' : ''} />
+                            <Input name="name" value={formData.name} onChange={(e) => handleInputChange('name', e.target.value)} className={errors.name ? 'border-red-500' : ''} />
                             {errors.name && <span className="text-sm text-red-500">{errors.name}</span>}
                         </div>
 
                         <div className="flex flex-col gap-2">
                             <label className="font-medium text-surface-500">Email Address *</label>
-                            <Input type="email" value={formData.email} onChange={(e) => handleInputChange('email', e.target.value)} className={errors.email ? 'border-red-500' : ''} />
+                            <Input name="email" type="email" value={formData.email} onChange={(e) => handleInputChange('email', e.target.value)} className={errors.email ? 'border-red-500' : ''} />
                             {errors.email && <span className="text-sm text-red-500">{errors.email}</span>}
                         </div>
 
                         <div className="flex flex-col gap-2">
                             <label className="font-medium text-surface-500">Phone Number *</label>
-                            <Input type="tel" value={formData.phone} onChange={(e) => handleInputChange('phone', e.target.value)} className={errors.phone ? 'border-red-500' : ''} />
+                            <Input name="phone" type="tel" value={formData.phone} onChange={(e) => handleInputChange('phone', e.target.value)} className={errors.phone ? 'border-red-500' : ''} />
                             {errors.phone && <span className="text-sm text-red-500">{errors.phone}</span>}
                         </div>
 
                         <div className="flex flex-col gap-2">
                             <label className="font-medium text-surface-500">Institution / Hospital / Company *</label>
-                            <Input value={formData.institution} onChange={(e) => handleInputChange('institution', e.target.value)} className={errors.institution ? 'border-red-500' : ''} />
+                            <Input name="institution" value={formData.institution} onChange={(e) => handleInputChange('institution', e.target.value)} className={errors.institution ? 'border-red-500' : ''} />
                             {errors.institution && <span className="text-sm text-red-500">{errors.institution}</span>}
                         </div>
 
                         <div className="flex flex-col gap-2">
                             <label className="font-medium text-surface-700">Products *</label>
+                            <input type="hidden" name="products" value={formData.products.join(', ')} />
                             <div className="flex flex-col gap-4">
                                 <div className="inline-flex items-center justify-start gap-2">
                                     <div className="flex flex-1 items-center justify-start gap-[9.14px]">
@@ -221,12 +213,12 @@ const Contact = () => {
 
                         <div className="flex flex-col gap-2">
                             <label className="font-medium text-surface-500">Message *</label>
-                            <Textarea value={formData.message} onChange={(e) => handleInputChange('message', e.target.value)} className={errors.message ? 'border-red-500' : ''} />
+                            <Textarea name="message" value={formData.message} onChange={(e) => handleInputChange('message', e.target.value)} className={errors.message ? 'border-red-500' : ''} />
                             {errors.message && <span className="text-sm text-red-500">{errors.message}</span>}
                         </div>
 
-                        <button className={`button-gradient h-14 w-full transition-opacity ${isSubmitting ? 'cursor-not-allowed opacity-70' : ''}`} type="submit" disabled={isSubmitting}>
-                            {isSubmitting ? 'Sending...' : 'Book A Demo'}
+                        <button className={`button-gradient h-14 w-full transition-opacity ${state.submitting ? 'cursor-not-allowed opacity-70' : ''}`} type="submit" disabled={state.submitting}>
+                            {state.submitting ? 'Sending...' : 'Book A Demo'}
                         </button>
                     </form>
                 </AnimatedContainer>

@@ -51,25 +51,25 @@ const News = () => {
                     }}
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-                        <g clip-path="url(#clip0_7070_2036)">
+                        <g clipPath="url(#clip0_7070_2036)">
                             <g filter="url(#filter0_d_7070_2036)">
                                 <path
                                     d="M18.3327 13.3337C18.3327 9.65176 15.3479 6.66699 11.666 6.66699H1.66602V33.3337H14.9993C16.8403 33.3337 18.3327 34.826 18.3327 36.667V13.3337Z"
                                     fill="url(#paint0_linear_7070_2036)"
-                                    shape-rendering="crispEdges"
+                                    shapeRendering="crispEdges"
                                 />
-                                <path d="M21.666 36.667C21.666 34.826 23.1584 33.3337 24.9993 33.3337H38.3327V6.66699H28.3327C24.6508 6.66699 21.666 9.65176 21.666 13.3337V36.667Z" fill="url(#paint1_linear_7070_2036)" shape-rendering="crispEdges" />
+                                <path d="M21.666 36.667C21.666 34.826 23.1584 33.3337 24.9993 33.3337H38.3327V6.66699H28.3327C24.6508 6.66699 21.666 9.65176 21.666 13.3337V36.667Z" fill="url(#paint1_linear_7070_2036)" shapeRendering="crispEdges" />
                                 <path
                                     d="M11.666 6.91699C15.2098 6.91699 18.083 9.79016 18.083 13.334V34.8418C17.4588 33.7894 16.3114 33.084 14.999 33.084H1.91602V6.91699H11.666ZM28.333 6.91699H38.083V33.084H24.999C23.6872 33.0841 22.5403 33.789 21.916 34.8408V13.334C21.916 9.79016 24.7892 6.91699 28.333 6.91699Z"
                                     stroke="url(#paint2_linear_7070_2036)"
-                                    stroke-width="0.5"
-                                    shape-rendering="crispEdges"
+                                    strokeWidth="0.5"
+                                    shapeRendering="crispEdges"
                                 />
                             </g>
                         </g>
                         <defs>
-                            <filter id="filter0_d_7070_2036" x="-2.33398" y="3.66699" width="44.6667" height="38" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <filter id="filter0_d_7070_2036" x="-2.33398" y="3.66699" width="44.6667" height="38" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                                 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                                 <feOffset dy="1" />
                                 <feGaussianBlur stdDeviation="2" />
@@ -79,16 +79,16 @@ const News = () => {
                                 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_7070_2036" result="shape" />
                             </filter>
                             <linearGradient id="paint0_linear_7070_2036" x1="19.9993" y1="7.04218" x2="19.9993" y2="36.667" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="white" />
-                                <stop offset="1" stop-color="white" stop-opacity="0" />
+                                <stop stopColor="white" />
+                                <stop offset="1" stopColor="white" stopOpacity="0" />
                             </linearGradient>
                             <linearGradient id="paint1_linear_7070_2036" x1="19.9993" y1="7.04218" x2="19.9993" y2="36.667" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="white" />
-                                <stop offset="1" stop-color="white" stop-opacity="0" />
+                                <stop stopColor="white" />
+                                <stop offset="1" stopColor="white" stopOpacity="0" />
                             </linearGradient>
                             <linearGradient id="paint2_linear_7070_2036" x1="19.9993" y1="6.66699" x2="19.9993" y2="36.667" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="white" />
-                                <stop offset="0.586424" stop-color="white" stop-opacity="0" />
+                                <stop stopColor="white" />
+                                <stop offset="0.586424" stopColor="white" stopOpacity="0" />
                             </linearGradient>
                             <clipPath id="clip0_7070_2036">
                                 <rect width="40" height="40" fill="white" />
