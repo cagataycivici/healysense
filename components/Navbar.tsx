@@ -1,23 +1,28 @@
 'use client';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react';
 
 const Navbar: React.FC<React.HTMLAttributes<HTMLElement>> = ({ className, ...props }) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
+    const pathname = usePathname();
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
-    const scrollToSection = (sectionId: string) => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-            element.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+    const handleNavClick = (item: { label: string; sectionId: string }) => {
+        // If we're on the home page and it's not the Home link, scroll to section
+        if (pathname === '/' && item.label !== 'Home') {
+            const element = document.getElementById(item.sectionId);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         }
         setIsMobileMenuOpen(false);
     };
@@ -77,9 +82,15 @@ const Navbar: React.FC<React.HTMLAttributes<HTMLElement>> = ({ className, ...pro
 
                 <div className="hidden items-start justify-start gap-6 backdrop-blur-[1.50px] lg:flex">
                     {navItems.map((item) => (
-                        <button key={item.label} onClick={() => scrollToSection(item.sectionId)} className="cursor-pointer text-xl font-medium leading-normal text-white/70 transition-colors hover:text-white">
-                            {item.label}
-                        </button>
+                        item.label === 'Home' ? (
+                            <Link key={item.label} href="/" className="cursor-pointer text-xl font-medium leading-normal text-white/70 transition-colors hover:text-white">
+                                {item.label}
+                            </Link>
+                        ) : (
+                            <button key={item.label} onClick={() => handleNavClick(item)} className="cursor-pointer text-xl font-medium leading-normal text-white/70 transition-colors hover:text-white">
+                                {item.label}
+                            </button>
+                        )
                     ))}
                 </div>
 
@@ -94,13 +105,24 @@ const Navbar: React.FC<React.HTMLAttributes<HTMLElement>> = ({ className, ...pro
                 <div ref={menuRef} className="absolute left-0 right-0 top-full z-50 border-b border-white/10 bg-black/95 backdrop-blur-sm lg:hidden">
                     <div className="flex flex-col px-4 py-4">
                         {navItems.map((item) => (
-                            <button
-                                key={item.label}
-                                onClick={() => scrollToSection(item.sectionId)}
-                                className="border-l-2 border-transparent px-4 py-4 text-left text-base font-medium text-white/70 transition-all hover:border-white/20 hover:text-white"
-                            >
-                                {item.label}
-                            </button>
+                            item.label === 'Home' ? (
+                                <Link
+                                    key={item.label}
+                                    href="/"
+                                    className="border-l-2 border-transparent px-4 py-4 text-left text-base font-medium text-white/70 transition-all hover:border-white/20 hover:text-white"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                    {item.label}
+                                </Link>
+                            ) : (
+                                <button
+                                    key={item.label}
+                                    onClick={() => handleNavClick(item)}
+                                    className="border-l-2 border-transparent px-4 py-4 text-left text-base font-medium text-white/70 transition-all hover:border-white/20 hover:text-white"
+                                >
+                                    {item.label}
+                                </button>
+                            )
                         ))}
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 'use client';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 import AnimatedContainer from './AnimatedContainer';
 import CirclePattern from './CirclePattern';
@@ -12,13 +13,18 @@ type FooterProps = {
 };
 
 const Footer: React.FC<React.HTMLAttributes<HTMLElement> & FooterProps> = ({ className, ...props }) => {
-    const scrollToSection = (sectionId: string) => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-            element.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+    const pathname = usePathname();
+
+    const handleNavClick = (item: { label: string; sectionId: string }) => {
+        // If we're on the home page and it's not the Home link, scroll to section
+        if (pathname === '/' && item.label !== 'Home') {
+            const element = document.getElementById(item.sectionId);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         }
     };
 
@@ -117,18 +123,24 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement> & FooterProps> = ({ cla
                         </div>
                         <div className="grid w-full grid-cols-2 gap-4 backdrop-blur-[1.50px] lg:flex lg:w-auto lg:flex-wrap lg:items-start lg:justify-start lg:gap-6">
                             {navItems.map((item) => (
-                                <button key={item.label} onClick={() => scrollToSection(item.sectionId)} className="cursor-pointer text-left text-base font-medium leading-normal text-white/70 transition-colors hover:text-white">
-                                    {item.label}
-                                </button>
+                                item.label === 'Home' ? (
+                                    <Link key={item.label} href="/" className="cursor-pointer text-left text-base font-medium leading-normal text-white/70 transition-colors hover:text-white">
+                                        {item.label}
+                                    </Link>
+                                ) : (
+                                    <button key={item.label} onClick={() => handleNavClick(item)} className="cursor-pointer text-left text-base font-medium leading-normal text-white/70 transition-colors hover:text-white">
+                                        {item.label}
+                                    </button>
+                                )
                             ))}
                         </div>
                     </div>
                     <div className="relative z-10 h-0 w-full outline outline-1 outline-offset-[-0.50px] outline-white/10" />
                     <div className="relative z-10 flex flex-wrap items-start justify-center gap-4 self-stretch lg:gap-8">
-                        <div className="text-base font-medium leading-normal text-white/70">PDPL Policy</div>
-                        <div className="text-base font-medium leading-normal text-white/70">Information Security</div>
-                        <div className="text-base font-medium leading-normal text-white/70">Clarification Text</div>
-                        <div className="text-base font-medium leading-normal text-white/70">Storage & Disposal</div>
+                        <Link href="/policies/pdpl" className="cursor-pointer text-base font-medium leading-normal text-white/70 transition-colors hover:text-white">PDPL Policy</Link>
+                        <Link href="/policies/information-security" className="cursor-pointer text-base font-medium leading-normal text-white/70 transition-colors hover:text-white">Information Security</Link>
+                        <Link href="/policies/clarification-text" className="cursor-pointer text-base font-medium leading-normal text-white/70 transition-colors hover:text-white">Clarification Text</Link>
+                        <Link href="/policies/storage-disposal" className="cursor-pointer text-base font-medium leading-normal text-white/70 transition-colors hover:text-white">Storage & Disposal</Link>
                     </div>
                 </div>
             </div>
