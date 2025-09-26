@@ -30,7 +30,6 @@ const News = () => {
 
     return (
         <div className="container flex flex-col items-center justify-start gap-16 pb-8 pt-16">
-            {/* Header Section */}
             <div className="flex flex-col items-center justify-start gap-6 self-stretch">
                 <div
                     className="relative flex size-[72px] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-b from-[#531EAF] to-[#641BE1]"
@@ -91,7 +90,6 @@ const News = () => {
                 </div>
             </div>
 
-            {/* News Grid */}
             <div className="grid grid-cols-1 gap-6 self-stretch lg:grid-cols-3">
                 {newsData.map((item, index) => (
                     <AnimatedContainer key={index} delay={index * 100} className="flex h-full flex-1 flex-col items-start justify-start gap-4 bg-surface-0">

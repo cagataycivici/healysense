@@ -56,7 +56,6 @@ const Products = () => {
             </div>
 
             <div className="mt-10 flex flex-col items-center gap-10">
-                {/* Category Tags */}
                 <div className="flex items-center gap-4">
                     <div className="flex items-center rounded-full border border-surface-200 bg-surface-0 px-4 py-2 shadow-[0px_1px_2px_0px_rgba(18,18,23,0.05)]">
                         <div className="text-lg font-normal leading-normal text-surface-950">Thoracic CT</div>
@@ -69,9 +68,7 @@ const Products = () => {
                     </div>
                 </div>
 
-                {/* Products Grid */}
                 <div className="flex w-full flex-col gap-6">
-                    {/* First Row - 3 products */}
                     <div className="flex flex-col gap-6 lg:flex-row">
                         {products.slice(0, 3).map((product, index) => (
                             <AnimatedContainer key={index} delay={index * 200} className="relative flex flex-1 flex-col gap-8 overflow-hidden rounded-[28px] bg-gradient-to-b from-violet-800 to-violet-700 p-8">
@@ -88,7 +85,6 @@ const Products = () => {
                         ))}
                     </div>
 
-                    {/* Second Row - 3 products */}
                     <div className="flex flex-col gap-6 lg:flex-row">
                         {products.slice(3, 6).map((product, index) => (
                             <AnimatedContainer key={index + 3} delay={(index + 3) * 200} className="relative flex flex-1 flex-col gap-8 overflow-hidden rounded-[28px] bg-gradient-to-b from-violet-800 to-violet-700 p-8">

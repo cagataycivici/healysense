@@ -52,38 +52,32 @@ const Contact = () => {
     const validateForm = (): boolean => {
         const newErrors: FormErrors = {};
 
-        // Name validation
         if (!formData.name.trim()) {
             newErrors.name = 'Name is required';
         } else if (formData.name.trim().length < 2) {
             newErrors.name = 'Name must be at least 2 characters';
         }
 
-        // Email validation
         if (!formData.email.trim()) {
             newErrors.email = 'Email is required';
         } else if (!validateEmail(formData.email)) {
             newErrors.email = 'Please enter a valid email address';
         }
 
-        // Phone validation
         if (!formData.phone.trim()) {
             newErrors.phone = 'Phone number is required';
         } else if (!validatePhone(formData.phone)) {
             newErrors.phone = 'Please enter a valid phone number';
         }
 
-        // Institution validation
         if (!formData.institution.trim()) {
             newErrors.institution = 'Institution is required';
         }
 
-        // Products validation
         if (formData.products.length === 0) {
             newErrors.products = 'Please select at least one product';
         }
 
-        // Message validation
         if (!formData.message.trim()) {
             newErrors.message = 'Message is required';
         } else if (formData.message.trim().length < 10) {
@@ -96,7 +90,6 @@ const Contact = () => {
 
     const handleInputChange = (field: keyof FormData, value: string) => {
         setFormData((prev) => ({ ...prev, [field]: value }));
-        // Clear error when user starts typing
         if (errors[field]) {
             setErrors((prev) => ({ ...prev, [field]: undefined }));
         }
@@ -107,7 +100,6 @@ const Contact = () => {
             ...prev,
             products: prev.products.includes(product) ? prev.products.filter((p) => p !== product) : [...prev.products, product]
         }));
-        // Clear products error when user selects a product
         if (errors.products) {
             setErrors((prev) => ({ ...prev, products: undefined }));
         }
@@ -120,10 +112,8 @@ const Contact = () => {
             return;
         }
 
-        // Call Formspree's handleSubmit with the form data
         await handleSubmit(e);
 
-        // Reset form after successful submission
         if (state.succeeded) {
             setFormData({
                 name: '',

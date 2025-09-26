@@ -25,7 +25,6 @@ const Integration = () => {
 
     return (
         <div className="container flex flex-col items-start justify-end gap-16 pb-8 pt-16">
-            {/* Header Section */}
             <div className="flex w-full flex-col items-center justify-start gap-4">
                 <div
                     className="relative flex h-[72px] w-[72px] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-b from-[#531EAF] to-[#641BE1]"
@@ -89,11 +88,9 @@ const Integration = () => {
                 </div>
             </div>
 
-            {/* Integration Cards */}
             <div className="flex w-full flex-col items-start justify-start gap-6 lg:flex-row">
                 {integrations.map((integration, index) => (
                     <AnimatedContainer key={index} delay={index * 200} className="mx-auto flex w-full flex-1 flex-col items-center justify-start gap-4">
-                        {/* Card Visual */}
                         <div
                             className="relative flex h-[370px] w-full flex-col overflow-hidden rounded-[28px] bg-gradient-to-b from-[#531EAF] to-[#641BE1]"
                             style={{
@@ -101,7 +98,6 @@ const Integration = () => {
                                     '0px 2px 5px 0px rgba(120,149,206,0.08), 0px 9px 9px -4px rgba(120,149,206,0.07), 0px 21px 13px -8px rgba(120,149,206,0.04), 0px 38px 15px -8px rgba(120,149,206,0.01), 0px 59px 16px -8px rgba(120,149,206,0.00)'
                             }}
                         >
-                            {/* Tag - Only this has padding and background */}
                             <div className="relative z-10 flex justify-center p-4">
                                 <div
                                     className="inline-flex items-start justify-start rounded-[999px] bg-white/20 px-4 py-2 outline outline-1 outline-offset-[-1px] outline-white/40"
@@ -113,7 +109,6 @@ const Integration = () => {
                                 </div>
                             </div>
 
-                            {/* Image fills the entire card area */}
                             {integration.tag.includes('Marketplace') ? (
                                 /* Marketplace: 80% visible on desktop, full on mobile, positioned right-bottom */
                                 <div className="absolute inset-0 flex items-end justify-end">
@@ -138,7 +133,6 @@ const Integration = () => {
                             )}
                         </div>
 
-                        {/* Card Content */}
                         <div className="flex flex-col items-center justify-start gap-4 self-stretch p-6">
                             <div className="flex flex-col items-start justify-start gap-3 self-stretch">
                                 <div className="justify-start self-stretch text-2xl font-semibold text-surface-950">{integration.title}</div>

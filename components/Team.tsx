@@ -5,7 +5,6 @@ import Link from 'next/link';
 const Team = () => {
     return (
         <AnimatedContainer className="mx-auto flex w-full max-w-[1300px] flex-col items-center justify-start gap-16 self-stretch px-12 py-32">
-            {/* Header Section */}
             <div className="flex w-full flex-col items-center justify-start gap-4">
                 <div
                     className="relative flex h-[72px] w-[72px] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-b from-[#531EAF] to-[#641BE1]"
@@ -58,7 +57,6 @@ const Team = () => {
 
             <div className="mt-16 w-full">
                 <div className="flex flex-col items-start gap-8 2xl:flex-row 2xl:gap-16">
-                    {/* Text Section */}
                     <div className="flex-1 2xl:max-w-md">
                         <div className="text-center 2xl:text-left">
                             <span className="text-lg font-normal leading-normal text-surface-700 lg:text-2xl">Dedicated experts from different fields teamed up and created team. </span>
@@ -77,7 +75,6 @@ const Team = () => {
                         </div>
                     </div>
 
-                    {/* Team Grid */}
                     <div className="w-full flex-1">
                         <div className="flex flex-wrap justify-center gap-6 lg:flex-nowrap lg:gap-12">
                             {startupTeamData.map((item, index) => (

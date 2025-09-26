@@ -19,7 +19,6 @@ const Navbar: React.FC<React.HTMLAttributes<HTMLElement>> = ({ className, ...pro
         setIsMobileMenuOpen(false);
 
         if (pathname === '/') {
-            // If we're on the home page, scroll to section
             const element = document.getElementById(item.sectionId);
             if (element) {
                 element.scrollIntoView({
@@ -28,7 +27,6 @@ const Navbar: React.FC<React.HTMLAttributes<HTMLElement>> = ({ className, ...pro
                 });
             }
         } else {
-            // If we're on another page, navigate to home page with hash
             router.push(`/#${item.sectionId}`);
         }
     };
@@ -62,7 +60,6 @@ const Navbar: React.FC<React.HTMLAttributes<HTMLElement>> = ({ className, ...pro
         };
     }, [isMobileMenuOpen]);
 
-    // Handle scrolling to section when page loads with hash
     useEffect(() => {
         if (pathname === '/' && window.location.hash) {
             const sectionId = window.location.hash.substring(1);

@@ -53,7 +53,6 @@ const VideoFeature = () => {
 
     return (
         <div className="container flex flex-col items-center justify-start gap-16 pb-8 pt-16">
-            {/* Header Section */}
             <div className="flex w-full flex-col items-center justify-start gap-4">
                 <div
                     className="relative flex h-[72px] w-[72px] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-b from-[#531EAF] to-[#641BE1]"
@@ -102,7 +101,6 @@ const VideoFeature = () => {
                     <h1 className="text-center text-3xl font-semibold leading-tight text-surface-950 lg:text-6xl lg:leading-tight">Showreel</h1>
                     <p className="text-center text-lg font-normal leading-normal text-surface-500 lg:text-2xl">Behind the scenes of Healysense: innovation, expertise, and vision.</p>
 
-                    {/* Navigation Buttons */}
                     <div className="mt-6 flex items-center gap-6">
                         <button onClick={handlePrev} className="h-12 w-[5.5rem] rounded-full border-0 border-white/12 shadow-stroke transition-transform duration-200 hover:bg-surface-100/20">
                             <i className="pi pi-arrow-left text-xl"></i>
@@ -114,7 +112,6 @@ const VideoFeature = () => {
                 </div>
             </div>
 
-            {/* Video Section */}
             <AnimatedContainer
                 className={`relative h-[300px] w-full max-w-[960px] overflow-hidden rounded-[28px] bg-black/10 transition-opacity duration-300 lg:h-[540px] ${isTransitioning ? 'opacity-50' : 'opacity-100'}`}
                 style={{
@@ -124,11 +121,9 @@ const VideoFeature = () => {
             >
                 {!isVideoLoaded ? (
                     <>
-                        {/* Video Thumbnail */}
                         <div className="group absolute inset-0 cursor-pointer transition-all duration-500" onClick={loadVideo}>
                             <Image src={currentVideo.thumbnail} alt={currentVideo.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 960px" />
 
-                            {/* Play Button */}
                             <div
                                 className={`absolute left-1/2 top-1/2 flex h-[82px] w-[82px] -translate-x-1/2 -translate-y-1/2 transform items-center justify-center gap-[9.14px] overflow-hidden rounded-full bg-white/10 p-6 outline outline-1 outline-offset-[-1px] outline-white/30 transition-all duration-300 group-hover:scale-110 ${
                                     isTransitioning ? 'opacity-0' : 'opacity-100'
@@ -147,7 +142,6 @@ const VideoFeature = () => {
                                 </div>
                             </div>
 
-                            {/* Hover Effect */}
                             <div className="absolute inset-0 bg-white/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                         </div>
                     </>
@@ -164,7 +158,6 @@ const VideoFeature = () => {
                     ></iframe>
                 )}
 
-                {/* Transition Overlay */}
                 {isTransitioning && (
                     <div className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm">
                         <div className="h-8 w-8 animate-spin rounded-full border-2 border-white/30 border-t-white"></div>

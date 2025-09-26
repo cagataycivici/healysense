@@ -18,7 +18,6 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement> & FooterProps> = ({ cla
 
     const handleNavClick = (item: { label: string; sectionId: string }) => {
         if (pathname === '/') {
-            // If we're on the home page, scroll to section
             const element = document.getElementById(item.sectionId);
             if (element) {
                 element.scrollIntoView({
@@ -27,7 +26,6 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement> & FooterProps> = ({ cla
                 });
             }
         } else {
-            // If we're on another page, navigate to home page with hash
             router.push(`/#${item.sectionId}`);
         }
     };
@@ -90,7 +88,9 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement> & FooterProps> = ({ cla
                             </div>
                             <div className="flex flex-col items-start justify-start gap-2">
                                 <div className="max-w-md justify-start self-stretch text-base font-normal leading-normal text-white">Dokuz Eylül Üniversitesi İnciraltı Yerleşkesi, DEPARK Nar Grup, Ofis:P2/E Balçova/İzmir/Türkiye</div>
-                                <Link href="mailto:info@healysense.ai" className="justify-start self-stretch text-base font-normal leading-normal text-white transition-colors hover:text-white/70">info@healysense.ai</Link>
+                                <Link href="mailto:info@healysense.ai" className="justify-start self-stretch text-base font-normal leading-normal text-white transition-colors hover:text-white/70">
+                                    info@healysense.ai
+                                </Link>
                             </div>
                             <div className="inline-flex items-start justify-start gap-[9.14px]">
                                 <Link

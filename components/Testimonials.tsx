@@ -70,7 +70,6 @@ const Testimonials = () => {
                 </div>
             </div>
 
-            {/* Testimonials Grid */}
             <div className="grid grid-cols-1 gap-6 self-stretch lg:grid-cols-3">
                 {testimonials.map((testimonial, index) => (
                     <AnimatedContainer key={index} delay={index * 100} className="flex h-full flex-col justify-between gap-8 rounded-[28px] bg-white p-6 outline outline-1 outline-offset-[-1px] outline-surface-200">
