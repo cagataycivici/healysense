@@ -1,86 +1,10 @@
-'use client';
 import AnimatedContainer from '@/components/AnimatedContainer';
-import useIsMobile from '@/lib/hooks/use-is-mobile';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
 
 const Team = () => {
-    const isMobile = useIsMobile();
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const containerRef = useRef<HTMLDivElement>(null);
-    const [slideWidth, setSlideWidth] = useState(0);
-    const [visibleItems, setVisibleItems] = useState(1);
-
-    // Determine visible items based on screen size
-    useEffect(() => {
-        const updateVisibleItems = () => {
-            const width = window.innerWidth;
-            if (width < 1024) {
-                // Mobile: 1 item visible
-                setVisibleItems(1);
-            } else if (width < 1536) {
-                // lg to 2xl: 2 items visible
-                setVisibleItems(2);
-            } else {
-                // 2xl+: Show all (static layout)
-                setVisibleItems(3);
-            }
-        };
-
-        updateVisibleItems();
-        window.addEventListener('resize', updateVisibleItems);
-        return () => window.removeEventListener('resize', updateVisibleItems);
-    }, []);
-
-    // Calculate slide width
-    useEffect(() => {
-        if (containerRef.current && visibleItems < 3) {
-            const container = containerRef.current;
-            const containerWidth = container.offsetWidth;
-
-            if (visibleItems === 1) {
-                // Mobile: Full width slides
-                setSlideWidth(containerWidth);
-            } else if (visibleItems === 2) {
-                // lg-xl: Show 2 items with third partially visible
-                // Each item takes 45% of container width
-                setSlideWidth(containerWidth * 0.45);
-            }
-        }
-    }, [visibleItems]);
-
-    const handlePrev = () => {
-        setCurrentIndex((prev) => {
-            if (prev === 0) return startupTeamData.length - 1;
-            return prev - 1;
-        });
-    };
-
-    const handleNext = () => {
-        setCurrentIndex((prev) => {
-            if (prev === startupTeamData.length - 1) return 0;
-            return prev + 1;
-        });
-    };
-
-    // Calculate transform based on current index and visible items
-    const getTransform = () => {
-        if (visibleItems === 3) return 'translateX(0)';
-
-        if (visibleItems === 1) {
-            // Mobile: Simple slide by 100%
-            return `translateX(-${currentIndex * 100}%)`;
-        } else {
-            // Desktop (2-item carousel): Slide by 50% to show 2 full items at a time
-            // This means: 0%, -50%, -100% for 3 items total
-            const slidePercentage = currentIndex * 50;
-            return `translateX(-${slidePercentage}%)`;
-        }
-    };
-
     return (
-        <AnimatedContainer className="mx-auto flex w-full max-w-[1200px] flex-col items-center justify-start gap-16 self-stretch px-4 py-32">
+        <AnimatedContainer className="mx-auto flex w-full max-w-[1300px] flex-col items-center justify-start gap-16 self-stretch px-12 py-32">
             {/* Header Section */}
             <div className="flex w-full flex-col items-center justify-start gap-4">
                 <div
@@ -128,15 +52,15 @@ const Team = () => {
                     </svg>
                 </div>
                 <div className="flex flex-col items-center justify-start gap-4 self-stretch">
-                    <div className="justify-start self-stretch text-center text-3xl font-semibold leading-tight text-surface-950 lg:text-6xl lg:leading-[65.62px]">Meet Our Talented Team</div>
+                    <div className="justify-start self-stretch text-center text-3xl font-semibold leading-tight text-surface-950 lg:text-6xl lg:leading-tight">Meet Our Talented Team</div>
                 </div>
             </div>
 
             <div className="mt-16 w-full">
-                <div className="flex flex-col items-start gap-8 lg:flex-row lg:gap-16">
+                <div className="flex flex-col items-start gap-8 2xl:flex-row 2xl:gap-16">
                     {/* Text Section */}
-                    <div className="flex-1 lg:max-w-md">
-                        <div className="text-center lg:text-left">
+                    <div className="flex-1 2xl:max-w-md">
+                        <div className="text-center 2xl:text-left">
                             <span className="text-lg font-normal leading-normal text-surface-700 lg:text-2xl">Dedicated experts from different fields teamed up and created team. </span>
                             <br />
                             <br />
@@ -151,95 +75,15 @@ const Team = () => {
                             <br />
                             <span className="text-lg font-normal leading-normal text-surface-700 lg:text-2xl">Join our journey to redefine medical analysis and meet our team.</span>
                         </div>
-
-                        {/* Navigation Buttons - Show on screens under 2xl */}
-                        <div className="mt-8 flex items-center justify-center gap-6 2xl:hidden">
-                            <button
-                                onClick={handlePrev}
-                                className="flex h-12 w-[5.5rem] items-center justify-center rounded-full border-0 border-white/12 bg-white shadow-stroke transition-transform duration-200 hover:scale-105 dark:border dark:bg-surface-800 dark:shadow-none"
-                            >
-                                <i className="pi pi-arrow-left text-xl text-surface-700 dark:text-white"></i>
-                            </button>
-                            <button
-                                onClick={handleNext}
-                                className="flex h-12 w-[5.5rem] items-center justify-center rounded-full border-0 border-white/12 bg-white shadow-stroke transition-transform duration-200 hover:scale-105 dark:border dark:bg-surface-800 dark:shadow-none"
-                            >
-                                <i className="pi pi-arrow-right text-xl text-surface-700 dark:text-white"></i>
-                            </button>
-                        </div>
                     </div>
 
-                    {/* Custom Carousel Section */}
+                    {/* Team Grid */}
                     <div className="w-full flex-1">
-                        {/* Custom Carousel for screens under 2xl */}
-                        <div className={`${visibleItems === 3 ? 'hidden' : 'block'}`}>
-                            <div
-                                ref={containerRef}
-                                className="relative"
-                                style={{
-                                    // Create viewport that shows 2 full items + partial 3rd
-                                    width: visibleItems === 2 ? 'calc(100% + 6rem)' : '100%',
-                                    overflow: 'hidden'
-                                }}
-                            >
-                                <div
-                                    className="flex transition-transform duration-300 ease-in-out"
-                                    style={{
-                                        transform: getTransform()
-                                    }}
-                                >
-                                    {startupTeamData.map((item, index) => (
-                                        <div
-                                            key={index}
-                                            className="flex-shrink-0"
-                                            style={{
-                                                width: visibleItems === 1 ? '100%' : '50%',
-                                                minWidth: visibleItems === 1 ? '100%' : '50%',
-                                                padding: visibleItems === 1 ? '0 0.5rem' : '0 0.5rem'
-                                            }}
-                                        >
-                                            <AnimatedContainer
-                                                delay={200 * index}
-                                                className="group relative h-[500px] w-full overflow-hidden rounded-3xl shadow-blue-card lg:h-[400px] lg:rounded-4xl"
-                                                style={{
-                                                    maxWidth: '24.6rem',
-                                                    margin: visibleItems === 1 ? '0 auto' : '0'
-                                                }}
-                                            >
-                                                <Image className="object-cover" fill sizes="(max-width: 768px) 280px, (max-width: 1200px) 50vw, 33vw" src={item.image} alt="Startup Team Item" />
-                                                <div className="absolute inset-0 flex flex-col items-start justify-end gap-4 overflow-hidden rounded-3xl bg-gradient-to-b from-black/0 to-black/70 p-8 opacity-0 transition-all group-hover:opacity-100 lg:rounded-4xl">
-                                                    <div className="inline-flex items-start justify-start gap-[9.14px]">
-                                                        <Link
-                                                            href={item.facebook}
-                                                            className="backdrop-blur-xs flex w-14 items-center justify-center gap-2 overflow-hidden rounded-full bg-white/5 px-4 py-2 outline outline-[0.50px] outline-offset-[-0.50px] outline-white/10"
-                                                        >
-                                                            <i className="pi pi-linkedin text-base text-white"></i>
-                                                        </Link>
-                                                        <Link
-                                                            href={item.twitter}
-                                                            className="backdrop-blur-xs flex w-14 items-center justify-center gap-2 overflow-hidden rounded-full bg-white/5 px-4 py-2 outline outline-[0.50px] outline-offset-[-0.50px] outline-white/10"
-                                                        >
-                                                            <i className="pi pi-twitter text-base text-white"></i>
-                                                        </Link>
-                                                    </div>
-                                                    <div className="flex flex-col items-start justify-start gap-1 self-stretch">
-                                                        <div className="justify-start self-stretch text-2xl font-semibold leading-loose text-white">{item.name}</div>
-                                                        <div className="justify-start self-stretch text-lg font-normal leading-7 text-white">{item.role}</div>
-                                                    </div>
-                                                </div>
-                                            </AnimatedContainer>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* 2XL+: Show all 3 items in a static flex layout */}
-                        <div className={`${visibleItems === 3 ? 'flex' : 'hidden'} flex-row justify-center gap-6`}>
+                        <div className="flex flex-wrap justify-center gap-6 lg:flex-nowrap lg:gap-12">
                             {startupTeamData.map((item, index) => (
-                                <AnimatedContainer key={index} delay={200 * index} className="group relative h-[400px] min-w-[18.6rem] max-w-[22rem] flex-1 overflow-hidden rounded-4xl shadow-blue-card">
-                                    <Image className="object-cover" fill sizes="(max-width: 1200px) 50vw, 33vw" src={item.image} alt="Startup Team Item" />
-                                    <div className="absolute inset-0 flex flex-col items-start justify-end gap-4 overflow-hidden rounded-4xl bg-gradient-to-b from-black/0 to-black/70 p-8 opacity-0 transition-all group-hover:opacity-100">
+                                <AnimatedContainer key={index} delay={200 * index} className="group relative h-[300px] w-[220px] flex-shrink-0 overflow-hidden rounded-[28px] shadow-blue-card sm:h-[372px] sm:w-[260px]">
+                                    <Image className="object-cover" fill sizes="(max-width: 640px) 220px, 260px" src={item.image} alt={item.name} />
+                                    <div className="absolute inset-0 flex flex-col items-start justify-end gap-4 overflow-hidden rounded-[28px] bg-gradient-to-b from-black/0 to-black/70 p-8 opacity-0 transition-all group-hover:opacity-100">
                                         <div className="inline-flex items-start justify-start gap-[9.14px]">
                                             <Link
                                                 href={item.facebook}
@@ -255,8 +99,8 @@ const Team = () => {
                                             </Link>
                                         </div>
                                         <div className="flex flex-col items-start justify-start gap-1 self-stretch">
-                                            <div className="justify-start self-stretch text-2xl font-semibold leading-loose text-white">{item.name}</div>
-                                            <div className="justify-start self-stretch text-lg font-normal leading-7 text-white">{item.role}</div>
+                                            <div className="justify-start self-stretch text-2xl font-semibold leading-normal text-white">{item.name}</div>
+                                            <div className="justify-start self-stretch text-lg font-normal leading-normal text-white">{item.role}</div>
                                         </div>
                                     </div>
                                 </AnimatedContainer>
@@ -276,24 +120,24 @@ const startupTeamData = [
         image: '/images/team-1.jpg',
         name: 'Serhat Tozburun',
         role: 'Founder',
-        twitter: 'https://twitter.com/serhattozburun',
-        facebook: 'https://linkedin.com/in/serhattozburun',
+        twitter: 'https://twitter.com',
+        facebook: 'https://linkedin.com',
         github: 'x'
     },
     {
         image: '/images/team-2.jpg',
         name: 'Semih Burhan',
         role: 'COO & Data Scientist',
-        twitter: 'https://twitter.com/semihburhan',
-        facebook: 'https://linkedin.com/in/semihburhan',
+        twitter: 'https://twitter.com',
+        facebook: 'https://linkedin.com',
         github: 'x'
     },
     {
         image: '/images/team-3.jpg',
-        name: 'John Doe',
-        role: 'Medical Advisor',
-        twitter: 'https://twitter.com/johndoe',
-        facebook: 'https://linkedin.com/in/johndoe',
+        name: 'Berkay Durmuş',
+        role: 'AI Engineer',
+        twitter: 'https://twitter.com',
+        facebook: 'https://linkedin.com',
         github: 'x'
     }
 ];

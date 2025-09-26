@@ -46,12 +46,12 @@ const Products = () => {
                     </svg>
                 </div>
                 <div className="flex flex-col items-center gap-4">
-                    <h1 className="text-center text-3xl font-semibold leading-tight text-surface-950 lg:text-6xl lg:leading-[65.62px]">
+                    <h1 className="text-center text-3xl font-semibold leading-tight text-surface-950 lg:text-6xl lg:leading-tight">
                         Redefining
                         <br />
                         Medical Image Analysis
                     </h1>
-                    <p className="text-center text-lg font-normal leading-loose text-surface-500 lg:text-2xl">Reduced Interpretation Time ⋅ Optimized Patient Management ⋅ Enhanced Radiology Workflow</p>
+                    <p className="text-center text-lg font-normal leading-normal text-surface-500 lg:text-2xl">Reduced Interpretation Time ⋅ Optimized Patient Management ⋅ Enhanced Radiology Workflow</p>
                 </div>
             </div>
 
@@ -59,13 +59,13 @@ const Products = () => {
                 {/* Category Tags */}
                 <div className="flex items-center gap-4">
                     <div className="flex items-center rounded-full border border-surface-200 bg-surface-0 px-4 py-2 shadow-[0px_1px_2px_0px_rgba(18,18,23,0.05)]">
-                        <div className="text-lg font-normal leading-7 text-surface-950">Thoracic CT</div>
+                        <div className="text-lg font-normal leading-normal text-surface-950">Thoracic CT</div>
                     </div>
                     <div className="flex items-center rounded-full border border-surface-200 bg-surface-0 px-4 py-2 shadow-[0px_1px_2px_0px_rgba(18,18,23,0.05)]">
-                        <div className="text-lg font-normal leading-7 text-surface-950">Abdominal CT</div>
+                        <div className="text-lg font-normal leading-normal text-surface-950">Abdominal CT</div>
                     </div>
                     <div className="flex items-center rounded-full border border-surface-200 bg-surface-0 px-4 py-2 shadow-[0px_1px_2px_0px_rgba(18,18,23,0.05)]">
-                        <div className="text-lg font-normal leading-7 text-surface-950">ECG Gated CT</div>
+                        <div className="text-lg font-normal leading-normal text-surface-950">ECG Gated CT</div>
                     </div>
                 </div>
 
@@ -80,8 +80,8 @@ const Products = () => {
                                     <Image src={product.image} alt={product.name} width={48} height={48} className="h-24 w-24 object-contain" />
                                 </div>
                                 <div className="flex flex-col items-center gap-4">
-                                    <h3 className="text-center text-2xl font-semibold leading-loose text-white/90">{product.name}</h3>
-                                    <p className="text-center text-lg font-normal leading-7 text-white/70">{product.description}</p>
+                                    <h3 className="text-center text-2xl font-semibold leading-normal text-white/90">{product.name}</h3>
+                                    <p className="text-center text-lg font-normal leading-normal text-white/70">{product.description}</p>
                                 </div>
                                 <div className="pointer-events-none absolute bottom-0 right-0 z-20 h-full w-full opacity-10" style={{ background: 'radial-gradient(circle, white 10%, transparent 100%)' }}></div>
                             </AnimatedContainer>
@@ -97,8 +97,8 @@ const Products = () => {
                                     <Image src={product.image} alt={product.name} width={48} height={48} className="h-24 w-24 object-contain" />
                                 </div>
                                 <div className="flex flex-col items-center gap-4">
-                                    <h3 className="text-center text-2xl font-semibold leading-loose text-white/90">{product.name}</h3>
-                                    <p className="text-center text-lg font-normal leading-7 text-white/70">{product.description}</p>
+                                    <h3 className="text-center text-2xl font-semibold leading-normal text-white/90">{product.name}</h3>
+                                    <p className="text-center text-lg font-normal leading-normal text-white/70">{product.description}</p>
                                 </div>
                                 <div className="pointer-events-none absolute bottom-0 right-0 z-20 h-full w-full opacity-10" style={{ background: 'radial-gradient(circle, white 10%, transparent 100%)' }}></div>
                             </AnimatedContainer>

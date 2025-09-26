@@ -1,9 +1,8 @@
 'use client';
 import AnimatedContainer from '@/components/AnimatedContainer';
 import CirclePattern from '@/components/CirclePattern';
-import ProductShowcase from '@/components/ProductShowcase';
 import Navbar from '@/components/Navbar';
-import Image from 'next/image';
+import ProductShowcase from '@/components/ProductShowcase';
 
 const Hero = () => {
     const isWide = true; // Fixed to wide layout
@@ -30,7 +29,7 @@ const Hero = () => {
                                     Discover the Power of <br />
                                     AI Driven Hybrid Solutions
                                 </h1>
-                                <p className="mx-auto mt-6 text-center text-xl font-normal leading-loose text-white/60 lg:mx-0 lg:text-left">
+                                <p className="mx-auto mt-6 text-center text-xl font-normal leading-normal text-white/60 lg:mx-0 lg:text-left">
                                     Models have been comprehensively trained and validated on heterogeneous datasets covering emergency throacic CT and abdomninal CT scans.
                                 </p>
                                 <button onClick={() => scrollToSection('contact')} className="button-regular mx-auto mt-8 w-fit lg:mx-0">
@@ -40,9 +39,9 @@ const Hero = () => {
 
                             <div className="relative z-5 mx-auto flex w-full max-w-[449px] flex-col gap-2 lg:mx-0">
                                 <div className="hero-stat-card flex items-center justify-start gap-6 self-stretch overflow-hidden p-6">
-                                    <div className="flex-1 text-xl font-semibold leading-loose text-white/90 lg:text-2xl">Diagnostic Speed</div>
+                                    <div className="flex-1 text-xl font-semibold leading-normal text-white/90 lg:text-2xl">Diagnostic Speed</div>
                                     <div className="flex items-center justify-start gap-2">
-                                        <div className="hero-before-after-item flex w-16 flex-col items-start justify-center overflow-hidden lg:w-24">
+                                        <div className="hero-before-after-item flex w-24 flex-col items-start justify-center overflow-hidden">
                                             <div className="flex items-center justify-center self-stretch bg-white/10 p-2">
                                                 <div className="text-lg font-bold tracking-wide text-white lg:text-xl">&lt; 10m</div>
                                             </div>
@@ -51,9 +50,9 @@ const Hero = () => {
                                 </div>
 
                                 <div className="hero-stat-card flex items-center justify-start gap-6 self-stretch overflow-hidden p-6">
-                                    <div className="flex-1 text-xl font-semibold leading-loose text-white/90 lg:text-2xl">Reduce Misdiagnosis</div>
+                                    <div className="flex-1 text-xl font-semibold leading-normal text-white/90 lg:text-2xl">Reduce Misdiagnosis</div>
                                     <div className="flex items-center justify-start gap-2">
-                                        <div className="hero-before-after-item flex w-16 flex-col items-start justify-center overflow-hidden lg:w-24">
+                                        <div className="hero-before-after-item flex w-24 flex-col items-start justify-center overflow-hidden">
                                             <div className="flex items-center justify-center self-stretch bg-white/10 p-2">
                                                 <div className="text-lg font-bold tracking-wide text-white lg:text-xl">&lt; 3.5%</div>
                                             </div>
@@ -62,12 +61,12 @@ const Hero = () => {
                                 </div>
 
                                 <div className="hero-stat-card flex items-center justify-start gap-6 self-stretch overflow-hidden p-6">
-                                    <div className="flex-1 text-xl font-semibold leading-loose text-white/90 lg:text-2xl">
+                                    <div className="flex-1 text-xl font-semibold leading-normal text-white/90 lg:text-2xl">
                                         Generation Tendency for <br />
                                         AI Tech in Health
                                     </div>
                                     <div className="flex items-center justify-start gap-2">
-                                        <div className="hero-before-after-item flex w-16 flex-col items-start justify-center overflow-hidden lg:w-24">
+                                        <div className="hero-before-after-item flex w-24 flex-col items-start justify-center overflow-hidden">
                                             <div className="flex items-center justify-center self-stretch bg-white/10 p-2">
                                                 <div className="text-lg font-bold tracking-wide text-white lg:text-xl">&gt; 85%</div>
                                             </div>

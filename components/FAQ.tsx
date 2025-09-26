@@ -35,8 +35,8 @@ const FAQ: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ className, ...pro
                     </svg>
                 </div>
                 <div className="flex flex-col items-center justify-start gap-4 self-stretch">
-                    <div className="justify-end self-stretch text-center text-3xl font-semibold leading-tight text-surface-950 lg:text-6xl lg:leading-[65.62px]">Frequently Asked Questions</div>
-                    <div className="justify-end self-stretch text-center text-xl font-normal leading-loose text-surface-500 lg:text-2xl">Find quick answers to the most common questions.</div>
+                    <div className="justify-end self-stretch text-center text-3xl font-semibold leading-tight text-surface-950 lg:text-6xl lg:leading-tight">Frequently Asked Questions</div>
+                    <div className="justify-end self-stretch text-center text-xl font-normal leading-normal text-surface-500 lg:text-2xl">Find quick answers to the most common questions.</div>
                 </div>
             </div>
             <div className="self-stretch">

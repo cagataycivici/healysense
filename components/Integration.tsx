@@ -84,8 +84,8 @@ const Integration = () => {
                     </svg>
                 </div>
                 <div className="flex flex-col items-center justify-start gap-4 self-stretch">
-                    <h1 className="text-center text-3xl font-semibold leading-tight text-surface-950 lg:text-6xl lg:leading-[65.62px]">Integration</h1>
-                    <p className="text-center text-lg font-normal leading-loose text-surface-500 lg:text-2xl">Choose the integration method that fits your workflow.</p>
+                    <h1 className="text-center text-3xl font-semibold leading-tight text-surface-950 lg:text-6xl lg:leading-tight">Integration</h1>
+                    <p className="text-center text-lg font-normal leading-normal text-surface-500 lg:text-2xl">Choose the integration method that fits your workflow.</p>
                 </div>
             </div>
 
@@ -109,7 +109,7 @@ const Integration = () => {
                                         boxShadow: '0px 0.9999998807907104px 1.999999761581421px 0px rgba(18,18,23,0.05)'
                                     }}
                                 >
-                                    <div className="justify-start text-lg font-medium leading-7 text-white">{integration.tag}</div>
+                                    <div className="justify-start text-lg font-medium leading-normal text-white">{integration.tag}</div>
                                 </div>
                             </div>
 
@@ -143,7 +143,7 @@ const Integration = () => {
                             <div className="flex flex-col items-start justify-start gap-3 self-stretch">
                                 <div className="justify-start self-stretch text-2xl font-semibold text-surface-950">{integration.title}</div>
                             </div>
-                            <div className="justify-start self-stretch text-lg font-normal leading-7 text-surface-700">{integration.description}</div>
+                            <div className="justify-start self-stretch text-lg font-normal leading-normal text-surface-700">{integration.description}</div>
                             <div className="flex flex-col items-start justify-start gap-[13.71px] self-stretch">
                                 {integration.features.map((feature, featureIndex) => (
                                     <div key={featureIndex} className="flex items-center justify-start gap-3 self-stretch">

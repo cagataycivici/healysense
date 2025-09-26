@@ -66,7 +66,7 @@ const Testimonials = () => {
                     </svg>
                 </div>
                 <div className="flex flex-col items-center justify-start gap-4 self-stretch">
-                    <div className="justify-start self-stretch text-center text-3xl font-semibold leading-tight text-surface-950 lg:text-6xl lg:leading-[65.62px]">Hear Healysense from Experts</div>
+                    <div className="justify-start self-stretch text-center text-3xl font-semibold leading-tight text-surface-950 lg:text-6xl lg:leading-tight">Hear Healysense from Experts</div>
                 </div>
             </div>
 
@@ -83,13 +83,13 @@ const Testimonials = () => {
                                     />
                                 </svg>
                             </div>
-                            <div className="flex-1 justify-start text-lg font-normal leading-7 text-surface-600">{testimonial.quote}</div>
+                            <div className="flex-1 justify-start text-lg font-normal leading-normal text-surface-600">{testimonial.quote}</div>
                         </div>
                         <div className="flex items-center justify-start gap-4">
                             <Image className="size-16 rounded-full border border-surface-200" src={testimonial.avatar} alt={testimonial.name} width={64} height={64} />
                             <div className="flex flex-1 flex-col items-start justify-center gap-1">
-                                <div className="justify-start text-xl font-semibold leading-7 text-surface-950">{testimonial.name}</div>
-                                <div className="justify-start text-lg font-normal leading-7 text-surface-600">{testimonial.role}</div>
+                                <div className="justify-start text-xl font-semibold leading-normal text-surface-950">{testimonial.name}</div>
+                                <div className="justify-start text-lg font-normal leading-normal text-surface-600">{testimonial.role}</div>
                             </div>
                         </div>
                     </AnimatedContainer>

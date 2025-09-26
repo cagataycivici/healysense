@@ -12,13 +12,13 @@ const ProductShowcase = ({ className = '' }: { className?: string }) => {
     ];
 
     return (
-        <div className={`z-30 hidden w-full max-w-[1152px] items-start justify-between overflow-hidden p-6 lg:flex ${className}`}>
+        <div className={`container z-30 hidden w-full items-start justify-between overflow-hidden p-6 lg:flex ${className}`}>
             {products.map((product, index) => (
                 <div key={index} className="flex items-center justify-center gap-3">
-                    <div className="relative h-8 w-8">
-                        <Image src={product.image} alt={product.name} width={32} height={32} className="h-8 w-8 object-contain" />
+                    <div className="relative h-10 w-10">
+                        <Image src={product.image} alt={product.name} width={32} height={32} className="h-10 w-10 object-contain" />
                     </div>
-                    <div className="text-lg font-semibold leading-7 text-white/60">{product.name}</div>
+                    <div className="text-lg font-semibold leading-normal text-white/90">{product.name}</div>
                 </div>
             ))}
         </div>

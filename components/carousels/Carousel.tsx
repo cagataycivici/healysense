@@ -46,8 +46,8 @@ const Carousel = forwardRef<
         >
             {!hideMask ? (
                 <>
-                    <div className="pointer-events-none absolute left-0 z-10 h-full w-[25%] bg-[linear-gradient(to_right,white_12%,transparent_100%)] dark:bg-[linear-gradient(to_right,rgb(var(--surface-950))_12%,transparent_100%)]"></div>
-                    <div className="pointer-events-none absolute right-0 z-10 h-full w-[25%] bg-[linear-gradient(to_left,white_12%,transparent_100%)] dark:bg-[linear-gradient(to_left,rgb(var(--surface-950))_12%,transparent_100%)]"></div>
+                    <div className="pointer-events-none absolute left-0 z-10 h-full w-[25%] bg-[linear-gradient(to_right,white_12%,transparent_100%)]"></div>
+                    <div className="pointer-events-none absolute right-0 z-10 h-full w-[25%] bg-[linear-gradient(to_left,white_12%,transparent_100%)]"></div>
                 </>
             ) : null}
             <div className={cn('block', refContainerClass?.includes('overflow-visible') ? 'overflow-visible' : 'overflow-hidden', refContainerClass)} ref={emblaRef}>

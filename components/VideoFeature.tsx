@@ -104,15 +104,15 @@ const VideoFeature = () => {
                     </svg>{' '}
                 </div>
                 <div className="flex flex-col items-center justify-start gap-4 self-stretch">
-                    <h1 className="text-center text-3xl font-semibold leading-tight text-surface-950 lg:text-6xl lg:leading-[65.62px]">Showreel</h1>
-                    <p className="text-center text-lg font-normal leading-loose text-surface-500 lg:text-2xl">Behind the scenes of Healysense: innovation, expertise, and vision.</p>
+                    <h1 className="text-center text-3xl font-semibold leading-tight text-surface-950 lg:text-6xl lg:leading-tight">Showreel</h1>
+                    <p className="text-center text-lg font-normal leading-normal text-surface-500 lg:text-2xl">Behind the scenes of Healysense: innovation, expertise, and vision.</p>
 
                     {/* Navigation Buttons */}
                     <div className="mt-6 flex items-center gap-6">
-                        <button onClick={handlePrev} className="h-12 w-[5.5rem] rounded-full border-0 border-white/12 shadow-stroke transition-transform duration-200 hover:scale-105 dark:border dark:shadow-none">
+                        <button onClick={handlePrev} className="h-12 w-[5.5rem] rounded-full border-0 border-white/12 shadow-stroke transition-transform duration-200 hover:bg-surface-100/20">
                             <i className="pi pi-arrow-left text-xl"></i>
                         </button>
-                        <button onClick={handleNext} className="h-12 w-[5.5rem] rounded-full border-0 border-white/12 shadow-stroke transition-transform duration-200 hover:scale-105 dark:border dark:shadow-none">
+                        <button onClick={handleNext} className="h-12 w-[5.5rem] rounded-full border-0 border-white/12 shadow-stroke transition-transform duration-200 hover:bg-surface-100/20">
                             <i className="pi pi-arrow-right text-xl"></i>
                         </button>
                     </div>
