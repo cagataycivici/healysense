@@ -80,11 +80,11 @@ const Team = () => {
     };
 
     return (
-        <AnimatedContainer className="self-stretch px-4 max-w-[1200px] w-full mx-auto py-32 flex flex-col justify-start items-center gap-16">
+        <AnimatedContainer className="mx-auto flex w-full max-w-[1200px] flex-col items-center justify-start gap-16 self-stretch px-4 py-32">
             {/* Header Section */}
-            <div className="w-full  flex flex-col justify-start items-center gap-4">
+            <div className="flex w-full flex-col items-center justify-start gap-4">
                 <div
-                    className="w-[72px] h-[72px] relative bg-gradient-to-b from-[#531EAF] to-[#641BE1] rounded-3xl overflow-hidden flex items-center justify-center"
+                    className="relative flex h-[72px] w-[72px] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-b from-[#531EAF] to-[#641BE1]"
                     style={{
                         boxShadow:
                             '0px 1px 2px 0px rgba(0,0,0,0.10), 0px 3px 3px 0px rgba(0,0,0,0.09), 0px 7px 4px 0px rgba(0,0,0,0.05), 0px 12px 5px 0px rgba(0,0,0,0.01), 0px 19px 5px 0px rgba(0,0,0,0.00), inset 0px 2px 3px 0px rgba(255,255,255,0.25)'
@@ -127,42 +127,42 @@ const Team = () => {
                         </defs>
                     </svg>
                 </div>
-                <div className="self-stretch flex flex-col justify-start items-center gap-4">
-                    <div className="self-stretch text-center justify-start text-surface-950 text-3xl lg:text-6xl font-semibold leading-tight lg:leading-[65.62px]">Meet Our Talented Team</div>
+                <div className="flex flex-col items-center justify-start gap-4 self-stretch">
+                    <div className="justify-start self-stretch text-center text-3xl font-semibold leading-tight text-surface-950 lg:text-6xl lg:leading-[65.62px]">Meet Our Talented Team</div>
                 </div>
             </div>
 
-            <div className="w-full mt-16">
-                <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+            <div className="mt-16 w-full">
+                <div className="flex flex-col items-start gap-8 lg:flex-row lg:gap-16">
                     {/* Text Section */}
                     <div className="flex-1 lg:max-w-md">
                         <div className="text-center lg:text-left">
-                            <span className="text-surface-700 text-lg lg:text-2xl font-normal leading-normal">Dedicated experts from different fields teamed up and created team. </span>
+                            <span className="text-lg font-normal leading-normal text-surface-700 lg:text-2xl">Dedicated experts from different fields teamed up and created team. </span>
                             <br />
                             <br />
-                            <span className="text-surface-700 text-lg lg:text-2xl font-normal leading-normal">They combine expertise in </span>
-                            <span className="text-surface-700 text-lg lg:text-2xl font-bold leading-normal">radiology</span>
-                            <span className="text-surface-700 text-lg lg:text-2xl font-normal leading-normal">, </span>
-                            <span className="text-surface-700 text-lg lg:text-2xl font-bold leading-normal">artificial intelligence</span>
-                            <span className="text-surface-700 text-lg lg:text-2xl font-normal leading-normal">, and </span>
-                            <span className="text-surface-700 text-lg lg:text-2xl font-bold leading-normal">mathematics</span>
-                            <span className="text-surface-700 text-lg lg:text-2xl font-normal leading-normal"> to develop revolutionary hybrid decision support systems.</span>
+                            <span className="text-lg font-normal leading-normal text-surface-700 lg:text-2xl">They combine expertise in </span>
+                            <span className="text-lg font-bold leading-normal text-surface-700 lg:text-2xl">radiology</span>
+                            <span className="text-lg font-normal leading-normal text-surface-700 lg:text-2xl">, </span>
+                            <span className="text-lg font-bold leading-normal text-surface-700 lg:text-2xl">artificial intelligence</span>
+                            <span className="text-lg font-normal leading-normal text-surface-700 lg:text-2xl">, and </span>
+                            <span className="text-lg font-bold leading-normal text-surface-700 lg:text-2xl">mathematics</span>
+                            <span className="text-lg font-normal leading-normal text-surface-700 lg:text-2xl"> to develop revolutionary hybrid decision support systems.</span>
                             <br />
                             <br />
-                            <span className="text-surface-700 text-lg lg:text-2xl font-normal leading-normal">Join our journey to redefine medical analysis and meet our team.</span>
+                            <span className="text-lg font-normal leading-normal text-surface-700 lg:text-2xl">Join our journey to redefine medical analysis and meet our team.</span>
                         </div>
 
                         {/* Navigation Buttons - Show on screens under 2xl */}
-                        <div className="flex 2xl:hidden items-center justify-center gap-6 mt-8">
+                        <div className="mt-8 flex items-center justify-center gap-6 2xl:hidden">
                             <button
                                 onClick={handlePrev}
-                                className="w-[5.5rem] h-12 shadow-stroke dark:shadow-none border-0 dark:border border-white/12 rounded-full hover:scale-105 transition-transform duration-200 bg-white dark:bg-surface-800 flex items-center justify-center"
+                                className="flex h-12 w-[5.5rem] items-center justify-center rounded-full border-0 border-white/12 bg-white shadow-stroke transition-transform duration-200 hover:scale-105 dark:border dark:bg-surface-800 dark:shadow-none"
                             >
                                 <i className="pi pi-arrow-left text-xl text-surface-700 dark:text-white"></i>
                             </button>
                             <button
                                 onClick={handleNext}
-                                className="w-[5.5rem] h-12 shadow-stroke dark:shadow-none border-0 dark:border border-white/12 rounded-full hover:scale-105 transition-transform duration-200 bg-white dark:bg-surface-800 flex items-center justify-center"
+                                className="flex h-12 w-[5.5rem] items-center justify-center rounded-full border-0 border-white/12 bg-white shadow-stroke transition-transform duration-200 hover:scale-105 dark:border dark:bg-surface-800 dark:shadow-none"
                             >
                                 <i className="pi pi-arrow-right text-xl text-surface-700 dark:text-white"></i>
                             </button>
@@ -170,7 +170,7 @@ const Team = () => {
                     </div>
 
                     {/* Custom Carousel Section */}
-                    <div className="flex-1 w-full">
+                    <div className="w-full flex-1">
                         {/* Custom Carousel for screens under 2xl */}
                         <div className={`${visibleItems === 3 ? 'hidden' : 'block'}`}>
                             <div
@@ -200,31 +200,31 @@ const Team = () => {
                                         >
                                             <AnimatedContainer
                                                 delay={200 * index}
-                                                className="group relative w-full h-[500px] lg:h-[400px] rounded-3xl lg:rounded-4xl shadow-blue-card overflow-hidden"
+                                                className="group relative h-[500px] w-full overflow-hidden rounded-3xl shadow-blue-card lg:h-[400px] lg:rounded-4xl"
                                                 style={{
                                                     maxWidth: '24.6rem',
                                                     margin: visibleItems === 1 ? '0 auto' : '0'
                                                 }}
                                             >
                                                 <Image className="object-cover" fill sizes="(max-width: 768px) 280px, (max-width: 1200px) 50vw, 33vw" src={item.image} alt="Startup Team Item" />
-                                                <div className="opacity-0 group-hover:opacity-100 transition-all absolute inset-0 p-8 bg-gradient-to-b from-black/0 to-black/70 rounded-3xl lg:rounded-4xl flex flex-col justify-end items-start gap-4 overflow-hidden">
-                                                    <div className="inline-flex justify-start items-start gap-[9.14px]">
+                                                <div className="absolute inset-0 flex flex-col items-start justify-end gap-4 overflow-hidden rounded-3xl bg-gradient-to-b from-black/0 to-black/70 p-8 opacity-0 transition-all group-hover:opacity-100 lg:rounded-4xl">
+                                                    <div className="inline-flex items-start justify-start gap-[9.14px]">
                                                         <Link
                                                             href={item.facebook}
-                                                            className="w-14 px-4 py-2 bg-white/5 rounded-full outline outline-[0.50px] outline-offset-[-0.50px] outline-white/10 backdrop-blur-xs flex justify-center items-center gap-2 overflow-hidden"
+                                                            className="backdrop-blur-xs flex w-14 items-center justify-center gap-2 overflow-hidden rounded-full bg-white/5 px-4 py-2 outline outline-[0.50px] outline-offset-[-0.50px] outline-white/10"
                                                         >
-                                                            <i className="pi pi-linkedin text-white text-base"></i>
+                                                            <i className="pi pi-linkedin text-base text-white"></i>
                                                         </Link>
                                                         <Link
                                                             href={item.twitter}
-                                                            className="w-14 px-4 py-2 bg-white/5 rounded-full outline outline-[0.50px] outline-offset-[-0.50px] outline-white/10 backdrop-blur-xs flex justify-center items-center gap-2 overflow-hidden"
+                                                            className="backdrop-blur-xs flex w-14 items-center justify-center gap-2 overflow-hidden rounded-full bg-white/5 px-4 py-2 outline outline-[0.50px] outline-offset-[-0.50px] outline-white/10"
                                                         >
-                                                            <i className="pi pi-twitter text-white text-base"></i>
+                                                            <i className="pi pi-twitter text-base text-white"></i>
                                                         </Link>
                                                     </div>
-                                                    <div className="self-stretch flex flex-col justify-start items-start gap-1">
-                                                        <div className="self-stretch justify-start text-white text-2xl font-semibold leading-loose">{item.name}</div>
-                                                        <div className="self-stretch justify-start text-white text-lg font-normal leading-7">{item.role}</div>
+                                                    <div className="flex flex-col items-start justify-start gap-1 self-stretch">
+                                                        <div className="justify-start self-stretch text-2xl font-semibold leading-loose text-white">{item.name}</div>
+                                                        <div className="justify-start self-stretch text-lg font-normal leading-7 text-white">{item.role}</div>
                                                     </div>
                                                 </div>
                                             </AnimatedContainer>
@@ -235,28 +235,28 @@ const Team = () => {
                         </div>
 
                         {/* 2XL+: Show all 3 items in a static flex layout */}
-                        <div className={`${visibleItems === 3 ? 'flex' : 'hidden'} flex-row gap-6 justify-center`}>
+                        <div className={`${visibleItems === 3 ? 'flex' : 'hidden'} flex-row justify-center gap-6`}>
                             {startupTeamData.map((item, index) => (
-                                <AnimatedContainer key={index} delay={200 * index} className="group relative flex-1 min-w-[18.6rem] max-w-[22rem] h-[400px] rounded-4xl shadow-blue-card overflow-hidden">
+                                <AnimatedContainer key={index} delay={200 * index} className="group relative h-[400px] min-w-[18.6rem] max-w-[22rem] flex-1 overflow-hidden rounded-4xl shadow-blue-card">
                                     <Image className="object-cover" fill sizes="(max-width: 1200px) 50vw, 33vw" src={item.image} alt="Startup Team Item" />
-                                    <div className="opacity-0 group-hover:opacity-100 transition-all absolute inset-0 p-8 bg-gradient-to-b from-black/0 to-black/70 rounded-4xl flex flex-col justify-end items-start gap-4 overflow-hidden">
-                                        <div className="inline-flex justify-start items-start gap-[9.14px]">
+                                    <div className="absolute inset-0 flex flex-col items-start justify-end gap-4 overflow-hidden rounded-4xl bg-gradient-to-b from-black/0 to-black/70 p-8 opacity-0 transition-all group-hover:opacity-100">
+                                        <div className="inline-flex items-start justify-start gap-[9.14px]">
                                             <Link
                                                 href={item.facebook}
-                                                className="w-14 px-4 py-2 bg-white/5 rounded-full outline outline-[0.50px] outline-offset-[-0.50px] outline-white/10 backdrop-blur-xs flex justify-center items-center gap-2 overflow-hidden"
+                                                className="backdrop-blur-xs flex w-14 items-center justify-center gap-2 overflow-hidden rounded-full bg-white/5 px-4 py-2 outline outline-[0.50px] outline-offset-[-0.50px] outline-white/10"
                                             >
-                                                <i className="pi pi-linkedin text-white text-base"></i>
+                                                <i className="pi pi-linkedin text-base text-white"></i>
                                             </Link>
                                             <Link
                                                 href={item.twitter}
-                                                className="w-14 px-4 py-2 bg-white/5 rounded-full outline outline-[0.50px] outline-offset-[-0.50px] outline-white/10 backdrop-blur-xs flex justify-center items-center gap-2 overflow-hidden"
+                                                className="backdrop-blur-xs flex w-14 items-center justify-center gap-2 overflow-hidden rounded-full bg-white/5 px-4 py-2 outline outline-[0.50px] outline-offset-[-0.50px] outline-white/10"
                                             >
-                                                <i className="pi pi-twitter text-white text-base"></i>
+                                                <i className="pi pi-twitter text-base text-white"></i>
                                             </Link>
                                         </div>
-                                        <div className="self-stretch flex flex-col justify-start items-start gap-1">
-                                            <div className="self-stretch justify-start text-white text-2xl font-semibold leading-loose">{item.name}</div>
-                                            <div className="self-stretch justify-start text-white text-lg font-normal leading-7">{item.role}</div>
+                                        <div className="flex flex-col items-start justify-start gap-1 self-stretch">
+                                            <div className="justify-start self-stretch text-2xl font-semibold leading-loose text-white">{item.name}</div>
+                                            <div className="justify-start self-stretch text-lg font-normal leading-7 text-white">{item.role}</div>
                                         </div>
                                     </div>
                                 </AnimatedContainer>

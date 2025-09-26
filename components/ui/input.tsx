@@ -4,7 +4,7 @@ const baseClasses = 'bg-white/16 rounded-full py-2 px-4 outline-none text-white/
 const Input = React.forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInputElement>>(({ className, type = 'text', ...props }, ref) =>
     type === 'search' ? (
         <div className="relative">
-            <i className="pi pi-search text-surface-0 absolute left-3 leading-none z-1 top-1/2 -translate-y-1/2"></i>
+            <i className="pi pi-search absolute left-3 top-1/2 z-1 -translate-y-1/2 leading-none text-surface-0"></i>
             <input ref={ref} type="search" className={cn(baseClasses, className, 'pl-10 pr-4')} {...props} />
         </div>
     ) : (

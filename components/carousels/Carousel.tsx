@@ -35,7 +35,7 @@ const Carousel = forwardRef<
 
     return (
         <section
-            className={cn('max-w-[88rem] m-auto relative', className)}
+            className={cn('relative m-auto max-w-[88rem]', className)}
             style={
                 {
                     '--slide-height': height,
@@ -46,15 +46,15 @@ const Carousel = forwardRef<
         >
             {!hideMask ? (
                 <>
-                    <div className="absolute h-full w-[25%] bg-[linear-gradient(to_right,white_12%,transparent_100%)] dark:bg-[linear-gradient(to_right,rgb(var(--surface-950))_12%,transparent_100%)] left-0 z-10 pointer-events-none"></div>
-                    <div className="absolute h-full w-[25%] bg-[linear-gradient(to_left,white_12%,transparent_100%)] dark:bg-[linear-gradient(to_left,rgb(var(--surface-950))_12%,transparent_100%)] right-0 z-10 pointer-events-none"></div>
+                    <div className="pointer-events-none absolute left-0 z-10 h-full w-[25%] bg-[linear-gradient(to_right,white_12%,transparent_100%)] dark:bg-[linear-gradient(to_right,rgb(var(--surface-950))_12%,transparent_100%)]"></div>
+                    <div className="pointer-events-none absolute right-0 z-10 h-full w-[25%] bg-[linear-gradient(to_left,white_12%,transparent_100%)] dark:bg-[linear-gradient(to_left,rgb(var(--surface-950))_12%,transparent_100%)]"></div>
                 </>
             ) : null}
             <div className={cn('block', refContainerClass?.includes('overflow-visible') ? 'overflow-visible' : 'overflow-hidden', refContainerClass)} ref={emblaRef}>
-                <div className="embla__container py-4 flex touch-pan-y touch-pinch-zoom ml-[calc(var(--slide-spacing)*-1)] [backface-visibility:hidden]">{children}</div>
+                <div className="embla__container ml-[calc(var(--slide-spacing)*-1)] flex touch-pan-y touch-pinch-zoom py-4 [backface-visibility:hidden]">{children}</div>
             </div>
             {!hideButtons ? (
-                <div className="mt-8 mx-auto w-fit flex items-center gap-6">
+                <div className="mx-auto mt-8 flex w-fit items-center gap-6">
                     <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
                     <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
                 </div>
@@ -67,8 +67,8 @@ export default Carousel;
 
 export const CarouselItem: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ children, className, ...props }) => {
     return (
-        <div {...props} className={cn('min-w-0 pl-[var(--slide-spacing)] flex-[0_0_var(--slide-size)] ', className)}>
-            <div className="flex items-center justify-center h-[var(--slide-height)] select-none">{children}</div>
+        <div {...props} className={cn('min-w-0 flex-[0_0_var(--slide-size)] pl-[var(--slide-spacing)]', className)}>
+            <div className="flex h-[var(--slide-height)] select-none items-center justify-center">{children}</div>
         </div>
     );
 };

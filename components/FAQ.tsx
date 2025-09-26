@@ -4,10 +4,10 @@ import AnimatedContainer from './AnimatedContainer';
 import { Accordion, AccordionItem } from './ui/accordion';
 const FAQ: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ className, ...props }) => {
     return (
-        <div className={cn('container pt-16 pb-8 flex flex-col justify-start items-center gap-14', className)} {...props}>
-            <div className="self-stretch flex flex-col justify-start items-center gap-6">
+        <div className={cn('container flex flex-col items-center justify-start gap-14 pb-8 pt-16', className)} {...props}>
+            <div className="flex flex-col items-center justify-start gap-6 self-stretch">
                 <div
-                    className="size-[72px] relative bg-gradient-to-b from-[#531EAF] to-[#641BE1] rounded-3xl overflow-hidden flex items-center justify-center"
+                    className="relative flex size-[72px] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-b from-[#531EAF] to-[#641BE1]"
                     style={{
                         boxShadow:
                             '0px 1px 2px 0px rgba(0,0,0,0.10), 0px 3px 3px 0px rgba(0,0,0,0.09), 0px 7px 4px 0px rgba(0,0,0,0.05), 0px 12px 5px 0px rgba(0,0,0,0.01), 0px 19px 5px 0px rgba(0,0,0,0.00), inset 0px 2px 3px 0px rgba(255,255,255,0.25)'
@@ -34,9 +34,9 @@ const FAQ: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ className, ...pro
                         </defs>
                     </svg>
                 </div>
-                <div className="self-stretch flex flex-col justify-start items-center gap-4">
-                    <div className="self-stretch text-center justify-end text-surface-950 text-3xl lg:text-6xl font-semibold leading-tight lg:leading-[65.62px]">Frequently Asked Questions</div>
-                    <div className="self-stretch text-center justify-end text-surface-500 text-xl lg:text-2xl font-normal leading-loose">Find quick answers to the most common questions.</div>
+                <div className="flex flex-col items-center justify-start gap-4 self-stretch">
+                    <div className="justify-end self-stretch text-center text-3xl font-semibold leading-tight text-surface-950 lg:text-6xl lg:leading-[65.62px]">Frequently Asked Questions</div>
+                    <div className="justify-end self-stretch text-center text-xl font-normal leading-loose text-surface-500 lg:text-2xl">Find quick answers to the most common questions.</div>
                 </div>
             </div>
             <div className="self-stretch">

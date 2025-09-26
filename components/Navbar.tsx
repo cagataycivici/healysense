@@ -54,8 +54,8 @@ const Navbar: React.FC<React.HTMLAttributes<HTMLElement>> = ({ className, ...pro
 
     return (
         <div className={cn('relative', className)} {...props}>
-            <nav className="self-stretch py-6 border-b border-white/10 flex justify-between items-center px-4 lg:px-8">
-                <Link href="/" className="flex justify-center items-center gap-[11.43px]">
+            <nav className="flex items-center justify-between self-stretch border-b border-white/10 px-4 py-6 lg:px-8">
+                <Link href="/" className="flex items-center justify-center gap-[11.43px]">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="40" viewBox="0 0 24 40" fill="none">
                         <g clipPath="url(#clip0_7009_11660)">
                             <path d="M0.499817 6.66717V19.999L12.0465 13.3342V0.00012207L0.499817 6.66717Z" fill="white" />
@@ -72,34 +72,34 @@ const Navbar: React.FC<React.HTMLAttributes<HTMLElement>> = ({ className, ...pro
                         </defs>
                     </svg>
                     <div className="justify-center">
-                        <span className="text-white/60 text-[20px] font-extrabold uppercase tracking-wider">healy</span>
-                        <span className="text-white text-[20px] font-extrabold uppercase tracking-wider">sense</span>
+                        <span className="text-[20px] font-extrabold uppercase tracking-wider text-white/60">healy</span>
+                        <span className="text-[20px] font-extrabold uppercase tracking-wider text-white">sense</span>
                     </div>
                 </Link>
 
-                <div className="hidden lg:flex backdrop-blur-[1.50px] justify-start items-start gap-6">
+                <div className="hidden items-start justify-start gap-6 backdrop-blur-[1.50px] lg:flex">
                     {navItems.map((item) => (
-                        <button key={item.label} onClick={() => scrollToSection(item.sectionId)} className="text-xl font-medium leading-normal text-white/70 hover:text-white transition-colors cursor-pointer">
+                        <button key={item.label} onClick={() => scrollToSection(item.sectionId)} className="cursor-pointer text-xl font-medium leading-normal text-white/70 transition-colors hover:text-white">
                             {item.label}
                         </button>
                     ))}
                 </div>
 
-                <button onClick={toggleMobileMenu} className="block lg:hidden text-white hover:text-white/80 transition-colors" aria-label="Toggle mobile menu">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button onClick={toggleMobileMenu} className="block text-white transition-colors hover:text-white/80 lg:hidden" aria-label="Toggle mobile menu">
+                    <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
             </nav>
 
             {isMobileMenuOpen && (
-                <div ref={menuRef} className="lg:hidden absolute left-0 right-0 top-full z-50 bg-black/95 backdrop-blur-sm border-b border-white/10">
+                <div ref={menuRef} className="absolute left-0 right-0 top-full z-50 border-b border-white/10 bg-black/95 backdrop-blur-sm lg:hidden">
                     <div className="flex flex-col px-4 py-4">
                         {navItems.map((item) => (
                             <button
                                 key={item.label}
                                 onClick={() => scrollToSection(item.sectionId)}
-                                className="px-4 py-4 text-base font-medium border-l-2 border-transparent hover:border-white/20 hover:text-white transition-all text-white/70 text-left"
+                                className="border-l-2 border-transparent px-4 py-4 text-left text-base font-medium text-white/70 transition-all hover:border-white/20 hover:text-white"
                             >
                                 {item.label}
                             </button>

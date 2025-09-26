@@ -40,11 +40,11 @@ const News = () => {
     ];
 
     return (
-        <div className="container pt-16 pb-8 flex flex-col justify-start items-center gap-16">
+        <div className="container flex flex-col items-center justify-start gap-16 pb-8 pt-16">
             {/* Header Section */}
-            <div className="self-stretch flex flex-col justify-start items-center gap-6">
+            <div className="flex flex-col items-center justify-start gap-6 self-stretch">
                 <div
-                    className="size-[72px] relative bg-gradient-to-b from-[#531EAF] to-[#641BE1] rounded-3xl overflow-hidden flex items-center justify-center"
+                    className="relative flex size-[72px] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-b from-[#531EAF] to-[#641BE1]"
                     style={{
                         boxShadow:
                             '0px 1px 2px 0px rgba(0,0,0,0.10), 0px 3px 3px 0px rgba(0,0,0,0.09), 0px 7px 4px 0px rgba(0,0,0,0.05), 0px 12px 5px 0px rgba(0,0,0,0.01), 0px 19px 5px 0px rgba(0,0,0,0.00), inset 0px 2px 3px 0px rgba(255,255,255,0.25)'
@@ -96,32 +96,32 @@ const News = () => {
                         </defs>
                     </svg>
                 </div>
-                <div className="self-stretch flex flex-col justify-start items-center gap-4">
-                    <div className="self-stretch text-center justify-end text-surface-950 text-3xl lg:text-6xl font-semibold leading-tight lg:leading-[65.62px]">News & Publications</div>
-                    <div className="self-stretch text-center justify-end text-surface-500 text-lg lg:text-2xl font-normal leading-normal lg:leading-loose">Latest insights and research in medical AI technology</div>
+                <div className="flex flex-col items-center justify-start gap-4 self-stretch">
+                    <div className="justify-end self-stretch text-center text-3xl font-semibold leading-tight text-surface-950 lg:text-6xl lg:leading-[65.62px]">News & Publications</div>
+                    <div className="justify-end self-stretch text-center text-lg font-normal leading-normal text-surface-500 lg:text-2xl lg:leading-loose">Latest insights and research in medical AI technology</div>
                 </div>
             </div>
 
             {/* News Grid */}
-            <div className="self-stretch grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 gap-6 self-stretch lg:grid-cols-3">
                 {newsData.map((item, index) => (
-                    <AnimatedContainer key={index} delay={index * 100} className="flex-1 bg-surface-0 flex flex-col justify-start items-start gap-4 h-full">
+                    <AnimatedContainer key={index} delay={index * 100} className="flex h-full flex-1 flex-col items-start justify-start gap-4 bg-surface-0">
                         <Link href={item.link} target="_blank" rel="noopener noreferrer" className="block w-full">
-                            <Image className="self-stretch h-[217px] w-full relative rounded-2xl object-cover hover:scale-105 transition-transform duration-300" src={item.image} alt={item.title} width={370} height={217} />
+                            <Image className="relative h-[217px] w-full self-stretch rounded-2xl object-cover transition-transform duration-300 hover:scale-105" src={item.image} alt={item.title} width={370} height={217} />
                         </Link>
-                        <div className="self-stretch flex flex-col justify-between items-start flex-1">
-                            <div className="self-stretch p-3 flex flex-col justify-center items-start gap-2">
+                        <div className="flex flex-1 flex-col items-start justify-between self-stretch">
+                            <div className="flex flex-col items-start justify-center gap-2 self-stretch p-3">
                                 <Link href={item.link} target="_blank" rel="noopener noreferrer">
-                                    <div className="self-stretch justify-start text-surface-950 text-xl font-medium leading-7 hover:text-[#641BE1] transition-colors cursor-pointer">{item.title}</div>
+                                    <div className="cursor-pointer justify-start self-stretch text-xl font-medium leading-7 text-surface-950 transition-colors hover:text-[#641BE1]">{item.title}</div>
                                 </Link>
-                                <div className="self-stretch justify-start text-surface-500 text-lg font-normal leading-7">{item.description}</div>
+                                <div className="justify-start self-stretch text-lg font-normal leading-7 text-surface-500">{item.description}</div>
                             </div>
-                            <div className="self-stretch flex flex-col justify-center items-center gap-2 mt-auto">
-                                <div className="self-stretch p-3 flex justify-start items-center gap-3">
-                                    <Image className="w-[40px] h-[40px] relative rounded-full" src={item.author.avatar} alt={item.author.name} width={40} height={40} />
-                                    <div className="flex-1 flex flex-col justify-center items-start gap-1">
-                                        <div className="self-stretch justify-start text-surface-950 text-lg font-normal leading-7">{item.author.name}</div>
-                                        <div className="self-stretch justify-start text-surface-500 text-base font-normal leading-normal">{item.author.role}</div>
+                            <div className="mt-auto flex flex-col items-center justify-center gap-2 self-stretch">
+                                <div className="flex items-center justify-start gap-3 self-stretch p-3">
+                                    <Image className="relative h-[40px] w-[40px] rounded-full" src={item.author.avatar} alt={item.author.name} width={40} height={40} />
+                                    <div className="flex flex-1 flex-col items-start justify-center gap-1">
+                                        <div className="justify-start self-stretch text-lg font-normal leading-7 text-surface-950">{item.author.name}</div>
+                                        <div className="justify-start self-stretch text-base font-normal leading-normal text-surface-500">{item.author.role}</div>
                                     </div>
                                 </div>
                             </div>

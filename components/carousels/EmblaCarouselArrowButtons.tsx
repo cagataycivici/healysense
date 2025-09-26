@@ -48,7 +48,7 @@ type PropType = ComponentPropsWithRef<'button'>;
 
 export const PrevButton: React.FC<PropType> = ({ ...props }) => {
     return (
-        <button className="w-32 h-12 rounded-full flex items-center justify-center shadow-stroke dark:shadow-black-card border-0 dark:border border-white/12" type="button" {...props}>
+        <button className="flex h-12 w-32 items-center justify-center rounded-full border-0 border-white/12 shadow-stroke dark:border dark:shadow-black-card" type="button" {...props}>
             <i className="pi pi-arrow-left text-xl"></i>
         </button>
     );
@@ -56,7 +56,7 @@ export const PrevButton: React.FC<PropType> = ({ ...props }) => {
 
 export const NextButton: React.FC<PropType> = ({ ...props }) => {
     return (
-        <button className="w-32 h-12 rounded-full flex items-center justify-center shadow-stroke dark:shadow-black-card border-0 dark:border border-white/12" type="button" {...props}>
+        <button className="flex h-12 w-32 items-center justify-center rounded-full border-0 border-white/12 shadow-stroke dark:border dark:shadow-black-card" type="button" {...props}>
             <i className="pi pi-arrow-right text-xl"></i>
         </button>
     );

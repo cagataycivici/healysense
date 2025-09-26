@@ -14,9 +14,9 @@ const AccordionItem = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTML
         setIsOpen((prev) => !prev);
     };
     return (
-        <div className={cn('rounded-3xl px-6 overflow-hidden shadow-stroke dark:shadow-none border-0 dark:border dark:border-white/12', className)} ref={ref} {...props}>
-            <div onClick={handleClick} className={`py-6 select-none flex items-start gap-2 cursor-pointer transition-padding duration-200 ${isOpen ? 'pb-4' : 'pb-6'}`}>
-                <h3 className="text-xl font-semibold text-surface-950 dark:text-surface-0 flex-1">{title}</h3>
+        <div className={cn('overflow-hidden rounded-3xl border-0 px-6 shadow-stroke dark:border dark:border-white/12 dark:shadow-none', className)} ref={ref} {...props}>
+            <div onClick={handleClick} className={`transition-padding flex cursor-pointer select-none items-start gap-2 py-6 duration-200 ${isOpen ? 'pb-4' : 'pb-6'}`}>
+                <h3 className="flex-1 text-xl font-semibold text-surface-950 dark:text-surface-0">{title}</h3>
                 <span>
                     <i className={!isOpen ? 'pi pi-plus' : 'pi pi-minus' + ' text-sm text-surface-950 dark:text-surface-0'}></i>
                 </span>

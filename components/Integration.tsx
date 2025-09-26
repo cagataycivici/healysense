@@ -24,11 +24,11 @@ const Integration = () => {
     ];
 
     return (
-        <div className="container pt-16 pb-8 flex flex-col justify-end items-start gap-16">
+        <div className="container flex flex-col items-start justify-end gap-16 pb-8 pt-16">
             {/* Header Section */}
-            <div className="w-full flex flex-col justify-start items-center gap-4">
+            <div className="flex w-full flex-col items-center justify-start gap-4">
                 <div
-                    className="w-[72px] h-[72px] relative bg-gradient-to-b from-[#531EAF] to-[#641BE1] rounded-3xl flex items-center justify-center overflow-hidden"
+                    className="relative flex h-[72px] w-[72px] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-b from-[#531EAF] to-[#641BE1]"
                     style={{
                         boxShadow:
                             '0px 1px 2px 0px rgba(0,0,0,0.10), 0px 3px 3px 0px rgba(0,0,0,0.09), 0px 7px 4px 0px rgba(0,0,0,0.05), 0px 12px 5px 0px rgba(0,0,0,0.01), 0px 19px 5px 0px rgba(0,0,0,0.00), inset 0px 2px 3px 0px rgba(255,255,255,0.25)'
@@ -83,33 +83,33 @@ const Integration = () => {
                         </defs>
                     </svg>
                 </div>
-                <div className="self-stretch flex flex-col justify-start items-center gap-4">
-                    <h1 className="text-3xl lg:text-6xl text-surface-950 font-semibold text-center leading-tight lg:leading-[65.62px]">Integration</h1>
-                    <p className="text-lg lg:text-2xl text-surface-500 font-normal text-center leading-loose">Choose the integration method that fits your workflow.</p>
+                <div className="flex flex-col items-center justify-start gap-4 self-stretch">
+                    <h1 className="text-center text-3xl font-semibold leading-tight text-surface-950 lg:text-6xl lg:leading-[65.62px]">Integration</h1>
+                    <p className="text-center text-lg font-normal leading-loose text-surface-500 lg:text-2xl">Choose the integration method that fits your workflow.</p>
                 </div>
             </div>
 
             {/* Integration Cards */}
-            <div className="w-full flex flex-col lg:flex-row justify-start items-start gap-6">
+            <div className="flex w-full flex-col items-start justify-start gap-6 lg:flex-row">
                 {integrations.map((integration, index) => (
-                    <AnimatedContainer key={index} delay={index * 200} className="flex-1 w-full  mx-auto flex flex-col justify-start items-center gap-4">
+                    <AnimatedContainer key={index} delay={index * 200} className="mx-auto flex w-full flex-1 flex-col items-center justify-start gap-4">
                         {/* Card Visual */}
                         <div
-                            className="w-full h-[370px] bg-gradient-to-b from-[#531EAF] to-[#641BE1] rounded-[28px] overflow-hidden flex flex-col relative"
+                            className="relative flex h-[370px] w-full flex-col overflow-hidden rounded-[28px] bg-gradient-to-b from-[#531EAF] to-[#641BE1]"
                             style={{
                                 boxShadow:
                                     '0px 2px 5px 0px rgba(120,149,206,0.08), 0px 9px 9px -4px rgba(120,149,206,0.07), 0px 21px 13px -8px rgba(120,149,206,0.04), 0px 38px 15px -8px rgba(120,149,206,0.01), 0px 59px 16px -8px rgba(120,149,206,0.00)'
                             }}
                         >
                             {/* Tag - Only this has padding and background */}
-                            <div className="flex justify-center p-4 relative z-10">
+                            <div className="relative z-10 flex justify-center p-4">
                                 <div
-                                    className="px-4 py-2 bg-white/20 rounded-[999px] outline outline-1 outline-offset-[-1px] outline-white/40 inline-flex justify-start items-start"
+                                    className="inline-flex items-start justify-start rounded-[999px] bg-white/20 px-4 py-2 outline outline-1 outline-offset-[-1px] outline-white/40"
                                     style={{
                                         boxShadow: '0px 0.9999998807907104px 1.999999761581421px 0px rgba(18,18,23,0.05)'
                                     }}
                                 >
-                                    <div className="justify-start text-white text-lg font-medium leading-7">{integration.tag}</div>
+                                    <div className="justify-start text-lg font-medium leading-7 text-white">{integration.tag}</div>
                                 </div>
                             </div>
 
@@ -117,21 +117,21 @@ const Integration = () => {
                             {integration.tag.includes('Marketplace') ? (
                                 /* Marketplace: 80% visible on desktop, full on mobile, positioned right-bottom */
                                 <div className="absolute inset-0 flex items-end justify-end">
-                                    <div className="relative w-full lg:w-[140%] h-full ">
+                                    <div className="relative h-full w-full lg:w-[140%]">
                                         <Image src="/images/card-marketplace.png" alt="Marketplace Interface" fill className="object-contain object-bottom lg:object-right-bottom" sizes="(max-width: 1024px) 100vw, 120vw" />
                                     </div>
                                 </div>
                             ) : integration.tag.includes('Local') ? (
                                 /* Local Installation: full width and centered */
                                 <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="relative w-full h-full">
+                                    <div className="relative h-full w-full">
                                         <Image src="/images/card-local.svg" alt="Local Installation Interface" fill className="object-contain" sizes="(max-width: 1024px) 100vw, 50vw" />
                                     </div>
                                 </div>
                             ) : (
                                 /* Cloud Base: positioned -10% from bottom */
                                 <div className="absolute inset-0 flex items-end justify-center" style={{ bottom: '-10%' }}>
-                                    <div className="relative w-9/12 h-full ">
+                                    <div className="relative h-full w-9/12">
                                         <Image src="/images/card-base.svg" alt="Cloud Services Interface" fill className="object-contain object-bottom" sizes="(max-width: 1024px) 100vw, 50vw" />
                                     </div>
                                 </div>
@@ -139,16 +139,16 @@ const Integration = () => {
                         </div>
 
                         {/* Card Content */}
-                        <div className="self-stretch p-6 flex flex-col justify-start items-center gap-4">
-                            <div className="self-stretch flex flex-col justify-start items-start gap-3">
-                                <div className="self-stretch justify-start text-surface-950 text-2xl font-semibold">{integration.title}</div>
+                        <div className="flex flex-col items-center justify-start gap-4 self-stretch p-6">
+                            <div className="flex flex-col items-start justify-start gap-3 self-stretch">
+                                <div className="justify-start self-stretch text-2xl font-semibold text-surface-950">{integration.title}</div>
                             </div>
-                            <div className="self-stretch justify-start text-surface-700 text-lg font-normal leading-7">{integration.description}</div>
-                            <div className="self-stretch flex flex-col justify-start items-start gap-[13.71px]">
+                            <div className="justify-start self-stretch text-lg font-normal leading-7 text-surface-700">{integration.description}</div>
+                            <div className="flex flex-col items-start justify-start gap-[13.71px] self-stretch">
                                 {integration.features.map((feature, featureIndex) => (
-                                    <div key={featureIndex} className="self-stretch flex justify-start items-center gap-3">
-                                        <i className="pi pi-check-circle w-4 h-4 text-surface-500" style={{ fontSize: '16px' }}></i>
-                                        <div className="flex-1 justify-start text-surface-500 text-lg font-normal leading-none">{feature}</div>
+                                    <div key={featureIndex} className="flex items-center justify-start gap-3 self-stretch">
+                                        <i className="pi pi-check-circle h-4 w-4 text-surface-500" style={{ fontSize: '16px' }}></i>
+                                        <div className="flex-1 justify-start text-lg font-normal leading-none text-surface-500">{feature}</div>
                                     </div>
                                 ))}
                             </div>

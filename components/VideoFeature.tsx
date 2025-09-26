@@ -57,11 +57,11 @@ const VideoFeature = () => {
     const currentVideo = videos[currentVideoIndex];
 
     return (
-        <div className="container pt-16 pb-8 flex flex-col justify-start items-center gap-16">
+        <div className="container flex flex-col items-center justify-start gap-16 pb-8 pt-16">
             {/* Header Section */}
-            <div className="w-full flex flex-col justify-start items-center gap-4">
+            <div className="flex w-full flex-col items-center justify-start gap-4">
                 <div
-                    className="w-[72px] h-[72px] relative bg-gradient-to-b from-[#531EAF] to-[#641BE1] rounded-3xl flex items-center justify-center overflow-hidden"
+                    className="relative flex h-[72px] w-[72px] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-b from-[#531EAF] to-[#641BE1]"
                     style={{
                         boxShadow:
                             '0px 1px 2px 0px rgba(0,0,0,0.10), 0px 3px 3px 0px rgba(0,0,0,0.09), 0px 7px 4px 0px rgba(0,0,0,0.05), 0px 12px 5px 0px rgba(0,0,0,0.01), 0px 19px 5px 0px rgba(0,0,0,0.00), inset 0px 2px 3px 0px rgba(255,255,255,0.25)'
@@ -103,16 +103,16 @@ const VideoFeature = () => {
                         </defs>
                     </svg>{' '}
                 </div>
-                <div className="self-stretch flex flex-col justify-start items-center gap-4">
-                    <h1 className="text-3xl lg:text-6xl text-surface-950 font-semibold text-center leading-tight lg:leading-[65.62px]">Showreel</h1>
-                    <p className="text-lg lg:text-2xl text-surface-500 font-normal text-center leading-loose">Behind the scenes of Healysense: innovation, expertise, and vision.</p>
+                <div className="flex flex-col items-center justify-start gap-4 self-stretch">
+                    <h1 className="text-center text-3xl font-semibold leading-tight text-surface-950 lg:text-6xl lg:leading-[65.62px]">Showreel</h1>
+                    <p className="text-center text-lg font-normal leading-loose text-surface-500 lg:text-2xl">Behind the scenes of Healysense: innovation, expertise, and vision.</p>
 
                     {/* Navigation Buttons */}
-                    <div className="flex items-center gap-6 mt-6">
-                        <button onClick={handlePrev} className="w-[5.5rem] h-12 shadow-stroke dark:shadow-none border-0 dark:border border-white/12 rounded-full hover:scale-105 transition-transform duration-200">
+                    <div className="mt-6 flex items-center gap-6">
+                        <button onClick={handlePrev} className="h-12 w-[5.5rem] rounded-full border-0 border-white/12 shadow-stroke transition-transform duration-200 hover:scale-105 dark:border dark:shadow-none">
                             <i className="pi pi-arrow-left text-xl"></i>
                         </button>
-                        <button onClick={handleNext} className="w-[5.5rem] h-12 shadow-stroke dark:shadow-none border-0 dark:border border-white/12 rounded-full hover:scale-105 transition-transform duration-200">
+                        <button onClick={handleNext} className="h-12 w-[5.5rem] rounded-full border-0 border-white/12 shadow-stroke transition-transform duration-200 hover:scale-105 dark:border dark:shadow-none">
                             <i className="pi pi-arrow-right text-xl"></i>
                         </button>
                     </div>
@@ -121,7 +121,7 @@ const VideoFeature = () => {
 
             {/* Video Section */}
             <AnimatedContainer
-                className={`w-full max-w-[960px] h-[300px] lg:h-[540px] relative bg-black/10 rounded-[28px] overflow-hidden transition-opacity duration-300 ${isTransitioning ? 'opacity-50' : 'opacity-100'}`}
+                className={`relative h-[300px] w-full max-w-[960px] overflow-hidden rounded-[28px] bg-black/10 transition-opacity duration-300 lg:h-[540px] ${isTransitioning ? 'opacity-50' : 'opacity-100'}`}
                 style={{
                     boxShadow:
                         '0px 0px 1px 0px rgba(0,0,0,0.06), 0px 2px 2px 0px rgba(0,0,0,0.05), 0px 4px 3px 0px rgba(0,0,0,0.03), 0px 8px 3px 0px rgba(0,0,0,0.01), 0px 12px 3px 0px rgba(0,0,0,0.00), 0px 1px 1px 0px rgba(0,0,0,0.06), inset 0px -1px 1px 0px rgba(0,0,0,0.06)'
@@ -130,21 +130,21 @@ const VideoFeature = () => {
                 {!isVideoLoaded ? (
                     <>
                         {/* Video Thumbnail */}
-                        <div className="absolute inset-0 cursor-pointer group transition-all duration-500" onClick={loadVideo}>
+                        <div className="group absolute inset-0 cursor-pointer transition-all duration-500" onClick={loadVideo}>
                             <Image src={currentVideo.thumbnail} alt={currentVideo.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 960px" />
 
                             {/* Play Button */}
                             <div
-                                className={`absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[82px] h-[82px] p-6 bg-white/10 rounded-full outline outline-1 outline-offset-[-1px] outline-white/30 flex justify-center items-center gap-[9.14px] overflow-hidden group-hover:scale-110 transition-all duration-300 ${
+                                className={`absolute left-1/2 top-1/2 flex h-[82px] w-[82px] -translate-x-1/2 -translate-y-1/2 transform items-center justify-center gap-[9.14px] overflow-hidden rounded-full bg-white/10 p-6 outline outline-1 outline-offset-[-1px] outline-white/30 transition-all duration-300 group-hover:scale-110 ${
                                     isTransitioning ? 'opacity-0' : 'opacity-100'
                                 }`}
                                 style={{
                                     backdropFilter: 'blur(5px)'
                                 }}
                             >
-                                <div className="w-[40px] h-[40px] relative overflow-hidden">
+                                <div className="relative h-[40px] w-[40px] overflow-hidden">
                                     <div
-                                        className="w-[28.40px] h-[33.15px] absolute left-[8.33px] top-[3.42px] bg-surface-0"
+                                        className="absolute left-[8.33px] top-[3.42px] h-[33.15px] w-[28.40px] bg-surface-0"
                                         style={{
                                             clipPath: 'polygon(0 0, 100% 50%, 0 100%)'
                                         }}
@@ -153,7 +153,7 @@ const VideoFeature = () => {
                             </div>
 
                             {/* Hover Effect */}
-                            <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div className="absolute inset-0 bg-white/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                         </div>
                     </>
                 ) : (
@@ -165,14 +165,14 @@ const VideoFeature = () => {
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
-                        className={`w-full h-full transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
+                        className={`h-full w-full transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}
                     ></iframe>
                 )}
 
                 {/* Transition Overlay */}
                 {isTransitioning && (
-                    <div className="absolute inset-0 bg-black/20 backdrop-blur-sm flex items-center justify-center">
-                        <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm">
+                        <div className="h-8 w-8 animate-spin rounded-full border-2 border-white/30 border-t-white"></div>
                     </div>
                 )}
             </AnimatedContainer>

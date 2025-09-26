@@ -12,7 +12,7 @@ type AnimatedContainerProps = {
 const AnimatedContainer: React.FC<React.HTMLAttributes<HTMLDivElement> & AnimatedContainerProps> = ({ className, children, visibleClass, notVisibleClass, delay = 0, ...props }) => {
     const [elementRef, isVisible] = useVisible({ delay });
     return (
-        <div ref={elementRef} className={cn('', isVisible ? cn('animate-in fade-in slide-in-from-top-24 duration-500', visibleClass) : cn('opacity-0', notVisibleClass), className)} {...props}>
+        <div ref={elementRef} className={cn('', isVisible ? cn('duration-500 animate-in fade-in slide-in-from-top-24', visibleClass) : cn('opacity-0', notVisibleClass), className)} {...props}>
             {children}
         </div>
     );
