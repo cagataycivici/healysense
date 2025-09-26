@@ -11,7 +11,7 @@ type FooterProps = {
     noContainer?: boolean;
 };
 
-const Footer: React.FC<React.HTMLAttributes<HTMLElement> & FooterProps> = ({ className, image, transparent = false, noContainer, children, ...props }) => {
+const Footer: React.FC<React.HTMLAttributes<HTMLElement> & FooterProps> = ({ className, ...props }) => {
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);
         if (element) {
@@ -137,108 +137,3 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement> & FooterProps> = ({ cla
 };
 
 export default Footer;
-
-const socials = [
-    {
-        icon: 'pi pi-youtube',
-        link: ''
-    },
-    {
-        icon: 'pi pi-twitter',
-        link: ''
-    },
-    {
-        icon: 'pi pi-discord',
-        link: ''
-    }
-];
-
-const footerNavsData = [
-    {
-        title: 'Landings',
-        items: [
-            {
-                label: 'Travel',
-                to: '/pages/travel'
-            },
-            {
-                label: 'SaaS',
-                to: '/pages/saas'
-            },
-            {
-                label: 'Startup',
-                to: '/pages/startup'
-            },
-            {
-                label: 'Enterprise',
-                to: '/pages/enterprise'
-            },
-            {
-                label: 'E-Learning',
-                to: '/pages/e-learning'
-            },
-            {
-                label: 'Real Estate',
-                to: '/pages/real-estate'
-            },
-            {
-                label: 'Logistics',
-                to: '/pages/logistic'
-            },
-            {
-                label: 'Agency',
-                to: '/pages/agency'
-            }
-        ]
-    },
-    {
-        title: 'Secondary Pages',
-        items: [
-            {
-                label: 'About',
-                to: '/second-pages/about'
-            },
-            {
-                label: 'Pricing',
-                to: '/second-pages/pricing'
-            },
-            {
-                label: 'Blog',
-                to: '/second-pages/blog'
-            },
-            {
-                label: 'Blog Detail',
-                to: '/second-pages/blog/detail'
-            },
-            {
-                label: 'Contact',
-                to: '/second-pages/contact'
-            }
-        ]
-    },
-    {
-        title: 'Account Pages',
-        items: [
-            {
-                label: 'Sign Up',
-                to: '/second-pages/signup'
-            },
-            {
-                label: 'Sign In',
-                to: '/second-pages/signin'
-            },
-            {
-                label: 'Error',
-                to: '/second-pages/404'
-            },
-            {
-                label: 'Password Reset',
-                to: '/second-pages/reset-password'
-            },
-            {
-                label: 'Account General',
-                to: '/second-pages/account'
-            }
-        ]
-    }
-];
