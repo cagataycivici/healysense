@@ -12,7 +12,7 @@ const ProductShowcase = ({ className = '' }: { className?: string }) => {
     ];
 
     return (
-        <div className={`w-full max-w-[1152px] p-6 hidden lg:flex justify-between items-start overflow-hidden ${className}`}>
+        <div className={`w-full max-w-[1152px] p-6 hidden lg:flex justify-between items-start overflow-hidden z-30 ${className}`}>
             {products.map((product, index) => (
                 <div key={index} className="flex justify-center items-center gap-3">
                     <div className="w-8 h-8 relative">

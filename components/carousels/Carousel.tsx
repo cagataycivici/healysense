@@ -50,7 +50,7 @@ const Carousel = forwardRef<
                     <div className="absolute h-full w-[25%] bg-[linear-gradient(to_left,white_12%,transparent_100%)] dark:bg-[linear-gradient(to_left,rgb(var(--surface-950))_12%,transparent_100%)] right-0 z-10 pointer-events-none"></div>
                 </>
             ) : null}
-            <div className={cn('overflow-hidden block', refContainerClass)} ref={emblaRef}>
+            <div className={cn('block', refContainerClass?.includes('overflow-visible') ? 'overflow-visible' : 'overflow-hidden', refContainerClass)} ref={emblaRef}>
                 <div className="embla__container py-4 flex touch-pan-y touch-pinch-zoom ml-[calc(var(--slide-spacing)*-1)] [backface-visibility:hidden]">{children}</div>
             </div>
             {!hideButtons ? (

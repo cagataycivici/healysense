@@ -5,8 +5,8 @@ import React from 'react';
 
 const Contact = () => {
     return (
-        <div className="container mt-24 lg:mt-64 pb-24 lg:pb-16">
-            <div className="relative max-w-xl mx-auto lg:max-w-none px-10 pt-10 pb-40 lg:p-20 rounded-3xl lg:rounded-4xl bg-main-gradient mb-96 lg:mb-56">
+        <div className="container pt-16 pb-[30rem]">
+            <div className="relative  mx-auto lg:max-w-none px-10 pt-10 pb-40 lg:p-20 rounded-3xl lg:rounded-4xl bg-main-gradient mb-96 lg:mb-40">
                 <div className="lg:w-1/2">
                     <h1 className="title lg:text-5xl text-3xl !leading-tight">Ready to Integrate Our AI Solutions Into Your Workflow</h1>
                     <p className="text-lg lg:text-xl text-white/64 mt-4">Start using the power of artificial intelligence to enrich your radiologic workflow.</p>

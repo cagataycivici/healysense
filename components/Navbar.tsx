@@ -2,161 +2,113 @@
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import React from 'react';
-import Logo from './Logo';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from './ui/dropdown';
+import React, { useEffect, useRef, useState } from 'react';
 
 const Navbar: React.FC<React.HTMLAttributes<HTMLElement>> = ({ className, ...props }) => {
     const pathname = usePathname();
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const menuRef = useRef<HTMLDivElement>(null);
+
+    const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+    };
+
+    const scrollToSection = (sectionId: string) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+        setIsMobileMenuOpen(false);
+    };
+
+    const navItems = [
+        { label: 'Home', sectionId: 'hero' },
+        { label: 'Solutions', sectionId: 'solutions' },
+        { label: 'Showreel', sectionId: 'showreel' },
+        { label: 'Integration', sectionId: 'integration' },
+        { label: 'Team', sectionId: 'team' },
+        { label: 'Experts', sectionId: 'testimonials' },
+        { label: 'News', sectionId: 'news' },
+        { label: 'FAQ', sectionId: 'faq' },
+        { label: 'Book a Demo', sectionId: 'contact' }
+    ];
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+                setIsMobileMenuOpen(false);
+            }
+        };
+
+        if (isMobileMenuOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isMobileMenuOpen]);
+
     return (
-        <nav className={cn('flex items-center relative z-[99999] justify-between py-6 w-[calc(100%-3rem)] max-h-[75px] mx-auto border-b border-white/10 border-dashed', className)} {...props}>
-            <Link href="/">
-                <Logo />
-            </Link>
-            <ul className="hidden lg:flex items-center gap-3">
-                {navbarData.map((root) => (
-                    <li key={root.id}>
-                        <DropdownMenu unstyled className="flex-1 max-w-60">
-                            <DropdownMenuTrigger className="inline-flex items-center gap-2 rounded-full py-1 pr-2 pl-3 select-none transition-all cursor-pointer text-white/72 hover:text-white hover:bg-white/8 hover:shadow-[0px_10px_10px_-8px_rgba(18,18,23,0.02),0px_2px_2px_-1.5px_rgba(18,18,23,0.02),0px_1px_1px_-0.5px_rgba(18,18,23,0.02),0px_0px_0px_1px_rgba(18,18,23,0.02)] group-data-[open=true]:!bg-white/16 group-data-[open=true]:!text-white group-data-[open=true]:!backdrop-blur-2xl border border-white/0 group-data-[open=true]:!border-white/4 group-data-[open=true]:!shadow-[0px_2px_5px_0px_rgba(255,255,255,0.06)_inset,0px_12px_20px_0px_rgba(0,0,0,0.06)]">
-                                <span className="text-base">{root.title}</span>
-                                <i className="pi pi-chevron-down text-xs"></i>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent className="top-[calc(100%+0.5rem)] w-40 p-2 rounded-2xl shadow-blue-card flex flex-col gap-2 bg-surface-0">
-                                {root.content.map((item, index) => (
-                                    <Link key={index} href={item.to} className="w-full">
-                                        <DropdownMenuItem
-                                            className={`w-full text-left py-2 px-3 rounded-lg  transition-all font-medium ${item.to === pathname ? 'text-surface-950 bg-surface-200' : 'text-surface-500 hover:text-surface-950 hover:bg-surface-200'}`}
-                                        >
-                                            {item.label}
-                                        </DropdownMenuItem>
-                                    </Link>
-                                ))}
-                            </DropdownMenuContent>
-                        </DropdownMenu>
-                    </li>
-                ))}
-            </ul>
-            <ul className="hidden lg:flex items-center">
-                <li>
-                    <Link href="/second-pages/signup" className="button-regular">Sign Up</Link>
-                </li>
-            </ul>
-            <DropdownMenu unstyled className="lg:hidden block">
-                <DropdownMenuTrigger className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-surface-0 text-surface-950">
-                    <i className="pi pi-bars"></i>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="top-[calc(100%+0.5rem)] max-h-96 overflow-auto left-auto !right-0 w-60 p-2 rounded-2xl shadow-blue-card flex flex-col bg-surface-0">
-                    <div className="flex flex-col ">
-                        {navbarData.map((root) => (
-                            <div key={root.id} className="mt-4">
-                                <span className="px-3 !py-2 text-surface-950 font-medium">{root.title}</span>
-                                <div className="flex flex-col gap-1 my-2">
-                                    {root.content.map((item, index) => (
-                                        <Link href={item.to} key={index} className="py-2 px-3 rounded-lg hover:bg-surface-200 font-medium text-surface-500 hover:text-surface-950">
-                                            {item.label}
-                                        </Link>
-                                    ))}
-                                </div>
-                            </div>
+        <div className={cn('relative', className)} {...props}>
+            <nav className="self-stretch py-6 border-b border-white/10 flex justify-between items-center px-4 lg:px-8">
+                <Link href="/" className="flex justify-center items-center gap-[11.43px]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="40" viewBox="0 0 24 40" fill="none">
+                        <g clipPath="url(#clip0_7009_11660)">
+                            <path d="M0.499817 6.66717V19.999L12.0465 13.3342V0.00012207L0.499817 6.66717Z" fill="white" />
+                            <path d="M0.499817 33.3331L12.0465 26.6661V13.3343L0.499817 19.999V33.3331Z" fill="#DDD2EF" />
+                            <path d="M23.5932 19.9988L12.0466 13.3341L0.499878 19.9988L12.0466 26.6659L23.5932 19.9988Z" fill="#531FAE" />
+                            <path d="M23.5932 19.9988L12.0466 13.3341L0.499878 19.9988L12.0466 26.6659L23.5932 19.9988Z" fill="white" fillOpacity="0.6" style={{ mixBlendMode: 'screen' }} />
+                            <path d="M23.5932 6.66718L12.0466 13.3342V26.666L23.5932 19.999V6.66718Z" fill="#DDD2EF" />
+                            <path d="M23.5932 33.3331V19.999L12.0466 26.6661V40.0002L23.5932 33.3331Z" fill="white" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_7009_11660">
+                                <rect width="23.0934" height="40" fill="white" transform="translate(0.5)" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <div className="justify-center">
+                        <span className="text-white/60 text-[20px] font-extrabold uppercase tracking-wider">healy</span>
+                        <span className="text-white text-[20px] font-extrabold uppercase tracking-wider">sense</span>
+                    </div>
+                </Link>
+
+                <div className="hidden lg:flex backdrop-blur-[1.50px] justify-start items-start gap-6">
+                    {navItems.map((item) => (
+                        <button key={item.label} onClick={() => scrollToSection(item.sectionId)} className="text-xl font-medium leading-normal text-white/70 hover:text-white transition-colors cursor-pointer">
+                            {item.label}
+                        </button>
+                    ))}
+                </div>
+
+                <button onClick={toggleMobileMenu} className="block lg:hidden text-white hover:text-white/80 transition-colors" aria-label="Toggle mobile menu">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </nav>
+
+            {isMobileMenuOpen && (
+                <div ref={menuRef} className="lg:hidden absolute left-0 right-0 top-full z-50 bg-black/95 backdrop-blur-sm border-b border-white/10">
+                    <div className="flex flex-col px-4 py-4">
+                        {navItems.map((item) => (
+                            <button
+                                key={item.label}
+                                onClick={() => scrollToSection(item.sectionId)}
+                                className="px-4 py-4 text-base font-medium border-l-2 border-transparent hover:border-white/20 hover:text-white transition-all text-white/70 text-left"
+                            >
+                                {item.label}
+                            </button>
                         ))}
                     </div>
-                </DropdownMenuContent>
-            </DropdownMenu>
-        </nav>
+                </div>
+            )}
+        </div>
     );
 };
 
 export default Navbar;
-
-const navbarData = [
-    {
-        id: 'landings',
-        title: 'Landings',
-        content: [
-            {
-                label: 'Travel',
-                to: '/pages/travel'
-            },
-            {
-                label: 'SaaS',
-                to: '/pages/saas'
-            },
-            {
-                label: 'Startup',
-                to: '/pages/startup'
-            },
-            {
-                label: 'Enterprise',
-                to: '/pages/enterprise'
-            },
-            {
-                label: 'E-Learning',
-                to: '/pages/e-learning'
-            },
-            {
-                label: 'Real Estate',
-                to: '/pages/real-estate'
-            },
-            {
-                label: 'Logistics',
-                to: '/pages/logistic'
-            },
-            {
-                label: 'Agency',
-                to: '/pages/agency'
-            }
-        ]
-    },
-    {
-        id: 'second_pages',
-        title: 'Secondary Pages',
-        content: [
-            {
-                label: 'About',
-                to: '/second-pages/about'
-            },
-            {
-                label: 'Pricing',
-                to: '/second-pages/pricing'
-            },
-            {
-                label: 'Blog',
-                to: '/second-pages/blog'
-            },
-            {
-                label: 'Blog Detail',
-                to: '/second-pages/blog/detail'
-            },
-            {
-                label: 'Contact',
-                to: '/second-pages/contact'
-            }
-        ]
-    },
-    {
-        id: 'account_pages',
-        title: 'Account Pages',
-        content: [
-            {
-                label: 'Sign Up',
-                to: '/second-pages/signup'
-            },
-            {
-                label: 'Sign In',
-                to: '/second-pages/signin'
-            },
-            {
-                label: 'Error',
-                to: '/second-pages/error'
-            },
-            {
-                label: 'Password Reset',
-                to: '/second-pages/reset-password'
-            },
-            {
-                label: 'Account General',
-                to: '/second-pages/account'
-            }
-        ]
-    }
-];

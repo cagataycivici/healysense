@@ -4,13 +4,35 @@ import AnimatedContainer from './AnimatedContainer';
 import { Accordion, AccordionItem } from './ui/accordion';
 const FAQ: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ className, ...props }) => {
     return (
-        <div className={cn('w-full max-w-[1440px] px-4 lg:px-[361.14px] pt-32 pb-[139.43px] mx-auto flex flex-col justify-start items-center gap-14', className)} {...props}>
+        <div className={cn('container pt-16 pb-8 flex flex-col justify-start items-center gap-14', className)} {...props}>
             <div className="self-stretch flex flex-col justify-start items-center gap-6">
-                <div className="size-[72px] relative bg-gradient-to-b from-violet-800 to-violet-700 rounded-3xl shadow-[0px_1px_2px_0px_rgba(0,0,0,0.10)] shadow-[0px_3px_3px_0px_rgba(0,0,0,0.09)] shadow-[0px_7px_4px_0px_rgba(0,0,0,0.05)] shadow-[0px_12px_5px_0px_rgba(0,0,0,0.01)] shadow-[0px_19px_5px_0px_rgba(0,0,0,0.00)] shadow-[inset_0px_2px_3px_0px_rgba(255,255,255,0.25)] overflow-hidden">
-                    <div className="size-[40px] left-[16px] top-[16px] absolute overflow-hidden">
-                        <div className="w-[23.52px] h-[23.44px] left-0 top-[2.42px] absolute bg-gradient-to-b from-white to-white/0" />
-                        <div className="w-[23.37px] h-[23.44px] left-[16.63px] top-[14.14px] absolute bg-gradient-to-b from-white to-white/0" />
-                    </div>
+                <div
+                    className="size-[72px] relative bg-gradient-to-b from-[#531EAF] to-[#641BE1] rounded-3xl overflow-hidden flex items-center justify-center"
+                    style={{
+                        boxShadow:
+                            '0px 1px 2px 0px rgba(0,0,0,0.10), 0px 3px 3px 0px rgba(0,0,0,0.09), 0px 7px 4px 0px rgba(0,0,0,0.05), 0px 12px 5px 0px rgba(0,0,0,0.01), 0px 19px 5px 0px rgba(0,0,0,0.00), inset 0px 2px 3px 0px rgba(255,255,255,0.25)'
+                    }}
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <path
+                            d="M1.6975 25.8594H11.7969C18.2582 25.8594 23.5156 20.602 23.5156 14.1406C23.5156 7.6793 18.2582 2.42188 11.7969 2.42188C5.33555 2.42188 0 7.6793 0 14.1406C0 17.2294 1.29578 20.1774 3.44609 22.362L1.6975 25.8594ZM12.9688 21.1719H10.625V18.8281H12.9688V21.1719ZM11.7969 7.10938C14.3821 7.10938 16.4844 9.21164 16.4844 11.7969C16.4844 13.5478 15.5196 15.1409 13.9666 15.9522C13.351 16.2749 12.9688 16.9627 12.9688 17.6562H10.625C10.625 16.0289 11.4891 14.603 12.8795 13.8762C13.6577 13.4688 14.1406 12.6723 14.1406 11.7969C14.1406 10.5048 13.0889 9.45312 11.7969 9.45312C10.5048 9.45312 9.45312 10.5048 9.45312 11.7969H7.10938C7.10938 9.21164 9.21164 7.10938 11.7969 7.10938Z"
+                            fill="url(#paint0_linear_7037_4530)"
+                        />
+                        <path
+                            d="M25.8469 14.3862C25.7433 20.3324 21.9345 25.3776 16.6328 27.3284C17.3649 33.0912 22.2447 37.5781 28.203 37.5781H38.3024L36.5538 34.0808C38.7041 31.8962 39.9999 28.9481 39.9999 25.8594C39.9999 19.3873 34.6751 14.1406 28.203 14.1406C27.3966 14.1406 26.6088 14.2257 25.8469 14.3862ZM34.0624 29.375H24.6874V27.0312H34.0624V29.375ZM34.0624 24.6875H24.6874V22.3438H34.0624V24.6875Z"
+                            fill="url(#paint1_linear_7037_4530)"
+                        />
+                        <defs>
+                            <linearGradient id="paint0_linear_7037_4530" x1="11.7578" y1="2.71499" x2="11.7578" y2="25.8594" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="white" />
+                                <stop offset="1" stop-color="white" stop-opacity="0" />
+                            </linearGradient>
+                            <linearGradient id="paint1_linear_7037_4530" x1="28.3164" y1="14.4337" x2="28.3164" y2="37.5781" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="white" />
+                                <stop offset="1" stop-color="white" stop-opacity="0" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
                 </div>
                 <div className="self-stretch flex flex-col justify-start items-center gap-4">
                     <div className="self-stretch text-center justify-end text-surface-950 text-3xl lg:text-6xl font-semibold leading-tight lg:leading-[65.62px]">Frequently Asked Questions</div>

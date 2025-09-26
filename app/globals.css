@@ -38,8 +38,8 @@ html {
   --surface-950: 2 6 23;
 
   /* Primary gradient colors */
-  --bg-gradient-from: rgb(var(--violet-500));
-  --bg-gradient-to: rgb(var(--violet-700));
+  --bg-gradient-from: rgb(83, 30, 175);
+  --bg-gradient-to: rgb(100, 27, 225);
 
   --gradient-background: linear-gradient(
     180deg,
@@ -121,7 +121,7 @@ body {
   }
 
   .container {
-    @apply max-w-[1352px] px-4 mx-auto;
+    @apply max-w-[1152px] px-4 mx-auto;
   }
 
   .icon-box{

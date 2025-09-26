@@ -3,6 +3,7 @@ import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import Integration from '@/components/Integration';
+import News from '@/components/News';
 import Products from '@/components/Products';
 import Team from '@/components/Team';
 import Testimonials from '@/components/Testimonials';
@@ -11,15 +12,34 @@ import VideoFeature from '@/components/VideoFeature';
 export default function Home() {
     return (
         <section>
-            <Hero />
-            <Products />
-            <VideoFeature />
-            <Integration />
-            <Team />
-            <Testimonials />
-            <FAQ className="mt-24 lg:mt-64" />
-            <Contact />
-            <Footer className="mt-24 lg:mt-80" />
+            <div id="hero">
+                <Hero />
+            </div>
+            <div id="solutions">
+                <Products />
+            </div>
+            <div id="showreel">
+                <VideoFeature />
+            </div>
+            <div id="integration">
+                <Integration />
+            </div>
+            <div id="team">
+                <Team />
+            </div>
+            <div id="testimonials">
+                <Testimonials />
+            </div>
+            <div id="faq">
+                <FAQ />
+            </div>
+            <div id="news">
+                <News />
+            </div>
+            <div id="contact">
+                <Contact />
+            </div>
+            <Footer />
         </section>
     );
 }

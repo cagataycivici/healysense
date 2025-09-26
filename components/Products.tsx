@@ -3,32 +3,48 @@ import Image from 'next/image';
 
 const Products = () => {
     const products = [
-        { name: 'AortaSense Pro', description: 'Through the integration of AI technology and computing modules, we develop a hybrid system for the aorta that automates medical image interpretation.', image: '/images/hero-product-1.png' },
+        { name: 'AortaSense Pro', description: 'Through the integration of AI technology and computing modules, we develop a hybrid system for the aorta that automates medical image interpretation.', image: '/images/icon-aorta.png' },
         {
             name: 'AcutePanaMaster',
             description: 'We are working on an AI-driven decision support system for acute pancreatitis that aims to harness the power of AI to provide accurate and reliable information derived from CT images.',
-            image: '/images/hero-product-2.png'
+            image: '/images/icon-acute.png'
         },
-        { name: 'AppendiXpert', description: 'Advanced image analysis meets efficiency: AI-driven technology for Acute Appendicitis from CT scans.', image: '/images/hero-product-3.png' },
-        { name: 'CholeciAssist', description: 'Healysense leverages deep learning algorithms to extract insights from CT images and improve the diagnosis of Acute Cholecystitis.', image: '/images/hero-product-4.png' },
-        { name: 'DivertiSense', description: 'Unleash Diagnostic Confidence: AI-driven decision support for Acute Diverticulitis from CT images.', image: '/images/hero-product-5.png' },
+        { name: 'AppendiXpert', description: 'Advanced image analysis meets efficiency: AI-driven technology for Acute Appendicitis from CT scans.', image: '/images/icon-appendi.png' },
+        { name: 'CholeciAssist', description: 'Healysense leverages deep learning algorithms to extract insights from CT images and improve the diagnosis of Acute Cholecystitis.', image: '/images/icon-choleci.png' },
+        { name: 'DivertiSense', description: 'Unleash Diagnostic Confidence: AI-driven decision support for Acute Diverticulitis from CT images.', image: '/images/icon-diverti.png' },
         {
             name: 'UreteralStoneSense',
             description: 'Utilizing deep learning algorithms and image analysis techniques to assist clinicians in accurate Kidney/Ureter Stone detection, localization and characterization for personalized treatment strategies.',
-            image: '/images/hero-product-6.png'
+            image: '/images/icon-ureteral.png'
         }
     ];
 
     return (
-        <div className="w-full max-w-[1152px] mx-auto px-4 lg:mt-40 mt-24">
+        <div className="container pt-16 pb-8">
             <div className="flex flex-col items-center gap-6">
                 <div
-                    className="w-[72px] h-[72px] relative bg-gradient-to-b from-violet-800 to-violet-700 rounded-3xl flex items-center justify-center overflow-hidden"
+                    className="w-[72px] h-[72px] relative bg-gradient-to-b from-[#531EAF] to-[#641BE1] rounded-3xl flex items-center justify-center overflow-hidden"
                     style={{
                         boxShadow:
                             '0px 1px 2px 0px rgba(0,0,0,0.10), 0px 3px 3px 0px rgba(0,0,0,0.09), 0px 7px 4px 0px rgba(0,0,0,0.05), 0px 12px 5px 0px rgba(0,0,0,0.01), 0px 19px 5px 0px rgba(0,0,0,0.00), inset 0px 2px 3px 0px rgba(255,255,255,0.25)'
                     }}
-                ></div>
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="40" viewBox="0 0 24 40" fill="none">
+                        <g clipPath="url(#clip0_7009_11660)">
+                            <path d="M0.499817 6.66717V19.999L12.0465 13.3342V0.00012207L0.499817 6.66717Z" fill="white" />
+                            <path d="M0.499817 33.3331L12.0465 26.6661V13.3343L0.499817 19.999V33.3331Z" fill="#DDD2EF" />
+                            <path d="M23.5932 19.9988L12.0466 13.3341L0.499878 19.9988L12.0466 26.6659L23.5932 19.9988Z" fill="#531FAE" />
+                            <path d="M23.5932 19.9988L12.0466 13.3341L0.499878 19.9988L12.0466 26.6659L23.5932 19.9988Z" fill="white" fillOpacity="0.6" style={{ mixBlendMode: 'screen' }} />
+                            <path d="M23.5932 6.66718L12.0466 13.3342V26.666L23.5932 19.999V6.66718Z" fill="#DDD2EF" />
+                            <path d="M23.5932 33.3331V19.999L12.0466 26.6661V40.0002L23.5932 33.3331Z" fill="white" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_7009_11660">
+                                <rect width="23.0934" height="40" fill="white" transform="translate(0.5)" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </div>
                 <div className="flex flex-col items-center gap-4">
                     <h1 className="text-3xl lg:text-6xl text-surface-950 font-semibold text-center leading-tight lg:leading-[65.62px]">
                         Redefining
@@ -43,13 +59,13 @@ const Products = () => {
                 {/* Category Tags */}
                 <div className="flex items-center gap-4">
                     <div className="px-4 py-2 bg-surface-0 rounded-full shadow-[0px_1px_2px_0px_rgba(18,18,23,0.05)] border border-surface-200 flex items-center">
-                        <div className="text-surface-950 text-lg font-normal leading-7">Vascular</div>
+                        <div className="text-surface-950 text-lg font-normal leading-7">Thoracic CT</div>
                     </div>
                     <div className="px-4 py-2 bg-surface-0 rounded-full shadow-[0px_1px_2px_0px_rgba(18,18,23,0.05)] border border-surface-200 flex items-center">
-                        <div className="text-surface-950 text-lg font-normal leading-7">Abdominal</div>
+                        <div className="text-surface-950 text-lg font-normal leading-7">Abdominal CT</div>
                     </div>
                     <div className="px-4 py-2 bg-surface-0 rounded-full shadow-[0px_1px_2px_0px_rgba(18,18,23,0.05)] border border-surface-200 flex items-center">
-                        <div className="text-surface-950 text-lg font-normal leading-7">Urological</div>
+                        <div className="text-surface-950 text-lg font-normal leading-7">ECG Gated CT</div>
                     </div>
                 </div>
 
@@ -61,14 +77,7 @@ const Products = () => {
                             <AnimatedContainer key={index} delay={index * 200} className="flex-1 p-8 relative bg-gradient-to-b from-violet-800 to-violet-700 rounded-[28px] flex flex-col gap-8 overflow-hidden">
                                 <Image src="/images/products-grid.svg" alt="Products Grid" width={40} height={40} className="w-60 h-60 absolute top-0 left-0" />
                                 <div className="flex flex-col items-center">
-                                    <div
-                                        className="w-24 h-24 relative bg-violet-950 rounded-3xl flex items-center justify-center overflow-hidden"
-                                        style={{
-                                            boxShadow: 'inset 0px -14.88px 12.48px -12.48px rgba(90,35,231,0.65), inset 0px -1.92px 1.44px -1.44px rgba(255,255,255,0.65), inset 0px 1.92px 1.44px -1.44px rgba(255,255,255,0.15)'
-                                        }}
-                                    >
-                                        <Image src={product.image} alt={product.name} width={48} height={48} className="w-12 h-12 object-contain" />
-                                    </div>
+                                    <Image src={product.image} alt={product.name} width={48} height={48} className="w-24 h-24 object-contain" />
                                 </div>
                                 <div className="flex flex-col items-center gap-4">
                                     <h3 className="text-white/90 text-2xl font-semibold text-center leading-loose">{product.name}</h3>
@@ -85,14 +94,7 @@ const Products = () => {
                             <AnimatedContainer key={index + 3} delay={(index + 3) * 200} className="flex-1 p-8 relative bg-gradient-to-b from-violet-800 to-violet-700 rounded-[28px] flex flex-col gap-8 overflow-hidden">
                                 <Image src="/images/products-grid.svg" alt="Products Grid" width={40} height={40} className="w-60 h-60 absolute top-0 left-0" />
                                 <div className="flex flex-col items-center">
-                                    <div
-                                        className="w-24 h-24 relative bg-violet-950 rounded-3xl flex items-center justify-center overflow-hidden"
-                                        style={{
-                                            boxShadow: 'inset 0px -14.88px 12.48px -12.48px rgba(90,35,231,0.65), inset 0px -1.92px 1.44px -1.44px rgba(255,255,255,0.65), inset 0px 1.92px 1.44px -1.44px rgba(255,255,255,0.15)'
-                                        }}
-                                    >
-                                        <Image src={product.image} alt={product.name} width={48} height={48} className="w-12 h-12 object-contain" />
-                                    </div>
+                                    <Image src={product.image} alt={product.name} width={48} height={48} className="w-24 h-24 object-contain" />
                                 </div>
                                 <div className="flex flex-col items-center gap-4">
                                     <h3 className="text-white/90 text-2xl font-semibold text-center leading-loose">{product.name}</h3>

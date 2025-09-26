@@ -6,6 +6,11 @@ export default function myImageLoader({ src, width, quality }: ImageLoaderProps)
         return `${src}?w=${width}&q=${quality || 75}`;
     }
 
+    // Handle external URLs (https/http)
+    if (src.startsWith('https://') || src.startsWith('http://')) {
+        return `${src}?w=${width}&q=${quality || 75}`;
+    }
+
     // Handle other images through PrimeFaces CDN
     return `https://primefaces.org/cdn/templates/genesis/${src}?w=${width}&q=${quality || 75}`;
 }
