@@ -38,7 +38,7 @@ const PolicyPage = () => {
                 } else {
                     setError('Policy not found');
                 }
-            } catch (err) {
+            } catch {
                 setError('Failed to load policy data');
             } finally {
                 setLoading(false);
@@ -68,7 +68,7 @@ const PolicyPage = () => {
         <div className="min-h-screen bg-white">
             <AnimatedContainer visibleClass="!slide-in-from-top-0" className="relative bg-main-gradient">
                 <div className="container">
-                    <div className="relative h-auto pb-12 overflow-hidden">
+                    <div className="relative h-auto overflow-hidden pb-12">
                         <div className="relative z-10">
                             <Navbar />
 
