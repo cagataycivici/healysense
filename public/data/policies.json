@@ -1,0 +1,27 @@
+{
+  "information-security": {
+    "title": "Information Security",
+    "description": "Healysense Bilgi ve Medikal Tek. Araş. Gel. Danış. San. Tic. A.Ş. Information Security Management System Policy",
+    "lastUpdated": "2025-09-26",
+    "content": {
+      "overview": "The primary objective of the systems established in accordance with the ISO/IEC 27001:2022 Information Security Management System (ISMS) standard within the scope of Healysense's services is to demonstrate that information security management is effectively ensured across all components, including personnel, infrastructure, software, hardware, customer information, organizational data, all business operations, third-party information, and financial resources; to secure the integrity of quality and risk management; to monitor and evaluate the performance of information and quality security management processes; and to ensure the proper regulation of relationships with third parties concerning matters of quality, information security, and customer satisfaction.",
+      "sections": [
+        {
+          "title": "In this regard, the objective of our Information Security Management System (ISMS) Policy is to:",
+          "items": [
+            "Protect the information assets of Healysense Bilgi ve Medikal Tek. Araş. Gel. Danış. San. Tic. A.Ş. against all types of threats that may arise intentionally or unintentionally, internally or externally; ensure appropriate accessibility to information in alignment with business processes; comply with legal and regulatory requirements; and carry out continuous improvement activities.",
+            "Ensure the continuity of the three fundamental components of the Information Security Management System in all operations: Confidentiality (Preventing unauthorized access to critical information), Integrity (Ensuring and demonstrating the accuracy and completeness of information), Availability (Ensuring that authorized individuals can access information whenever necessary).",
+            "Leadership and Commitment: The management of our company demonstrates leadership in the establishment and implementation of the ISMS and ensures active participation at the highest level.",
+            "Address the security of not only electronically stored data but also all information held in written, printed, verbal, and similar formats.",
+            "Provide Information Security Management training to all personnel.",
+            "Report all actual or suspected information security vulnerabilities to the ISMS Team and ensure that such incidents are investigated by the team.",
+            "Prepare, maintain, and test business continuity plans.",
+            "Conduct periodic evaluations in the field of information security to identify existing risks; review and follow up on action plans based on the evaluation results.",
+            "Prevent any disputes and conflicts of interest that may arise from contractual obligations.",
+            "Fulfill business requirements for accessibility to information and information systems."
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -176,37 +176,13 @@ const Contact = () => {
                         <div className="flex flex-col gap-2">
                             <label className="font-medium text-surface-700">Products *</label>
                             <input type="hidden" name="products" value={formData.products.join(', ')} />
-                            <div className="flex flex-col gap-4">
-                                <div className="inline-flex items-center justify-start gap-2">
-                                    <div className="flex flex-1 items-center justify-start gap-[9.14px]">
-                                        <Checkbox checked={formData.products.includes(products[0])} onChange={() => handleProductToggle(products[0])} />
-                                        <div className="flex-1 justify-start text-base font-normal leading-normal text-surface-700">{products[0]}</div>
+                            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+                                {products.map((product) => (
+                                    <div key={product} className="flex items-center justify-start gap-[9.14px]">
+                                        <Checkbox checked={formData.products.includes(product)} onChange={() => handleProductToggle(product)} />
+                                        <div className="flex-1 justify-start text-base font-normal leading-normal text-surface-700">{product}</div>
                                     </div>
-                                    <div className="flex flex-1 items-center justify-start gap-[9.14px]">
-                                        <Checkbox checked={formData.products.includes(products[1])} onChange={() => handleProductToggle(products[1])} />
-                                        <div className="flex-1 justify-start text-base font-normal leading-normal text-surface-700">{products[1]}</div>
-                                    </div>
-                                </div>
-                                <div className="inline-flex items-center justify-start gap-2">
-                                    <div className="flex flex-1 items-center justify-start gap-[9.14px]">
-                                        <Checkbox checked={formData.products.includes(products[2])} onChange={() => handleProductToggle(products[2])} />
-                                        <div className="flex-1 justify-start text-base font-normal leading-normal text-surface-700">{products[2]}</div>
-                                    </div>
-                                    <div className="flex flex-1 items-center justify-start gap-[9.14px]">
-                                        <Checkbox checked={formData.products.includes(products[3])} onChange={() => handleProductToggle(products[3])} />
-                                        <div className="flex-1 justify-start text-base font-normal leading-normal text-surface-700">{products[3]}</div>
-                                    </div>
-                                </div>
-                                <div className="inline-flex items-center justify-start gap-2">
-                                    <div className="flex flex-1 items-center justify-start gap-[9.14px]">
-                                        <Checkbox checked={formData.products.includes(products[4])} onChange={() => handleProductToggle(products[4])} />
-                                        <div className="flex-1 justify-start text-base font-normal leading-normal text-surface-700">{products[4]}</div>
-                                    </div>
-                                    <div className="flex flex-1 items-center justify-start gap-[9.14px]">
-                                        <Checkbox checked={formData.products.includes(products[5])} onChange={() => handleProductToggle(products[5])} />
-                                        <div className="flex-1 justify-start text-base font-normal leading-normal text-surface-700">{products[5]}</div>
-                                    </div>
-                                </div>
+                                ))}
                             </div>
                             {errors.products && <span className="text-sm text-red-500">{errors.products}</span>}
                         </div>

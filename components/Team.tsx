@@ -87,12 +87,16 @@ const Team = () => {
                                         <div className="inline-flex items-start justify-start gap-[9.14px]">
                                             <Link
                                                 href={item.facebook}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                                 className="backdrop-blur-xs flex w-14 items-center justify-center gap-2 overflow-hidden rounded-full bg-white/5 px-4 py-2 outline outline-[0.50px] outline-offset-[-0.50px] outline-white/10"
                                             >
                                                 <i className="pi pi-linkedin text-base text-white"></i>
                                             </Link>
                                             <Link
                                                 href={item.twitter}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                                 className="backdrop-blur-xs flex w-14 items-center justify-center gap-2 overflow-hidden rounded-full bg-white/5 px-4 py-2 outline outline-[0.50px] outline-offset-[-0.50px] outline-white/10"
                                             >
                                                 <i className="pi pi-twitter text-base text-white"></i>
@@ -118,26 +122,26 @@ export default Team;
 const startupTeamData = [
     {
         image: '/images/team-1.jpg',
-        name: 'Serhat Tozburun',
+        name: 'Serhat Tozburun, PhD',
         role: 'Founder',
-        twitter: 'https://twitter.com',
-        facebook: 'https://linkedin.com',
+        twitter: 'https://x.com/SerhatTozburun',
+        facebook: 'https://www.linkedin.com/in/serhat-tozburun-39627946/',
         github: 'x'
     },
     {
         image: '/images/team-2.jpg',
         name: 'Semih Burhan',
         role: 'COO & Data Scientist',
-        twitter: 'https://twitter.com',
-        facebook: 'https://linkedin.com',
+        twitter: 'https://x.com/smhburhan',
+        facebook: ' https://www.linkedin.com/in/smhhburhan/',
         github: 'x'
     },
     {
         image: '/images/team-3.jpg',
         name: 'Berkay Durmuş',
         role: 'AI Engineer',
-        twitter: 'https://twitter.com',
-        facebook: 'https://linkedin.com',
+        twitter: 'https://x.com/bdurrmus',
+        facebook: 'https://www.linkedin.com/in/berkayahmetdurmus/',
         github: 'x'
     }
 ];

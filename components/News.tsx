@@ -5,37 +5,26 @@ import Link from 'next/link';
 const News = () => {
     const newsData = [
         {
-            image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&w=370&h=217&fit=crop&crop=center',
-            title: 'AI-Powered Medical Imaging: The Future of Diagnostics',
-            description: 'Explore how artificial intelligence is revolutionizing medical imaging and improving diagnostic accuracy in healthcare.',
-            author: {
-                name: 'Dr. Sarah Mitchell',
-                role: 'Radiologist',
-                avatar: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&w=40&h=40&fit=crop&crop=face'
-            },
-            link: 'https://www.nature.com/articles/s41591-021-01293-w'
+            image: 'https://cdn.webrazzi.com/uploads/2025/06/workup-astart-ilk-donem-216.png',
+            title: `Anadolu Sigorta'nın Ana Destekçisi Olduğu Workup AStart Girişimcilik Programı'nın İlk Dönemi 9 Girişimle Başlıyor!`,
+            description: `100. yılını kutlayan Anadolu Sigorta'nın ana destekçisi olduğu Workup AStart Girişimcilik Programı'nın ilk dönemi 9 girişimle başlıyor`,
+            source: 'Webrazzi',
+            link: 'https://webrazzi.com/2025/06/10/workup-astart-girisimcilik-programi-nin-ilk-donemi-9-girisimle-basliyor/'
         },
         {
-            image: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-4.0.3&w=370&h=217&fit=crop&crop=center',
-            title: 'Hybrid Decision Support Systems in Healthcare',
-            description: 'Learn about the latest developments in hybrid AI systems that combine human expertise with machine learning.',
-            author: {
-                name: 'Prof. Michael Chen',
-                role: 'Data Scientist',
-                avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&w=40&h=40&fit=crop&crop=face'
-            },
-            link: 'https://www.nejm.org/doi/full/10.1056/NEJMra1814259'
+            image: 'https://marketing.webassets.siemens-healthineers.com/d02b3af74ada6d25/0e952595fbcd/v/a9887fc87528/foiBulten.png',
+            title: `Siemens Healthineers Türkiye’den ’’Future of’’ Serisi: Future of Imaging (FOI) Boğaziçi Üniversitesi’nde Gerçekleştirildi`,
+            description: `Siemens Healthineers Türkiye, ülkemizin sağlık ekosistemini güçlendirmek ve sağlık girişimcilerini desteklemek üzere düzenlediği Future of Laboratories program serisinin ardından, görüntüleme teknolojilerinin geleceğine odaklanan Future of Imaging’i de hayata geçirdi. Boğaziçi Üniversitesi Biyomedikal Mühendisliği Enstitüsü iş birliği düzenlenen Future of Imaging (FOI)  Aralık ayında, Boğaziçi Üniversitesi Albert Long Hall'de gerçekleşti. Tıbbi görüntüleme alanındaki yenilikçi fikirlerin ve projelerin yarıştığı programda, aynı zamanda sağlık ekosisteminde görev yapan kilit paydaşların katılımıyla panel oturumları da gerçekleştirildi.`,
+            source: 'Siemens',
+            link: 'https://www.siemens-healthineers.com/tr/basin/basin-bultenleri/foi-bogazici-universitesinde-gerceklesti'
         },
         {
-            image: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-4.0.3&w=370&h=217&fit=crop&crop=center',
-            title: 'The Role of Mathematics in Medical AI',
-            description: 'Discover how mathematical models and algorithms are transforming medical analysis and patient care.',
-            author: {
-                name: 'Dr. Emily Rodriguez',
-                role: 'AI Researcher',
-                avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&w=40&h=40&fit=crop&crop=face'
-            },
-            link: 'https://www.sciencedirect.com/science/article/pii/S0895611121000148'
+            image: 'https://opg.optica.org/images/conf_papers_thumbnail.jpg',
+            title: 'Wavelet-Informed Pix2pix Model with an FID-based Loss Function for Confocal Microscopy',
+            description:
+                'We present a novel model based on conditional generative adversarial networks that generates high-quality images from low-quality confocal microscopy images. Our model outperforms four existing models in terms of FID, CMMD, and LPIPS metrics.',
+            source: 'Optica',
+            link: 'https://opg.optica.org/abstract.cfm?uri=ECBO-2025-Th4B.5'
         }
     ];
 
@@ -114,15 +103,11 @@ const News = () => {
                                 <Link href={item.link} target="_blank" rel="noopener noreferrer">
                                     <div className="cursor-pointer justify-start self-stretch text-xl font-medium leading-normal text-surface-950 transition-colors hover:text-[#641BE1]">{item.title}</div>
                                 </Link>
-                                <div className="justify-start self-stretch text-lg font-normal leading-normal text-surface-500">{item.description}</div>
+                                <div className="line-clamp-4 justify-start self-stretch text-lg font-normal leading-normal text-surface-500">{item.description}</div>
                             </div>
                             <div className="mt-auto flex flex-col items-center justify-center gap-2 self-stretch">
-                                <div className="flex items-center justify-start gap-3 self-stretch p-3">
-                                    <Image className="relative h-[40px] w-[40px] rounded-full" src={item.author.avatar} alt={item.author.name} width={40} height={40} />
-                                    <div className="flex flex-1 flex-col items-start justify-center gap-1">
-                                        <div className="justify-start self-stretch text-lg font-normal leading-normal text-surface-950">{item.author.name}</div>
-                                        <div className="justify-start self-stretch text-base font-normal leading-normal text-surface-500">{item.author.role}</div>
-                                    </div>
+                                <div className="flex items-center justify-start self-stretch p-3">
+                                    <div className="justify-start self-stretch text-base font-medium leading-normal text-surface-500">{item.source}</div>
                                 </div>
                             </div>
                         </div>

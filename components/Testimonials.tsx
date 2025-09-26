@@ -24,7 +24,7 @@ const Testimonials = () => {
         },
         {
             quote: 'We created Healysense with a simple vision: to empower doctors and healthcare providers through hybrid AI solutions. Seeing it now improving patient outcomes and saving time for experts is the best validation of that mission.',
-            name: 'Serhat Tozburun',
+            name: 'Serhat Tozburun, PhD',
             role: 'Founder',
             avatar: '/images/avatar-serhat.jpg'
         },
@@ -86,7 +86,7 @@ const Testimonials = () => {
                             <div className="flex-1 justify-start text-lg font-normal leading-normal text-surface-600">{testimonial.quote}</div>
                         </div>
                         <div className="flex items-center justify-start gap-4">
-                            <Image className="size-16 rounded-full border border-surface-200" src={testimonial.avatar} alt={testimonial.name} width={64} height={64} />
+                            <Image className="size-16 rounded-full border border-surface-200 object-cover" src={testimonial.avatar} alt={testimonial.name} width={64} height={64} />
                             <div className="flex flex-1 flex-col items-start justify-center gap-1">
                                 <div className="justify-start text-xl font-semibold leading-normal text-surface-950">{testimonial.name}</div>
                                 <div className="justify-start text-lg font-normal leading-normal text-surface-600">{testimonial.role}</div>

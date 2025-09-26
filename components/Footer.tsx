@@ -1,7 +1,7 @@
 'use client';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import React from 'react';
 import AnimatedContainer from './AnimatedContainer';
 import CirclePattern from './CirclePattern';
@@ -14,10 +14,11 @@ type FooterProps = {
 
 const Footer: React.FC<React.HTMLAttributes<HTMLElement> & FooterProps> = ({ className, ...props }) => {
     const pathname = usePathname();
+    const router = useRouter();
 
     const handleNavClick = (item: { label: string; sectionId: string }) => {
-        // If we're on the home page and it's not the Home link, scroll to section
-        if (pathname === '/' && item.label !== 'Home') {
+        if (pathname === '/') {
+            // If we're on the home page, scroll to section
             const element = document.getElementById(item.sectionId);
             if (element) {
                 element.scrollIntoView({
@@ -25,6 +26,9 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement> & FooterProps> = ({ cla
                     block: 'start'
                 });
             }
+        } else {
+            // If we're on another page, navigate to home page with hash
+            router.push(`/#${item.sectionId}`);
         }
     };
 
@@ -86,7 +90,7 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement> & FooterProps> = ({ cla
                             </div>
                             <div className="flex flex-col items-start justify-start gap-2">
                                 <div className="max-w-md justify-start self-stretch text-base font-normal leading-normal text-white">Dokuz Eylül Üniversitesi İnciraltı Yerleşkesi, DEPARK Nar Grup, Ofis:P2/E Balçova/İzmir/Türkiye</div>
-                                <div className="justify-start self-stretch text-base font-normal leading-normal text-white">info@healysense.ai</div>
+                                <Link href="mailto:info@healysense.ai" className="justify-start self-stretch text-base font-normal leading-normal text-white transition-colors hover:text-white/70">info@healysense.ai</Link>
                             </div>
                             <div className="inline-flex items-start justify-start gap-[9.14px]">
                                 <Link
@@ -114,7 +118,7 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement> & FooterProps> = ({ cla
                                     <i className="pi pi-github text-base text-white"></i>
                                 </Link>
                                 <Link
-                                    href="mailto:healysense@gmail.com"
+                                    href="mailto:info@healysense.ai"
                                     className="backdrop-blur-xs flex items-center justify-start gap-2 overflow-hidden rounded-[99px] bg-white/5 px-4 py-2 outline outline-[0.50px] outline-offset-[-0.50px] outline-white/10 transition-colors hover:bg-white/10"
                                 >
                                     <i className="pi pi-envelope text-base text-white"></i>
@@ -122,7 +126,7 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement> & FooterProps> = ({ cla
                             </div>
                         </div>
                         <div className="grid w-full grid-cols-2 gap-4 backdrop-blur-[1.50px] lg:flex lg:w-auto lg:flex-wrap lg:items-start lg:justify-start lg:gap-6">
-                            {navItems.map((item) => (
+                            {navItems.map((item) =>
                                 item.label === 'Home' ? (
                                     <Link key={item.label} href="/" className="cursor-pointer text-left text-base font-medium leading-normal text-white/70 transition-colors hover:text-white">
                                         {item.label}
@@ -132,15 +136,26 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement> & FooterProps> = ({ cla
                                         {item.label}
                                     </button>
                                 )
-                            ))}
+                            )}
                         </div>
                     </div>
                     <div className="relative z-10 h-0 w-full outline outline-1 outline-offset-[-0.50px] outline-white/10" />
-                    <div className="relative z-10 flex flex-wrap items-start justify-center gap-4 self-stretch lg:gap-8">
-                        <Link href="/policies/pdpl" className="cursor-pointer text-base font-medium leading-normal text-white/70 transition-colors hover:text-white">PDPL Policy</Link>
-                        <Link href="/policies/information-security" className="cursor-pointer text-base font-medium leading-normal text-white/70 transition-colors hover:text-white">Information Security</Link>
-                        <Link href="/policies/clarification-text" className="cursor-pointer text-base font-medium leading-normal text-white/70 transition-colors hover:text-white">Clarification Text</Link>
-                        <Link href="/policies/storage-disposal" className="cursor-pointer text-base font-medium leading-normal text-white/70 transition-colors hover:text-white">Storage & Disposal</Link>
+                    <div className="relative z-10 flex flex-wrap items-start justify-end gap-4 self-stretch lg:gap-8">
+                        <Link href="/policies/information-security" className="cursor-pointer text-base font-medium leading-normal text-white/70 transition-colors hover:text-white">
+                            Information Security
+                        </Link>
+                        {/* <Link href="/policies/cookie-policy" className="cursor-pointer text-base font-medium leading-normal text-white/70 transition-colors hover:text-white">
+                        <Link href="/policies/pdpl" className="cursor-pointer text-base font-medium leading-normal text-white/70 transition-colors hover:text-white">
+                            PDPL Policy
+                        </Link>
+
+                        <Link href="/policies/clarification-text" className="cursor-pointer text-base font-medium leading-normal text-white/70 transition-colors hover:text-white">
+                            Clarification Text
+                        </Link>
+                        <Link href="/policies/storage-disposal" className="cursor-pointer text-base font-medium leading-normal text-white/70 transition-colors hover:text-white">
+                            Storage & Disposal
+                        </Link>
+                         */}
                     </div>
                 </div>
             </div>

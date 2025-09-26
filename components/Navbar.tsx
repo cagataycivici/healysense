@@ -1,21 +1,25 @@
 'use client';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react';
 
 const Navbar: React.FC<React.HTMLAttributes<HTMLElement>> = ({ className, ...props }) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
+    const buttonRef = useRef<HTMLButtonElement>(null);
     const pathname = usePathname();
+    const router = useRouter();
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
     const handleNavClick = (item: { label: string; sectionId: string }) => {
-        // If we're on the home page and it's not the Home link, scroll to section
-        if (pathname === '/' && item.label !== 'Home') {
+        setIsMobileMenuOpen(false);
+
+        if (pathname === '/') {
+            // If we're on the home page, scroll to section
             const element = document.getElementById(item.sectionId);
             if (element) {
                 element.scrollIntoView({
@@ -23,8 +27,10 @@ const Navbar: React.FC<React.HTMLAttributes<HTMLElement>> = ({ className, ...pro
                     block: 'start'
                 });
             }
+        } else {
+            // If we're on another page, navigate to home page with hash
+            router.push(`/#${item.sectionId}`);
         }
-        setIsMobileMenuOpen(false);
     };
 
     const navItems = [
@@ -41,7 +47,8 @@ const Navbar: React.FC<React.HTMLAttributes<HTMLElement>> = ({ className, ...pro
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
-            if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+            const target = event.target as Node;
+            if (menuRef.current && !menuRef.current.contains(target) && buttonRef.current && !buttonRef.current.contains(target)) {
                 setIsMobileMenuOpen(false);
             }
         };
@@ -54,6 +61,22 @@ const Navbar: React.FC<React.HTMLAttributes<HTMLElement>> = ({ className, ...pro
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, [isMobileMenuOpen]);
+
+    // Handle scrolling to section when page loads with hash
+    useEffect(() => {
+        if (pathname === '/' && window.location.hash) {
+            const sectionId = window.location.hash.substring(1);
+            const element = document.getElementById(sectionId);
+            if (element) {
+                setTimeout(() => {
+                    element.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }, 100);
+            }
+        }
+    }, [pathname]);
 
     return (
         <div className={cn('relative', className)} {...props}>
@@ -81,7 +104,7 @@ const Navbar: React.FC<React.HTMLAttributes<HTMLElement>> = ({ className, ...pro
                 </Link>
 
                 <div className="hidden items-start justify-start gap-6 backdrop-blur-[1.50px] lg:flex">
-                    {navItems.map((item) => (
+                    {navItems.map((item) =>
                         item.label === 'Home' ? (
                             <Link key={item.label} href="/" className="cursor-pointer text-xl font-medium leading-normal text-white/70 transition-colors hover:text-white">
                                 {item.label}
@@ -91,10 +114,10 @@ const Navbar: React.FC<React.HTMLAttributes<HTMLElement>> = ({ className, ...pro
                                 {item.label}
                             </button>
                         )
-                    ))}
+                    )}
                 </div>
 
-                <button onClick={toggleMobileMenu} className="block text-white transition-colors hover:text-white/80 lg:hidden" aria-label="Toggle mobile menu">
+                <button ref={buttonRef} onClick={toggleMobileMenu} className="block text-white transition-colors hover:text-white/80 lg:hidden" aria-label="Toggle mobile menu">
                     <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
@@ -102,28 +125,24 @@ const Navbar: React.FC<React.HTMLAttributes<HTMLElement>> = ({ className, ...pro
             </nav>
 
             {isMobileMenuOpen && (
-                <div ref={menuRef} className="absolute left-0 right-0 top-full z-50 border-b border-white/10 bg-black/95 backdrop-blur-sm lg:hidden">
+                <div ref={menuRef} className="absolute left-0 right-0 top-full z-[100] border-b border-white/10 bg-black/95 backdrop-blur-sm lg:hidden">
                     <div className="flex flex-col px-4 py-4">
-                        {navItems.map((item) => (
+                        {navItems.map((item) =>
                             item.label === 'Home' ? (
                                 <Link
                                     key={item.label}
                                     href="/"
-                                    className="border-l-2 border-transparent px-4 py-4 text-left text-base font-medium text-white/70 transition-all hover:border-white/20 hover:text-white"
+                                    className="border-l-2 border-transparent px-4 py-4 text-left text-base font-medium text-white/70 transition-all hover:border-[#641BE1] hover:text-white"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                 >
                                     {item.label}
                                 </Link>
                             ) : (
-                                <button
-                                    key={item.label}
-                                    onClick={() => handleNavClick(item)}
-                                    className="border-l-2 border-transparent px-4 py-4 text-left text-base font-medium text-white/70 transition-all hover:border-white/20 hover:text-white"
-                                >
+                                <button key={item.label} onClick={() => handleNavClick(item)} className="border-l-2 border-transparent px-4 py-4 text-left text-base font-medium text-white/70 transition-all hover:border-[#641BE1] hover:text-white">
                                     {item.label}
                                 </button>
                             )
-                        ))}
+                        )}
                     </div>
                 </div>
             )}

@@ -43,7 +43,7 @@ const Hero = () => {
                                     <div className="flex items-center justify-start gap-2">
                                         <div className="hero-before-after-item flex w-24 flex-col items-start justify-center overflow-hidden">
                                             <div className="flex items-center justify-center self-stretch bg-white/10 p-2">
-                                                <div className="text-lg font-bold tracking-wide text-white lg:text-xl">&lt; 10m</div>
+                                                <div className="text-lg font-bold tracking-wide text-white lg:text-xl">&lt; 3m</div>
                                             </div>
                                         </div>
                                     </div>

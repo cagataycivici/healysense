@@ -3,18 +3,18 @@ import Image from 'next/image';
 
 const Products = () => {
     const products = [
-        { name: 'AortaSense Pro', description: 'Through the integration of AI technology and computing modules, we develop a hybrid system for the aorta that automates medical image interpretation.', image: '/images/icon-aorta.png' },
+        { name: 'AortaSense Pro', description: 'Automated AI interpretation for aortic CT images, improving efficiency and reliability.', image: '/images/icon-aorta.png' },
         {
             name: 'AcutePanaMaster',
-            description: 'We are working on an AI-driven decision support system for acute pancreatitis that aims to harness the power of AI to provide accurate and reliable information derived from CT images.',
+            description: 'AI decision support for acute pancreatitis, delivering fast and accurate insights from CT scans.',
             image: '/images/icon-acute.png'
         },
-        { name: 'AppendiXpert', description: 'Advanced image analysis meets efficiency: AI-driven technology for Acute Appendicitis from CT scans.', image: '/images/icon-appendi.png' },
-        { name: 'CholeciAssist', description: 'Healysense leverages deep learning algorithms to extract insights from CT images and improve the diagnosis of Acute Cholecystitis.', image: '/images/icon-choleci.png' },
-        { name: 'DivertiSense', description: 'Unleash Diagnostic Confidence: AI-driven decision support for Acute Diverticulitis from CT images.', image: '/images/icon-diverti.png' },
+        { name: 'AppendiXpert', description: 'Smart analysis of CT images to detect acute appendicitis with high precision.', image: '/images/icon-appendi.png' },
+        { name: 'CholeciAssist', description: 'Deep learning–powered tool enhancing diagnosis of acute cholecystitis from CT images.', image: '/images/icon-choleci.png' },
+        { name: 'DivertiSense', description: 'AI support for accurate detection and evaluation of acute diverticulitis.', image: '/images/icon-diverti.png' },
         {
             name: 'UreteralStoneSense',
-            description: 'Utilizing deep learning algorithms and image analysis techniques to assist clinicians in accurate Kidney/Ureter Stone detection, localization and characterization for personalized treatment strategies.',
+            description: 'Advanced AI for kidney and ureter stone detection and localization.',
             image: '/images/icon-ureteral.png'
         }
     ];

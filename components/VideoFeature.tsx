@@ -10,19 +10,14 @@ const VideoFeature = () => {
 
     const videos = [
         {
-            id: 'dQw4w9WgXcQ', // Replace with actual video IDs
-            title: 'Healysense Showreel',
-            thumbnail: '/images/video-preview-1.jpg'
-        },
-        {
-            id: 'jNQXAC9IVRw', // Replace with actual video IDs
+            id: 'YlNP2Ym_R-s',
             title: 'Product Overview',
-            thumbnail: '/images/video-preview-2.jpg'
+            thumbnail: 'https://img.youtube.com/vi/YlNP2Ym_R-s/maxresdefault.jpg'
         },
         {
-            id: 'M7lc1UVf-VE', // Replace with actual video IDs
-            title: 'Technology Deep Dive',
-            thumbnail: '/images/video-preview-3.jpg'
+            id: 'EqfHztauhcU',
+            title: 'Healysense Showreel',
+            thumbnail: '/images/video-preview-1.png'
         }
     ];
 

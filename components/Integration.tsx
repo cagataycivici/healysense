@@ -117,7 +117,7 @@ const Integration = () => {
                             {integration.tag.includes('Marketplace') ? (
                                 /* Marketplace: 80% visible on desktop, full on mobile, positioned right-bottom */
                                 <div className="absolute inset-0 flex items-end justify-end">
-                                    <div className="relative h-full w-full lg:w-[140%]">
+                                    <div className="relative bottom-[-20%] right-[-20%] h-full w-[180%] lg:bottom-0 lg:right-0 lg:w-[140%]">
                                         <Image src="/images/card-marketplace.png" alt="Marketplace Interface" fill className="object-contain object-bottom lg:object-right-bottom" sizes="(max-width: 1024px) 100vw, 120vw" />
                                     </div>
                                 </div>
@@ -125,7 +125,7 @@ const Integration = () => {
                                 /* Local Installation: full width and centered */
                                 <div className="absolute inset-0 flex items-center justify-center">
                                     <div className="relative -top-2 h-full w-full">
-                                        <Image src="/images/card-local.png" alt="Local Installation Interface" fill className="object-contain" sizes="(max-width: 1024px) 100vw, 50vw" />
+                                        <Image src="/images/card-local.png" alt="Local Installation Interface" fill className="object-cover md:object-contain" sizes="(max-width: 1024px) 100vw, 50vw" />
                                     </div>
                                 </div>
                             ) : (
