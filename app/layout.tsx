@@ -3,7 +3,7 @@ import './fonts/fonts.css';
 import './globals.css';
 
 export const metadata: Metadata = {
-    title: 'HealySense | AI-Powered Medical Diagnostics',
+    title: 'Healysense | AI-Powered Medical Diagnostics',
     description: 'Healysense combines human expertise with artificial intelligence for faster, safer medical diagnoses.',
     openGraph: {
         title: 'Healysense | AI-Powered Medical Diagnostics',

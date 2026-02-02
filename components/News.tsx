@@ -1,9 +1,32 @@
+'use client';
 import AnimatedContainer from '@/components/AnimatedContainer';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 const News = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [visibleCount, setVisibleCount] = useState(3);
+    const gap = 24; // gap-6 = 24px
+
+    useEffect(() => {
+        const handleResize = () => {
+            setVisibleCount(window.innerWidth >= 1024 ? 3 : 1);
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const newsData = [
+        {
+            image: '/images/shift-day.png',
+            title: `Siemens Healthineers SHIFT Innovation Day 2025`,
+            description: `SHIFT Innovation Day 2025 took place at the Innovation Center. Finalists including INCEPTO, M2Call, ScanLab, Healysense, Voximetry, RFiD Discovery | A Paragon ID company, Sweepin, Harness and @Medcase also showcased powerful solutions tackling real healthcare challenges. `,
+            source: 'Siemens Healthineers',
+            link: 'https://www.linkedin.com/feed/update/urn:li:activity:7379518334221860864/'
+            // https://www.linkedin.com/posts/healysense_siemenshealthineers-healysense-shiftinnovationday2025-activity-7379907949512687616-QXzW
+        },
         {
             image: 'https://cdn.webrazzi.com/uploads/2025/06/workup-astart-ilk-donem-216.png',
             title: `Anadolu Sigorta'nın Ana Destekçisi Olduğu Workup AStart Girişimcilik Programı'nın İlk Dönemi 9 Girişimle Başlıyor!`,
@@ -15,18 +38,32 @@ const News = () => {
             image: 'https://marketing.webassets.siemens-healthineers.com/d02b3af74ada6d25/0e952595fbcd/v/a9887fc87528/foiBulten.png',
             title: `Siemens Healthineers Türkiye’den ’’Future of’’ Serisi: Future of Imaging (FOI) Boğaziçi Üniversitesi’nde Gerçekleştirildi`,
             description: `Siemens Healthineers Türkiye, ülkemizin sağlık ekosistemini güçlendirmek ve sağlık girişimcilerini desteklemek üzere düzenlediği Future of Laboratories program serisinin ardından, görüntüleme teknolojilerinin geleceğine odaklanan Future of Imaging’i de hayata geçirdi. Boğaziçi Üniversitesi Biyomedikal Mühendisliği Enstitüsü iş birliği düzenlenen Future of Imaging (FOI)  Aralık ayında, Boğaziçi Üniversitesi Albert Long Hall'de gerçekleşti. Tıbbi görüntüleme alanındaki yenilikçi fikirlerin ve projelerin yarıştığı programda, aynı zamanda sağlık ekosisteminde görev yapan kilit paydaşların katılımıyla panel oturumları da gerçekleştirildi.`,
-            source: 'Siemens',
+            source: 'Siemens Healthineers',
             link: 'https://www.siemens-healthineers.com/tr/basin/basin-bultenleri/foi-bogazici-universitesinde-gerceklesti'
-        },
-        {
-            image: 'https://opg.optica.org/images/conf_papers_thumbnail.jpg',
-            title: 'Wavelet-Informed Pix2pix Model with an FID-based Loss Function for Confocal Microscopy',
-            description:
-                'We present a novel model based on conditional generative adversarial networks that generates high-quality images from low-quality confocal microscopy images. Our model outperforms four existing models in terms of FID, CMMD, and LPIPS metrics.',
-            source: 'Optica',
-            link: 'https://opg.optica.org/abstract.cfm?uri=ECBO-2025-Th4B.5'
         }
     ];
+
+    const maxIndex = Math.max(0, newsData.length - visibleCount);
+
+    // Reset currentIndex if it exceeds maxIndex after resize
+    useEffect(() => {
+        if (currentIndex > maxIndex) {
+            setCurrentIndex(maxIndex);
+        }
+    }, [currentIndex, maxIndex]);
+
+    const handlePrev = () => {
+        setCurrentIndex((prev) => (prev === 0 ? maxIndex : prev - 1));
+    };
+
+    const handleNext = () => {
+        setCurrentIndex((prev) => (prev === maxIndex ? 0 : prev + 1));
+    };
+
+    // Calculate translateX offset
+    // Each slide moves by: (100% + gap) / visibleCount for lg, or (100% + gap) for mobile
+    const slidePercent = currentIndex * (100 / visibleCount);
+    const slideGapPx = currentIndex * (gap / visibleCount);
 
     return (
         <div className="container flex flex-col items-center justify-start gap-16 pb-8 pt-16">
@@ -85,32 +122,44 @@ const News = () => {
                     </svg>
                 </div>
                 <div className="flex flex-col items-center justify-start gap-4 self-stretch">
-                    <div className="justify-end self-stretch text-center text-3xl font-semibold leading-tight text-surface-950 lg:text-6xl lg:leading-tight">News & Publications</div>
-                    <div className="justify-end self-stretch text-center text-lg font-normal leading-normal text-surface-500 lg:text-2xl lg:leading-normal">Latest insights and research in medical AI technology</div>
+                    <div className="justify-end self-stretch text-center text-3xl font-semibold leading-tight text-surface-950 lg:text-6xl lg:leading-tight">News</div>
+                    <div className="justify-end self-stretch text-center text-lg font-normal leading-normal text-surface-500 lg:text-2xl lg:leading-normal">Latest insights in medical AI technology</div>
+                </div>
+                <div className="mt-6 flex items-center gap-6">
+                    <button onClick={handlePrev} className="h-12 w-[5.5rem] rounded-full border-0 border-white/12 shadow-stroke transition-transform duration-200 hover:bg-surface-100/20">
+                        <i className="pi pi-arrow-left text-xl"></i>
+                    </button>
+                    <button onClick={handleNext} className="h-12 w-[5.5rem] rounded-full border-0 border-white/12 shadow-stroke transition-transform duration-200 hover:bg-surface-100/20">
+                        <i className="pi pi-arrow-right text-xl"></i>
+                    </button>
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-6 self-stretch lg:grid-cols-3">
-                {newsData.map((item, index) => (
-                    <AnimatedContainer key={index} delay={index * 100} className="flex h-full flex-1 flex-col items-start justify-start gap-4 bg-surface-0">
-                        <Link href={item.link} target="_blank" rel="noopener noreferrer" className="block w-full">
-                            <Image className="relative h-[217px] w-full self-stretch rounded-2xl object-cover transition-transform duration-300 hover:scale-105" src={item.image} alt={item.title} width={370} height={217} />
-                        </Link>
-                        <div className="flex flex-1 flex-col items-start justify-between self-stretch">
-                            <div className="flex flex-col items-start justify-center gap-2 self-stretch p-3">
-                                <Link href={item.link} target="_blank" rel="noopener noreferrer">
-                                    <div className="cursor-pointer justify-start self-stretch text-xl font-medium leading-normal text-surface-950 transition-colors hover:text-[#641BE1]">{item.title}</div>
+            <div className="self-stretch overflow-hidden">
+                <div className="flex gap-6 transition-transform duration-500 ease-in-out" style={{ transform: `translateX(calc(-${slidePercent}% - ${slideGapPx}px))` }}>
+                    {newsData.map((item, index) => (
+                        <div key={index} className="w-full flex-shrink-0 lg:w-[calc((100%-48px)/3)]">
+                            <AnimatedContainer delay={0} className="flex h-full flex-col items-start justify-start gap-4 bg-surface-0">
+                                <Link href={item.link} target="_blank" rel="noopener noreferrer" className="block w-full">
+                                    <Image className="relative h-[217px] w-full self-stretch rounded-2xl object-cover transition-transform duration-300 hover:scale-105" src={item.image} alt={item.title} width={370} height={217} />
                                 </Link>
-                                <div className="line-clamp-4 justify-start self-stretch text-lg font-normal leading-normal text-surface-500">{item.description}</div>
-                            </div>
-                            <div className="mt-auto flex flex-col items-center justify-center gap-2 self-stretch">
-                                <div className="flex items-center justify-start self-stretch p-3">
-                                    <div className="justify-start self-stretch text-base font-medium leading-normal text-surface-500">{item.source}</div>
+                                <div className="flex flex-1 flex-col items-start justify-between self-stretch">
+                                    <div className="flex flex-col items-start justify-center gap-2 self-stretch p-3">
+                                        <Link href={item.link} target="_blank" rel="noopener noreferrer">
+                                            <div className="cursor-pointer justify-start self-stretch text-xl font-medium leading-normal text-surface-950 transition-colors hover:text-[#641BE1]">{item.title}</div>
+                                        </Link>
+                                        <div className="line-clamp-4 justify-start self-stretch text-lg font-normal leading-normal text-surface-500">{item.description}</div>
+                                    </div>
+                                    <div className="mt-auto flex flex-col items-center justify-center gap-2 self-stretch">
+                                        <div className="flex items-center justify-start self-stretch p-3">
+                                            <div className="justify-start self-stretch text-base font-medium leading-normal text-surface-500">{item.source}</div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            </AnimatedContainer>
                         </div>
-                    </AnimatedContainer>
-                ))}
+                    ))}
+                </div>
             </div>
         </div>
     );

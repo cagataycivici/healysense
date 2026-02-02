@@ -3,17 +3,27 @@ import Image from 'next/image';
 
 const Products = () => {
     const products = [
-        { name: 'AortaSense Pro', description: 'Automated AI interpretation for aortic CT images, improving efficiency and reliability.', image: '/images/icon-aorta.png' },
         {
-            name: 'AcutePanaMaster',
+            name: 'AortaSense Pro™',
+            description: 'Automated AI interpretation for aortic CT images, improving efficiency and reliability.',
+            image: '/images/icon-aorta.png',
+            fundedByTubitak: true
+        },
+        {
+            name: 'AcutePanaMaster™',
             description: 'AI decision support for acute pancreatitis, delivering fast and accurate insights from CT scans.',
             image: '/images/icon-acute.png'
         },
-        { name: 'AppendiXpert', description: 'Smart analysis of CT images to detect acute appendicitis with high precision.', image: '/images/icon-appendi.png' },
-        { name: 'CholeciAssist', description: 'Deep learning–powered tool enhancing diagnosis of acute cholecystitis from CT images.', image: '/images/icon-choleci.png' },
-        { name: 'DivertiSense', description: 'AI support for accurate detection and evaluation of acute diverticulitis.', image: '/images/icon-diverti.png' },
         {
-            name: 'UreteralStoneSense',
+            name: 'AppendiXpert™',
+            description: 'Smart analysis of CT images to detect acute appendicitis with high precision.',
+            image: '/images/icon-appendi.png',
+            fundedByTubitak: true
+        },
+        { name: 'CholeciAssist™', description: 'Deep learning–powered tool enhancing diagnosis of acute cholecystitis from CT images.', image: '/images/icon-choleci.png' },
+        { name: 'DivertiSense™', description: 'AI support for accurate detection and evaluation of acute diverticulitis.', image: '/images/icon-diverti.png' },
+        {
+            name: 'UreteralStoneSense™',
             description: 'Advanced AI for kidney and ureter stone detection and localization.',
             image: '/images/icon-ureteral.png'
         }
@@ -76,10 +86,16 @@ const Products = () => {
                                 <div className="flex flex-col items-center">
                                     <Image src={product.image} alt={product.name} width={48} height={48} className="h-24 w-24 object-contain" />
                                 </div>
-                                <div className="flex flex-col items-center gap-4">
+                                <div className="flex flex-1 flex-col items-center gap-4">
                                     <h3 className="text-center text-2xl font-semibold leading-normal text-white/90">{product.name}</h3>
                                     <p className="text-center text-lg font-normal leading-normal text-white/70">{product.description}</p>
                                 </div>
+                                {product.fundedByTubitak && (
+                                    <div className="z-10 flex items-center justify-center gap-2 rounded-full bg-white/10 px-4 py-2 text-center backdrop-blur-sm">
+                                        <span className="text-sm font-medium text-white/80">Funded by</span>
+                                        <Image src="/images/logo-tubitak.png" alt="TUBITAK" width={80} height={24} className="h-6 w-auto object-contain brightness-0 invert" />
+                                    </div>
+                                )}
                                 <div className="pointer-events-none absolute bottom-0 right-0 z-20 h-full w-full opacity-10" style={{ background: 'radial-gradient(circle, white 10%, transparent 100%)' }}></div>
                             </AnimatedContainer>
                         ))}
@@ -92,10 +108,16 @@ const Products = () => {
                                 <div className="flex flex-col items-center">
                                     <Image src={product.image} alt={product.name} width={48} height={48} className="h-24 w-24 object-contain" />
                                 </div>
-                                <div className="flex flex-col items-center gap-4">
+                                <div className="flex flex-1 flex-col items-center gap-4">
                                     <h3 className="text-center text-2xl font-semibold leading-normal text-white/90">{product.name}</h3>
                                     <p className="text-center text-lg font-normal leading-normal text-white/70">{product.description}</p>
                                 </div>
+                                {product.fundedByTubitak && (
+                                    <div className="z-10 flex items-center justify-center gap-2 rounded-full bg-white/10 px-4 py-2 backdrop-blur-sm">
+                                        <span className="text-sm font-medium text-white/80">Funded by</span>
+                                        <Image src="/images/logo-tubitak.png" alt="TUBITAK" width={80} height={24} className="h-6 w-auto object-contain brightness-0 invert" />
+                                    </div>
+                                )}
                                 <div className="pointer-events-none absolute bottom-0 right-0 z-20 h-full w-full opacity-10" style={{ background: 'radial-gradient(circle, white 10%, transparent 100%)' }}></div>
                             </AnimatedContainer>
                         ))}

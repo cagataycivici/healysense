@@ -16,9 +16,21 @@ interface PolicyData {
             title: string;
             content?: string;
             items?: string[];
+            listStyle?: 'bullets' | 'none';
+            footer?: string;
         }>;
     };
 }
+
+const renderTextWithBold = (text: string) => {
+    const parts = text.split(/(\*\*[^*]+\*\*)/g);
+    return parts.map((part, index) => {
+        if (part.startsWith('**') && part.endsWith('**')) {
+            return <strong key={index}>{part.slice(2, -2)}</strong>;
+        }
+        return part;
+    });
+};
 
 const PolicyPage = () => {
     const params = useParams();
@@ -96,15 +108,24 @@ const PolicyPage = () => {
                                     <h2 className="mb-4 text-2xl font-semibold text-gray-900">{section.title}</h2>
                                     {section.content && <p className="mb-6 leading-relaxed">{section.content}</p>}
                                     {section.items && (
-                                        <ul className="mb-6 space-y-3">
-                                            {section.items.map((item, itemIndex) => (
-                                                <li key={itemIndex} className="flex items-start">
-                                                    <span className="mr-3 mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-purple-600"></span>
-                                                    <span className="leading-relaxed">{item}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
+                                        section.listStyle === 'none' ? (
+                                            <div className="mb-6 space-y-4">
+                                                {section.items.map((item, itemIndex) => (
+                                                    <p key={itemIndex} className="leading-relaxed">{renderTextWithBold(item)}</p>
+                                                ))}
+                                            </div>
+                                        ) : (
+                                            <ul className="mb-6 space-y-3">
+                                                {section.items.map((item, itemIndex) => (
+                                                    <li key={itemIndex} className="flex items-start">
+                                                        <span className="mr-3 mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-purple-600"></span>
+                                                        <span className="leading-relaxed">{renderTextWithBold(item)}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )
                                     )}
+                                    {section.footer && <p className="mb-6 leading-relaxed">{section.footer}</p>}
                                 </div>
                             ))}
 

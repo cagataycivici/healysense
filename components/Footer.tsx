@@ -82,11 +82,6 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement> & FooterProps> = ({ cla
                                 </div>
                             </div>
                             <div className="flex flex-col items-start justify-start gap-2">
-                                <div className="max-w-md justify-start self-stretch text-base font-normal leading-normal text-white/80">
-                                    Start Using the power of AI by integrating directly with existing Picture Archiving and Communication Systems (PACS).
-                                </div>
-                            </div>
-                            <div className="flex flex-col items-start justify-start gap-2">
                                 <div className="max-w-md justify-start self-stretch text-base font-normal leading-normal text-white">Dokuz Eylül Üniversitesi İnciraltı Yerleşkesi, DEPARK Nar Grup, Ofis:P2/E Balçova/İzmir/Türkiye</div>
                                 <Link href="mailto:info@healysense.ai" className="justify-start self-stretch text-base font-normal leading-normal text-white transition-colors hover:text-white/70">
                                     info@healysense.ai
@@ -110,12 +105,20 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement> & FooterProps> = ({ cla
                                     <i className="pi pi-twitter text-base text-white"></i>
                                 </Link>
                                 <Link
-                                    href="https://github.com/healysense"
+                                    href="https://www.instagram.com/healysenseai/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="backdrop-blur-xs flex items-center justify-start gap-2 overflow-hidden rounded-[99px] bg-white/5 px-4 py-2 outline outline-[0.50px] outline-offset-[-0.50px] outline-white/10 transition-colors hover:bg-white/10"
                                 >
-                                    <i className="pi pi-github text-base text-white"></i>
+                                    <i className="pi pi-instagram text-base text-white"></i>
+                                </Link>
+                                <Link
+                                    href="https://www.youtube.com/@Healysense"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="backdrop-blur-xs flex items-center justify-start gap-2 overflow-hidden rounded-[99px] bg-white/5 px-4 py-2 outline outline-[0.50px] outline-offset-[-0.50px] outline-white/10 transition-colors hover:bg-white/10"
+                                >
+                                    <i className="pi pi-youtube text-base text-white"></i>
                                 </Link>
                                 <Link
                                     href="mailto:info@healysense.ai"
@@ -140,22 +143,22 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement> & FooterProps> = ({ cla
                         </div>
                     </div>
                     <div className="relative z-10 h-0 w-full outline outline-1 outline-offset-[-0.50px] outline-white/10" />
-                    <div className="relative z-10 flex flex-wrap items-start justify-end gap-4 self-stretch lg:gap-8">
-                        <Link href="/policies/information-security" className="cursor-pointer text-base font-medium leading-normal text-white/70 transition-colors hover:text-white">
-                            Information Security
-                        </Link>
-                        {/* <Link href="/policies/cookie-policy" className="cursor-pointer text-base font-medium leading-normal text-white/70 transition-colors hover:text-white">
-                        <Link href="/policies/pdpl" className="cursor-pointer text-base font-medium leading-normal text-white/70 transition-colors hover:text-white">
-                            PDPL Policy
-                        </Link>
-
-                        <Link href="/policies/clarification-text" className="cursor-pointer text-base font-medium leading-normal text-white/70 transition-colors hover:text-white">
-                            Clarification Text
-                        </Link>
-                        <Link href="/policies/storage-disposal" className="cursor-pointer text-base font-medium leading-normal text-white/70 transition-colors hover:text-white">
-                            Storage & Disposal
-                        </Link>
-                         */}
+                    <div className="relative z-10 flex flex-wrap items-center justify-between gap-4 self-stretch lg:gap-8">
+                        <span className="text-base font-medium leading-normal text-white/70">© Copyright 2026 Healysense</span>
+                        <div className="flex flex-wrap items-start justify-end gap-4 lg:gap-8">
+                            <Link href="/policies/terms-of-use" className="cursor-pointer text-base font-medium leading-normal text-white/70 transition-colors hover:text-white">
+                                Terms of Use
+                            </Link>
+                            <Link href="/policies/quality-compliance" className="cursor-pointer text-base font-medium leading-normal text-white/70 transition-colors hover:text-white">
+                                Quality & Compliance Policy
+                            </Link>
+                            <Link href="/policies/information-security" className="cursor-pointer text-base font-medium leading-normal text-white/70 transition-colors hover:text-white">
+                                Information Security
+                            </Link>
+                            <Link href="/policies/privacy" className="cursor-pointer text-base font-medium leading-normal text-white/70 transition-colors hover:text-white">
+                                Privacy Policy
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>
