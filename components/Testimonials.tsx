@@ -59,8 +59,8 @@ const Testimonials = () => {
                         />
                         <defs>
                             <linearGradient id="paint0_linear_7038_2365" x1="19.5472" y1="5.37518" x2="19.5472" y2="35" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="white" />
-                                <stop offset="1" stop-color="white" stop-opacity="0" />
+                                <stop stopColor="white" />
+                                <stop offset="1" stopColor="white" stopOpacity="0" />
                             </linearGradient>
                         </defs>
                     </svg>

@@ -24,12 +24,12 @@ const FAQ: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ className, ...pro
                         />
                         <defs>
                             <linearGradient id="paint0_linear_7037_4530" x1="11.7578" y1="2.71499" x2="11.7578" y2="25.8594" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="white" />
-                                <stop offset="1" stop-color="white" stop-opacity="0" />
+                                <stop stopColor="white" />
+                                <stop offset="1" stopColor="white" stopOpacity="0" />
                             </linearGradient>
                             <linearGradient id="paint1_linear_7037_4530" x1="28.3164" y1="14.4337" x2="28.3164" y2="37.5781" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="white" />
-                                <stop offset="1" stop-color="white" stop-opacity="0" />
+                                <stop stopColor="white" />
+                                <stop offset="1" stopColor="white" stopOpacity="0" />
                             </linearGradient>
                         </defs>
                     </svg>

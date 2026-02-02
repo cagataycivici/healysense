@@ -107,11 +107,13 @@ const PolicyPage = () => {
                                 <div key={index} className="mb-8">
                                     <h2 className="mb-4 text-2xl font-semibold text-gray-900">{section.title}</h2>
                                     {section.content && <p className="mb-6 leading-relaxed">{section.content}</p>}
-                                    {section.items && (
-                                        section.listStyle === 'none' ? (
+                                    {section.items &&
+                                        (section.listStyle === 'none' ? (
                                             <div className="mb-6 space-y-4">
                                                 {section.items.map((item, itemIndex) => (
-                                                    <p key={itemIndex} className="leading-relaxed">{renderTextWithBold(item)}</p>
+                                                    <p key={itemIndex} className="leading-relaxed">
+                                                        {renderTextWithBold(item)}
+                                                    </p>
                                                 ))}
                                             </div>
                                         ) : (
@@ -123,8 +125,7 @@ const PolicyPage = () => {
                                                     </li>
                                                 ))}
                                             </ul>
-                                        )
-                                    )}
+                                        ))}
                                     {section.footer && <p className="mb-6 leading-relaxed">{section.footer}</p>}
                                 </div>
                             ))}

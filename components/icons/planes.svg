@@ -7,20 +7,20 @@
   </g>
   <defs>
     <linearGradient id="paint0_linear_4200_8551" x1="5.03281" y1="22.1459" x2="5.03281" y2="24.6313" gradientUnits="userSpaceOnUse">
-      <stop stop-color="white" stop-opacity="0.85"/>
-      <stop offset="1" stop-color="white"/>
+      <stop stopColor="white" stopOpacity="0.85"/>
+      <stop offset="1" stopColor="white"/>
     </linearGradient>
     <linearGradient id="paint1_linear_4200_8551" x1="14.882" y1="1.37879" x2="14.882" y2="25.0303" gradientUnits="userSpaceOnUse">
-      <stop stop-color="white" stop-opacity="0.85"/>
-      <stop offset="1" stop-color="white"/>
+      <stop stopColor="white" stopOpacity="0.85"/>
+      <stop offset="1" stopColor="white"/>
     </linearGradient>
     <linearGradient id="paint2_linear_4200_8551" x1="20.6017" y1="13.7532" x2="20.6017" y2="26.4063" gradientUnits="userSpaceOnUse">
-      <stop stop-color="white" stop-opacity="0.85"/>
-      <stop offset="1" stop-color="white"/>
+      <stop stopColor="white" stopOpacity="0.85"/>
+      <stop offset="1" stopColor="white"/>
     </linearGradient>
     <linearGradient id="paint3_linear_4200_8551" x1="8.0952" y1="3.73623" x2="8.0952" y2="11.5408" gradientUnits="userSpaceOnUse">
-      <stop stop-color="white" stop-opacity="0.85"/>
-      <stop offset="1" stop-color="white"/>
+      <stop stopColor="white" stopOpacity="0.85"/>
+      <stop offset="1" stopColor="white"/>
     </linearGradient>
     <clipPath id="clip0_4200_8551">
       <rect width="28" height="28" fill="white" transform="translate(0.333008)"/>
