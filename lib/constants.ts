@@ -30,10 +30,6 @@ export const BG_GRADIENT_COLORS: Record<PrimaryColorType, { from: string; to: st
         from: '#AF811E',
         to: '#E1A21B'
     },
-    teal: {
-        from: '#1EAFA3',
-        to: '#1BE1D0'
-    },
     cyan: {
         from: '#1E92AF',
         to: '#1BB9E1'
@@ -51,12 +47,16 @@ export const BG_GRADIENT_COLORS: Record<PrimaryColorType, { from: string; to: st
         to: '#251BE1'
     },
     violet: {
-        from: '#531EAF ',
-        to: '#641BE1'
+        from: '#F37021',
+        to: '#FF8C42'
     },
     purple: {
-        from: '#531EAF',
-        to: '#641BE1'
+        from: '#F37021',
+        to: '#FF8C42'
+    },
+    teal: {
+        from: '#00AAAD',
+        to: '#00CACD'
     },
     fuchsia: {
         from: '#9E1EAF',

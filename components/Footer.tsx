@@ -46,7 +46,7 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement> & FooterProps> = ({ cla
         <AnimatedContainer>
             <div className={cn('container w-full overflow-hidden px-4 pb-8 pt-16', className)} style={{}} {...props}>
                 <div
-                    className="relative inline-flex w-full flex-1 flex-col items-start justify-start gap-8 overflow-hidden rounded-[28px] bg-gradient-to-b from-[#531EAF] to-[#641BE1] p-8"
+                    className="relative inline-flex w-full flex-1 flex-col items-start justify-start gap-8 overflow-hidden rounded-[28px] bg-gradient-to-b from-primary-600 to-primary-500 p-8"
                     style={{
                         boxShadow:
                             '0px 0px 1px 0px rgba(0,0,0,0.06), 0px 2px 2px 0px rgba(0,0,0,0.05), 0px 4px 3px 0px rgba(0,0,0,0.03), 0px 8px 3px 0px rgba(0,0,0,0.01), 0px 12px 3px 0px rgba(0,0,0,0.00), 0px 1px 1px 0px rgba(0,0,0,0.06), inset 0px -1px 1px 0px rgba(0,0,0,0.06)'
@@ -64,10 +64,10 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement> & FooterProps> = ({ cla
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="40" viewBox="0 0 24 40" fill="none">
                                     <g clipPath="url(#clip0_7009_11660)">
                                         <path d="M0.499817 6.66717V19.999L12.0465 13.3342V0.00012207L0.499817 6.66717Z" fill="white" />
-                                        <path d="M0.499817 33.3331L12.0465 26.6661V13.3343L0.499817 19.999V33.3331Z" fill="#DDD2EF" />
-                                        <path d="M23.5932 19.9988L12.0466 13.3341L0.499878 19.9988L12.0466 26.6659L23.5932 19.9988Z" fill="#531FAE" />
+                                        <path d="M0.499817 33.3331L12.0465 26.6661V13.3343L0.499817 19.999V33.3331Z" fill="#FFE8D6" />
+                                        <path d="M23.5932 19.9988L12.0466 13.3341L0.499878 19.9988L12.0466 26.6659L23.5932 19.9988Z" fill="#F37021" />
                                         <path d="M23.5932 19.9988L12.0466 13.3341L0.499878 19.9988L12.0466 26.6659L23.5932 19.9988Z" fill="white" fillOpacity="0.6" style={{ mixBlendMode: 'screen' }} />
-                                        <path d="M23.5932 6.66718L12.0466 13.3342V26.666L23.5932 19.999V6.66718Z" fill="#DDD2EF" />
+                                        <path d="M23.5932 6.66718L12.0466 13.3342V26.666L23.5932 19.999V6.66718Z" fill="#FFE8D6" />
                                         <path d="M23.5932 33.3331V19.999L12.0466 26.6661V40.0002L23.5932 33.3331Z" fill="white" />
                                     </g>
                                     <defs>
@@ -82,7 +82,7 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement> & FooterProps> = ({ cla
                                 </div>
                             </div>
                             <div className="flex flex-col items-start justify-start gap-2">
-                                <div className="max-w-md justify-start self-stretch text-base font-normal leading-normal text-white">Dokuz Eylül Üniversitesi İnciraltı Yerleşkesi, DEPARK Nar Grup, Ofis:P2/E Balçova/İzmir/Türkiye</div>
+                                <div className="max-w-md justify-start self-stretch text-base font-normal leading-normal text-white">İnciraltı Mah., Mithatpaşa Cad., No:56-20/Z 35330 İzmir/TÜRKİYE</div>
                                 <Link href="mailto:info@healysense.ai" className="justify-start self-stretch text-base font-normal leading-normal text-white transition-colors hover:text-white/70">
                                     info@healysense.ai
                                 </Link>
@@ -144,7 +144,7 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement> & FooterProps> = ({ cla
                     </div>
                     <div className="relative z-10 h-0 w-full outline outline-1 outline-offset-[-0.50px] outline-white/10" />
                     <div className="relative z-10 flex flex-wrap items-center justify-between gap-4 self-stretch lg:gap-8">
-                        <span className="text-base font-medium leading-normal text-white/70">© Copyright 2026 Healysense</span>
+                        <span className="text-base font-medium leading-normal text-white/70">© 2026 HEALYSENSE</span>
                         <div className="flex flex-wrap items-start justify-end gap-4 lg:gap-8">
                             <Link href="/policies/terms-of-use" className="cursor-pointer text-base font-medium leading-normal text-white/70 transition-colors hover:text-white">
                                 Terms of Use

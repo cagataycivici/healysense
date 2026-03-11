@@ -18,8 +18,9 @@ const Publications = () => {
         },
         {
             number: 3,
-            citation: 'Giray Nuri Mavis, Berkay Ahmet Durmus, Semih Burhan, and Serhat Tozburun "Conditional generative adversarial network-based image enhancement model for confocal microscopy", Photonics West, (19 January 2026)',
-            link: 'https://spie.org/photonics-west/presentation/Conditional-generative-adversarial-network-based-image-enhancement-model-for-confocal/13865-49'
+            citation:
+                'Giray Nuri Mavis, Berkay Ahmet Durmus, Semih Burhan, Dilek Nazli, Gunes Ozhan, and Serhat Tozburun "Conditional generative adversarial network-based image enhancement model for confocal microscopy", Proc. SPIE 13865, Computational Optical Imaging and Artificial Intelligence in Biomedical Sciences III, 138650C (5 March 2026); https://doi.org/10.1117/12.3079178',
+            link: 'https://doi.org/10.1117/12.3079178'
         }
     ];
 
@@ -29,7 +30,7 @@ const Publications = () => {
                 <div className="flex flex-col items-center gap-6">
                     <AnimatedContainer delay={0}>
                         <div
-                            className="relative flex size-[72px] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-b from-[#531EAF] to-[#641BE1]"
+                            className="relative flex size-[72px] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-b from-[#F37021] to-[#FF8C42]"
                             style={{
                                 boxShadow:
                                     '0px 1px 2px 0px rgba(0,0,0,0.10), 0px 3px 3px 0px rgba(0,0,0,0.09), 0px 7px 4px 0px rgba(0,0,0,0.05), 0px 12px 5px 0px rgba(0,0,0,0.01), 0px 19px 5px 0px rgba(0,0,0,0.00), inset 0px 2px 3px 0px rgba(255,255,255,0.25)'
@@ -74,7 +75,7 @@ const Publications = () => {
                 </div>
 
                 <AnimatedContainer delay={200}>
-                    <div className="relative max-w-4xl overflow-hidden rounded-[28px] bg-gradient-to-b from-violet-800 to-violet-700 p-6 sm:p-8">
+                    <div className="relative max-w-4xl overflow-hidden rounded-[28px] bg-gradient-to-b from-violet-600 to-violet-500 p-6 shadow-blue-card sm:p-8">
                         <div className="flex flex-col gap-5">
                             {publications.map((pub, index) => (
                                 <Link

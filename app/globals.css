@@ -1,7 +1,7 @@
+@import "primeicons/primeicons.css";
 html {
   font-size: 14px;
 }
-@import "primeicons/primeicons.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,18 +10,45 @@ html {
   --background: #ffffff;
   --foreground: #171717;
 
-  /* Fixed violet theme variables */
-  --violet-50: 245 243 255;
-  --violet-100: 237 233 254;
-  --violet-200: 221 214 254;
-  --violet-300: 196 181 253;
-  --violet-400: 167 139 250;
-  --violet-500: 139 92 246;
-  --violet-600: 124 58 237;
-  --violet-700: 109 40 217;
-  --violet-800: 91 33 182;
-  --violet-900: 76 29 149;
-  --violet-950: 46 16 101;
+  /* Softened orange theme variables (#F37021) - More vibrant/less brown */
+  --violet-50: 255 248 242;
+  --violet-100: 255 238 224;
+  --violet-200: 255 218 189;
+  --violet-300: 255 192 144;
+  --violet-400: 255 162 92;
+  --violet-500: 243 112 33;
+  --violet-600: 235 115 50;  /* Softer */
+  --violet-700: 215 105 40;  /* Softer */
+  --violet-800: 195 95 30;   /* Softer */
+  --violet-900: 175 85 20;   /* Softer */
+  --violet-950: 155 75 10;   /* Softer */
+
+  --primary-50: 255 248 242;
+  --primary-100: 255 238 224;
+  --primary-200: 255 218 189;
+  --primary-300: 255 192 144;
+  --primary-400: 255 162 92;
+  --primary-500: 243 112 33;
+  --primary-600: 235 115 50;
+  --primary-700: 215 105 40;
+  --primary-800: 195 95 30;
+  --primary-900: 175 85 20;
+  --primary-950: 155 75 10;
+
+  /* Teal secondary theme variables (#00AAAD) */
+  --secondary-50: 230 250 250;
+  --secondary-100: 204 242 243;
+  --secondary-200: 153 226 228;
+  --secondary-300: 102 210 213;
+  --secondary-400: 51 194 197;
+  --secondary-500: 0 170 173;
+  --secondary-600: 0 145 148;
+  --secondary-700: 0 120 123;
+  --secondary-800: 0 95 98;
+  --secondary-900: 0 70 72;
+  --secondary-950: 0 45 47;
+
+
 
   /* Surface colors (slate) */
   --surface-0: 255 255 255;
@@ -37,15 +64,28 @@ html {
   --surface-900: 15 23 42;
   --surface-950: 2 6 23;
 
-  /* Primary gradient colors */
-  --bg-gradient-from: rgb(83, 30, 175);
-  --bg-gradient-to: rgb(100, 27, 225);
+  /* Primary gradient colors (Orange) */
+  --bg-gradient-from: rgb(243, 112, 33);
+  --bg-gradient-to: rgb(255, 140, 66);
+
+  /* Secondary gradient colors (Teal) */
+  --secondary-gradient-from: rgb(0, 170, 173);
+  --secondary-gradient-to: rgb(0, 202, 206);
+
+  --gradient-secondary: linear-gradient(
+    180deg,
+    var(--secondary-gradient-from) 0%,
+    var(--secondary-gradient-to) 100%
+  );
+
+
 
   --gradient-background: linear-gradient(
     180deg,
     var(--bg-gradient-from) 0%,
     var(--bg-gradient-to) 100%
   );
+
   --gradient-background-to-top: linear-gradient(
     0deg,
     var(--bg-gradient-from) 0%,
@@ -69,14 +109,14 @@ html {
     0px 4px 3px 0px rgba(0, 0, 0, 0.03), 0px 2px 2px 0px rgba(0, 0, 0, 0.05),
     0px 0px 1px 0px rgba(0, 0, 0, 0.06);
 
-  --blue-card-shadow: 0px 59px 16px -8px rgba(120, 149, 206, 0),
-    0px 38px 15px -8px rgba(120, 149, 206, 0.01),
-    0px 21px 13px -8px rgba(120, 149, 206, 0.04),
-    0px 9px 9px -4px rgba(120, 149, 206, 0.07),
-    0px 2px 5px 0px rgba(120, 149, 206, 0.08);
+  --blue-card-shadow: 0px 59px 16px -8px rgba(243, 112, 33, 0),
+    0px 38px 15px -8px rgba(243, 112, 33, 0.01),
+    0px 21px 13px -8px rgba(243, 112, 33, 0.04),
+    0px 9px 9px -4px rgba(243, 112, 33, 0.07),
+    0px 2px 5px 0px rgba(243, 112, 33, 0.08);
 
-  --stroke-shadow: 0px 1px 2px 0px rgba(164, 172, 185, 0.24),
-    0px 0px 0px 1px rgba(18, 55, 105, 0.08);
+  --stroke-shadow: 0px 1px 2px 0px rgba(243, 112, 33, 0.24),
+    0px 0px 0px 1px rgba(243, 112, 33, 0.08);
 }
 
 
@@ -147,5 +187,13 @@ body {
 
   .hero-before-after-title {
     background: rgba(255, 255, 255, 0.50);
+  }
+
+  .rebrand-filter {
+    filter: hue-rotate(145deg) saturate(1.8) brightness(1.2);
+  }
+
+  .teal-filter {
+    filter: hue-rotate(275deg) saturate(1.5) brightness(1);
   }
 }

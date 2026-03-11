@@ -77,7 +77,17 @@ const Hero = () => {
                         </div>
                     </div>
                     <div className="relative z-10 mt-8 px-6 lg:absolute lg:bottom-12 lg:left-1/2 lg:mt-0 lg:w-full lg:-translate-x-1/2 lg:px-0">
-                        <div className="flex flex-col items-center justify-center gap-8 lg:flex-row lg:gap-16">
+                        <div className="flex flex-col items-center justify-center gap-8 lg:flex-row lg:gap-12">
+                            {/* Funded by PrimeTek */}
+                            <div className="flex items-center gap-5">
+                                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 p-2">
+                                    <Image src="/images/primetek_logo.png" alt="PrimeTek" width={40} height={40} className="object-contain brightness-0 invert" />
+                                </div>
+                                <div className="flex flex-col">
+                                    <span className="whitespace-nowrap text-2xl font-bold text-white/90">Funded by</span>
+                                    <span className="whitespace-nowrap text-base text-white/50">PrimeTek</span>
+                                </div>
+                            </div>
                             {/*CE Marked - uncomment when ready*/}
                             <div className="flex items-center gap-5">
                                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10">
@@ -90,8 +100,8 @@ const Hero = () => {
                                     </svg>
                                 </div>
                                 <div className="flex flex-col">
-                                    <span className="text-2xl font-bold text-white/90">CE Marked</span>
-                                    <span className="text-base text-white/50">Marked Algorithms</span>
+                                    <span className="whitespace-nowrap text-2xl font-bold text-white/90">CE Marked</span>
+                                    <span className="whitespace-nowrap text-base text-white/50">Marked Algorithms</span>
                                 </div>
                             </div>
                             {/* PACS Integration */}
@@ -106,18 +116,18 @@ const Hero = () => {
                                     </svg>
                                 </div>
                                 <div className="flex flex-col">
-                                    <span className="text-2xl font-bold text-white/90">PACS Integrated</span>
-                                    <span className="text-base text-white/50">Direct Integration</span>
+                                    <span className="whitespace-nowrap text-2xl font-bold text-white/90">PACS Integrated</span>
+                                    <span className="whitespace-nowrap text-base text-white/50">Direct Integration</span>
                                 </div>
                             </div>
                             {/* ISO Certification */}
                             <div className="flex items-center gap-5">
                                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10">
-                                    <Image src="/images/iso.png" alt="ISO Certified" width={40} height={40} className="opacity-90" />
+                                    <Image src="/images/iso.png" alt="ISO Certified" width={40} height={40} className="object-contain opacity-90 brightness-0 invert" />
                                 </div>
                                 <div className="flex flex-col">
-                                    <span className="text-2xl font-bold text-white/90">ISO Certified</span>
-                                    <span className="text-base text-white/50">Certified Company</span>
+                                    <span className="whitespace-nowrap text-2xl font-bold text-white/90">ISO Certified</span>
+                                    <span className="whitespace-nowrap text-base text-white/50">Certified Company</span>
                                 </div>
                             </div>
                             <div className="flex items-center gap-5">
@@ -129,8 +139,8 @@ const Hero = () => {
                                     </svg>
                                 </div>
                                 <div className="flex flex-col">
-                                    <span className="text-2xl font-bold text-white/90">Cyber Secured</span>
-                                    <span className="text-base text-white/50">Tested for Security</span>
+                                    <span className="whitespace-nowrap text-2xl font-bold text-white/90">Cyber Secured</span>
+                                    <span className="whitespace-nowrap text-base text-white/50">Tested for Security</span>
                                 </div>
                             </div>
                         </div>

@@ -10,7 +10,8 @@ const config: Config = {
             backgroundImage: {
                 'main-gradient': 'var(--gradient-background)',
                 'main-gradient-to-top': 'var(--gradient-background-to-top)',
-                'main-gradient-to-left': 'var(--gradient-background-to-left)'
+                'main-gradient-to-left': 'var(--gradient-background-to-left)',
+                'secondary-gradient': 'var(--gradient-secondary)'
             },
             colors: {
                 /*Primary Colors*/
@@ -25,6 +26,19 @@ const config: Config = {
                 'primary-800': 'rgb(var(--primary-800))',
                 'primary-900': 'rgb(var(--primary-900))',
                 'primary-950': 'rgb(var(--primary-950))',
+                /*Secondary Colors (Teal)*/
+                'secondary-50': 'rgb(var(--secondary-50))',
+                'secondary-100': 'rgb(var(--secondary-100))',
+                'secondary-200': 'rgb(var(--secondary-200))',
+                'secondary-300': 'rgb(var(--secondary-300))',
+                'secondary-400': 'rgb(var(--secondary-400))',
+                'secondary-500': 'rgb(var(--secondary-500))',
+                'secondary-600': 'rgb(var(--secondary-600))',
+                'secondary-700': 'rgb(var(--secondary-700))',
+                'secondary-800': 'rgb(var(--secondary-800))',
+                'secondary-900': 'rgb(var(--secondary-900))',
+                'secondary-950': 'rgb(var(--secondary-950))',
+
                 /*Surface Colors*/
                 'surface-0': 'rgb(var(--surface-0))',
                 'surface-100': 'rgb(var(--surface-100))',
@@ -36,7 +50,30 @@ const config: Config = {
                 'surface-700': 'rgb(var(--surface-700))',
                 'surface-800': 'rgb(var(--surface-800))',
                 'surface-900': 'rgb(var(--surface-900))',
-                'surface-950': 'rgb(var(--surface-950))'
+                'surface-950': 'rgb(var(--surface-950))',
+                /*Violet and Purple mapped to Orange*/
+                'violet-50': 'rgb(var(--violet-50))',
+                'violet-100': 'rgb(var(--violet-100))',
+                'violet-200': 'rgb(var(--violet-200))',
+                'violet-300': 'rgb(var(--violet-300))',
+                'violet-400': 'rgb(var(--violet-400))',
+                'violet-500': 'rgb(var(--violet-500))',
+                'violet-600': 'rgb(var(--violet-600))',
+                'violet-700': 'rgb(var(--violet-700))',
+                'violet-800': 'rgb(var(--violet-800))',
+                'violet-900': 'rgb(var(--violet-900))',
+                'violet-950': 'rgb(var(--violet-950))',
+                'purple-50': 'rgb(var(--violet-50))',
+                'purple-100': 'rgb(var(--violet-100))',
+                'purple-200': 'rgb(var(--violet-200))',
+                'purple-300': 'rgb(var(--violet-300))',
+                'purple-400': 'rgb(var(--violet-400))',
+                'purple-500': 'rgb(var(--violet-500))',
+                'purple-600': 'rgb(var(--violet-600))',
+                'purple-700': 'rgb(var(--violet-700))',
+                'purple-800': 'rgb(var(--violet-800))',
+                'purple-900': 'rgb(var(--violet-900))',
+                'purple-950': 'rgb(var(--violet-950))'
             },
             borderRadius: {
                 '4xl': '2rem',

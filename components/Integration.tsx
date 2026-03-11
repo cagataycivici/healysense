@@ -27,7 +27,7 @@ const Integration = () => {
         <div className="container flex flex-col items-start justify-end gap-16 pb-8 pt-16">
             <div className="flex w-full flex-col items-center justify-start gap-4">
                 <div
-                    className="relative flex h-[72px] w-[72px] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-b from-[#531EAF] to-[#641BE1]"
+                    className="relative flex h-[72px] w-[72px] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-b from-[#F37021] to-[#FF8C42]"
                     style={{
                         boxShadow:
                             '0px 1px 2px 0px rgba(0,0,0,0.10), 0px 3px 3px 0px rgba(0,0,0,0.09), 0px 7px 4px 0px rgba(0,0,0,0.05), 0px 12px 5px 0px rgba(0,0,0,0.01), 0px 19px 5px 0px rgba(0,0,0,0.00), inset 0px 2px 3px 0px rgba(255,255,255,0.25)'
@@ -92,10 +92,9 @@ const Integration = () => {
                 {integrations.map((integration, index) => (
                     <AnimatedContainer key={index} delay={index * 200} className="mx-auto flex w-full flex-1 flex-col items-center justify-start gap-4">
                         <div
-                            className="relative flex h-[370px] w-full flex-col overflow-hidden rounded-[28px] bg-gradient-to-b from-[#531EAF] to-[#641BE1]"
+                            className="relative flex h-[370px] w-full flex-col overflow-hidden rounded-[28px] bg-gradient-to-b from-primary-600 to-primary-500"
                             style={{
-                                boxShadow:
-                                    '0px 2px 5px 0px rgba(120,149,206,0.08), 0px 9px 9px -4px rgba(120,149,206,0.07), 0px 21px 13px -8px rgba(120,149,206,0.04), 0px 38px 15px -8px rgba(120,149,206,0.01), 0px 59px 16px -8px rgba(120,149,206,0.00)'
+                                boxShadow: '0px 2px 5px 0px rgba(243,112,33,0.08), 0px 9px 9px -4px rgba(243,112,33,0.07), 0px 21px 13px -8px rgba(243,112,33,0.04), 0px 38px 15px -8px rgba(243,112,33,0.01), 0px 59px 16px -8px rgba(243,112,33,0.00)'
                             }}
                         >
                             <div className="relative z-10 flex justify-center p-4">
@@ -113,21 +112,21 @@ const Integration = () => {
                                 /* Marketplace: 80% visible on desktop, full on mobile, positioned right-bottom */
                                 <div className="absolute inset-0 flex items-end justify-end">
                                     <div className="relative bottom-[-20%] right-[-20%] h-full w-[180%] lg:bottom-0 lg:right-0 lg:w-[140%]">
-                                        <Image src="/images/card-marketplace.png" alt="Marketplace Interface" fill className="object-contain object-bottom lg:object-right-bottom" sizes="(max-width: 1024px) 100vw, 120vw" />
+                                        <Image src="/images/card-marketplace.png" alt="Marketplace Interface" fill className="rebrand-filter object-contain object-bottom lg:object-right-bottom" sizes="(max-width: 1024px) 100vw, 120vw" />
                                     </div>
                                 </div>
                             ) : integration.tag.includes('Local') ? (
                                 /* Local Installation: full width and centered */
                                 <div className="absolute inset-0 flex items-center justify-center">
                                     <div className="relative -top-2 h-full w-full">
-                                        <Image src="/images/card-local.png" alt="Local Installation Interface" fill className="object-cover md:object-contain" sizes="(max-width: 1024px) 100vw, 50vw" />
+                                        <Image src="/images/card-local.png" alt="Local Installation Interface" fill className="rebrand-filter object-cover md:object-contain" sizes="(max-width: 1024px) 100vw, 50vw" />
                                     </div>
                                 </div>
                             ) : (
                                 /* Cloud Base: positioned -10% from bottom */
                                 <div className="absolute inset-0 flex items-end justify-center" style={{ bottom: '-10%' }}>
                                     <div className="relative h-full w-9/12">
-                                        <Image src="/images/card-cloud.png" alt="Cloud Services Interface" fill className="object-contain object-bottom" sizes="(max-width: 1024px) 100vw, 50vw" />
+                                        <Image src="/images/card-cloud.png" alt="Cloud Services Interface" fill className="rebrand-filter object-contain object-bottom" sizes="(max-width: 1024px) 100vw, 50vw" />
                                     </div>
                                 </div>
                             )}
@@ -141,7 +140,7 @@ const Integration = () => {
                             <div className="flex flex-col items-start justify-start gap-[13.71px] self-stretch">
                                 {integration.features.map((feature, featureIndex) => (
                                     <div key={featureIndex} className="flex items-center justify-start gap-3 self-stretch">
-                                        <i className="pi pi-check-circle h-4 w-4 text-surface-500" style={{ fontSize: '16px' }}></i>
+                                        <i className="pi pi-check-circle h-4 w-4 text-primary-500" style={{ fontSize: '16px' }}></i>
                                         <div className="flex-1 justify-start text-lg font-normal leading-none text-surface-500">{feature}</div>
                                     </div>
                                 ))}

@@ -7,7 +7,7 @@ const FAQ: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ className, ...pro
         <div className={cn('container flex flex-col items-center justify-start gap-14 pb-8 pt-16', className)} {...props}>
             <div className="flex flex-col items-center justify-start gap-6 self-stretch">
                 <div
-                    className="relative flex size-[72px] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-b from-[#531EAF] to-[#641BE1]"
+                    className="relative flex size-[72px] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-b from-[#F37021] to-[#FF8C42]"
                     style={{
                         boxShadow:
                             '0px 1px 2px 0px rgba(0,0,0,0.10), 0px 3px 3px 0px rgba(0,0,0,0.09), 0px 7px 4px 0px rgba(0,0,0,0.05), 0px 12px 5px 0px rgba(0,0,0,0.01), 0px 19px 5px 0px rgba(0,0,0,0.00), inset 0px 2px 3px 0px rgba(255,255,255,0.25)'

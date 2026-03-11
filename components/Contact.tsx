@@ -37,7 +37,7 @@ const Contact = () => {
 
     const [errors, setErrors] = useState<FormErrors>({});
 
-    const products = ['AortaSense Pro', 'AcutePanaMaster', 'AppendiXpert', 'CholeciAssist', 'DivertiSense', 'UreteralStoneSense'];
+    const products = ['AortaSense Pro', 'AbdoXpert Suite'];
 
     const validateEmail = (email: string): boolean => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -128,13 +128,13 @@ const Contact = () => {
     };
 
     return (
-        <div className="container pb-[30rem] pt-16">
-            <div className="relative mx-auto mb-96 rounded-3xl bg-main-gradient px-10 pb-40 pt-10 lg:mb-40 lg:max-w-none lg:rounded-4xl lg:p-20">
+        <div className="container pb-[15rem] pt-[15rem]">
+            <div className="relative mx-auto mb-64 rounded-3xl bg-main-gradient px-10 pb-[30rem] pt-10 lg:mb-64 lg:max-w-none lg:rounded-4xl lg:p-20">
                 <div className="lg:w-1/2">
                     <h1 className="title text-3xl !leading-tight lg:text-5xl">Ready to Integrate Our AI Solutions Into Your Workflow</h1>
                     <p className="mt-4 text-lg text-white/64 lg:text-xl">Start using the power of artificial intelligence to enrich your radiologic workflow.</p>
                 </div>
-                <AnimatedContainer className="mt-10 h-0 lg:absolute lg:right-14 lg:top-14 lg:mt-0">
+                <AnimatedContainer className="mt-10 lg:absolute lg:right-14 lg:top-14 lg:mt-0">
                     <form onSubmit={onSubmit} className="mx-auto max-w-lg space-y-4 rounded-3xl bg-surface-0 p-6 shadow-blue-card lg:w-[32rem] lg:rounded-4xl lg:p-8">
                         {state.succeeded && <div className="rounded-lg bg-green-50 p-4 text-center text-green-800">Thank you! Your message has been sent successfully.</div>}
                         {state.errors && Object.keys(state.errors).length > 0 && <div className="rounded-lg bg-red-50 p-4 text-center text-red-800">There was an error submitting your form. Please try again.</div>}
@@ -205,9 +205,9 @@ interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement
 }
 
 const Input: React.FC<InputProps> = ({ className, ...props }) => {
-    return <input className={cn('min-h-10 w-full rounded-full border border-transparent bg-transparent px-4 py-1 shadow-stroke outline-none transition-colors focus:border-blue-500', className)} {...props} />;
+    return <input className={cn('min-h-10 w-full rounded-full border border-transparent bg-transparent px-4 py-1 shadow-stroke outline-none transition-colors focus:border-secondary-500', className)} {...props} />;
 };
 
 const Textarea: React.FC<TextareaProps> = ({ className, rows = 4, ...props }) => {
-    return <textarea rows={rows} className={cn('min-h-10 w-full resize-none rounded-2xl border border-transparent bg-transparent p-3 shadow-stroke outline-none transition-colors focus:border-blue-500', className)} {...props} />;
+    return <textarea rows={rows} className={cn('min-h-10 w-full resize-none rounded-2xl border border-transparent bg-transparent p-3 shadow-stroke outline-none transition-colors focus:border-secondary-500', className)} {...props} />;
 };

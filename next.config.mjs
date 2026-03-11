@@ -28,7 +28,8 @@ const nextConfig = {
         fileLoaderRule.exclude = /\.svg$/i;
 
         return config;
-    }
+    },
+    turbopack: {}
 };
 
 export default nextConfig;
