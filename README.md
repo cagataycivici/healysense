@@ -1,4 +1,4 @@
-Genesis is a [Next.js](https://nextjs.org/) project for Healysense bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Genesis is a [Next.js](https://nextjs.org/) project for Healysense website bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
