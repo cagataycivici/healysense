@@ -43,7 +43,7 @@ const Hero = () => {
                                     <div className="flex items-center justify-start gap-2">
                                         <div className="hero-before-after-item flex w-24 flex-col items-start justify-center overflow-hidden">
                                             <div className="flex items-center justify-center self-stretch bg-white/10 p-2">
-                                                <div className="text-lg font-bold tracking-wide text-white lg:text-xl">&lt; 3m</div>
+                                                <div className="text-lg font-bold tracking-wide text-white lg:text-xl">&lt; 1m</div>
                                             </div>
                                         </div>
                                     </div>
@@ -79,15 +79,15 @@ const Hero = () => {
                     <div className="relative z-10 mt-8 px-6 lg:absolute lg:bottom-12 lg:left-1/2 lg:mt-0 lg:w-full lg:-translate-x-1/2 lg:px-0">
                         <div className="flex flex-col items-center justify-center gap-8 lg:flex-row lg:gap-12">
                             {/* Funded by PrimeTek */}
-                            <div className="flex items-center gap-5">
-                                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 p-2">
-                                    <Image src="/images/primetek_logo.png" alt="PrimeTek" width={40} height={40} className="object-contain brightness-0 invert" />
+                            <a href="https://www.primetek.com.tr/" target="_blank" rel="noopener noreferrer" className="group flex cursor-pointer items-center gap-5">
+                                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 transition-colors group-hover:bg-white/20">
+                                    <Image src="/images/primetek_logo2.png" alt="PrimeTek" width={32} height={32} className="object-contain opacity-80 brightness-0 invert" />
                                 </div>
                                 <div className="flex flex-col">
-                                    <span className="whitespace-nowrap text-2xl font-bold text-white/90">Funded by</span>
-                                    <span className="whitespace-nowrap text-base text-white/50">PrimeTek</span>
+                                    <span className="whitespace-nowrap text-2xl font-bold text-white/90 transition-colors group-hover:text-white">Funded by</span>
+                                    <span className="whitespace-nowrap text-base text-white/50 transition-colors group-hover:text-white/70">PrimeTek</span>
                                 </div>
-                            </div>
+                            </a>
                             {/*CE Marked - uncomment when ready*/}
                             <div className="flex items-center gap-5">
                                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10">
@@ -130,8 +130,8 @@ const Hero = () => {
                                     <span className="whitespace-nowrap text-base text-white/50">Certified Company</span>
                                 </div>
                             </div>
-                            <div className="flex items-center gap-5">
-                                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10">
+                            <a href="https://www.cyberwhiz.co.uk/" target="_blank" rel="noopener noreferrer" className="group flex cursor-pointer items-center gap-5">
+                                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 transition-colors group-hover:bg-white/20">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 2l8 4v5c0 5.25-3.5 10.74-8 12-4.5-1.26-8-6.75-8-12V6l8-4z" />
                                         <circle cx="12" cy="10" r="2" />
@@ -139,10 +139,10 @@ const Hero = () => {
                                     </svg>
                                 </div>
                                 <div className="flex flex-col">
-                                    <span className="whitespace-nowrap text-2xl font-bold text-white/90">Cyber Secured</span>
-                                    <span className="whitespace-nowrap text-base text-white/50">Tested for Security</span>
+                                    <span className="whitespace-nowrap text-2xl font-bold text-white/90 transition-colors group-hover:text-white">Cyber Secured</span>
+                                    <span className="whitespace-nowrap text-base text-white/50 transition-colors group-hover:text-white/70">Tested by CyberWhiz</span>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                     <div className="absolute -bottom-[36rem] z-0">

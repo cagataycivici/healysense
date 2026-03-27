@@ -24,14 +24,14 @@ export default function Home() {
             <div id="partners">
                 <PartnersLogo />
             </div>
+            <div id="integration">
+                <Integration />
+            </div>
             <div id="partners">
                 <GrantsAwards />
             </div>
             <div id="showreel">
                 <VideoFeature />
-            </div>
-            <div id="integration">
-                <Integration />
             </div>
             <div id="team">
                 <Team />
