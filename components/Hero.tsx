@@ -26,8 +26,8 @@ const Hero = () => {
                         <div className="flex flex-col gap-8 px-6 pt-10 lg:mt-24 lg:flex-row lg:items-center lg:gap-16 lg:px-0 lg:pt-0">
                             <div className="flex flex-1 flex-col lg:ml-2">
                                 <h1 className="title mx-auto text-center text-5xl font-semibold !leading-tight text-white/90 lg:mx-0 lg:text-left lg:text-6xl">
-                                    Discover the Power of <br />
-                                    AI Driven Hybrid Solutions
+                                    AI-Powered Triage for <br />
+                                    Abdominal Emergencies
                                 </h1>
                                 <p className="mx-auto mt-6 text-center text-xl font-normal leading-normal text-white/60 lg:mx-0 lg:text-left">
                                     Models have been comprehensively trained and validated on heterogeneous datasets covering emergency thoracic CT and abdominal CT scans.
