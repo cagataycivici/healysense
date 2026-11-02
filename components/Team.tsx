@@ -1,8 +1,26 @@
+'use client';
 import AnimatedContainer from '@/components/AnimatedContainer';
+import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useCallback } from 'react';
 
 const Team = () => {
+    const [emblaRef, emblaApi] = useEmblaCarousel({ align: 'start', containScroll: 'trimSnaps' });
+
+    // wrap around at the ends, like the News and Showreel sliders
+    const handlePrev = useCallback(() => {
+        if (!emblaApi) return;
+        if (emblaApi.canScrollPrev()) emblaApi.scrollPrev();
+        else emblaApi.scrollTo(emblaApi.scrollSnapList().length - 1);
+    }, [emblaApi]);
+
+    const handleNext = useCallback(() => {
+        if (!emblaApi) return;
+        if (emblaApi.canScrollNext()) emblaApi.scrollNext();
+        else emblaApi.scrollTo(0);
+    }, [emblaApi]);
+
     return (
         <AnimatedContainer className="mx-auto flex w-full max-w-[1300px] flex-col items-center justify-start gap-16 self-stretch px-12 py-32">
             <div className="flex w-full flex-col items-center justify-start gap-4">
@@ -57,7 +75,7 @@ const Team = () => {
 
             <div className="mt-16 w-full">
                 <div className="flex flex-col items-start gap-8 2xl:flex-row 2xl:gap-16">
-                    <div className="flex-1 2xl:max-w-md">
+                    <div className="mx-auto w-full max-w-3xl 2xl:mx-0 2xl:max-w-md 2xl:flex-shrink-0">
                         <div className="text-center 2xl:text-left">
                             <span className="text-lg font-normal leading-normal text-surface-700 lg:text-2xl">Dedicated experts from different fields teamed up and created team. </span>
                             <br />
@@ -73,38 +91,50 @@ const Team = () => {
                             <br />
                             <span className="text-lg font-normal leading-normal text-surface-700 lg:text-2xl">Join our journey to redefine medical analysis and meet our team.</span>
                         </div>
+                        <div className="mt-10 flex items-center justify-center gap-6 2xl:justify-start">
+                            <button onClick={handlePrev} aria-label="Previous team member" className="h-12 w-[5.5rem] rounded-full border-0 border-white/12 shadow-stroke transition-transform duration-200 hover:bg-surface-100/20">
+                                <i className="pi pi-arrow-left text-xl"></i>
+                            </button>
+                            <button onClick={handleNext} aria-label="Next team member" className="h-12 w-[5.5rem] rounded-full border-0 border-white/12 shadow-stroke transition-transform duration-200 hover:bg-surface-100/20">
+                                <i className="pi pi-arrow-right text-xl"></i>
+                            </button>
+                        </div>
                     </div>
 
-                    <div className="w-full flex-1">
-                        <div className="flex flex-wrap justify-center gap-6 lg:flex-nowrap lg:gap-12">
+                    <div className="-my-6 w-full min-w-0 flex-1 overflow-hidden py-6" ref={emblaRef}>
+                        <div className="flex gap-6 lg:gap-12">
                             {startupTeamData.map((item, index) => (
-                                <AnimatedContainer key={index} delay={200 * index} className="group relative h-[300px] w-[220px] flex-shrink-0 overflow-hidden rounded-[28px] shadow-blue-card sm:h-[372px] sm:w-[260px]">
+                                <div key={index} className="group relative h-[300px] w-[220px] flex-shrink-0 overflow-hidden rounded-[28px] shadow-blue-card sm:h-[372px] sm:w-[260px]">
                                     <Image className="object-cover" fill sizes="(max-width: 640px) 220px, 260px" src={item.image} alt={item.name} />
                                     <div className="absolute inset-0 flex flex-col items-start justify-end gap-4 overflow-hidden rounded-[28px] bg-gradient-to-b from-black/0 to-black/70 p-8 opacity-0 transition-all group-hover:opacity-100">
                                         <div className="inline-flex items-start justify-start gap-[9.14px]">
                                             <Link
-                                                href={item.facebook}
+                                                href={item.linkedin}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
+                                                aria-label={`${item.name} on LinkedIn`}
                                                 className="backdrop-blur-xs flex w-14 items-center justify-center gap-2 overflow-hidden rounded-full bg-white/5 px-4 py-2 outline outline-[0.50px] outline-offset-[-0.50px] outline-white/10"
                                             >
                                                 <i className="pi pi-linkedin text-base text-white"></i>
                                             </Link>
-                                            <Link
-                                                href={item.twitter}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="backdrop-blur-xs flex w-14 items-center justify-center gap-2 overflow-hidden rounded-full bg-white/5 px-4 py-2 outline outline-[0.50px] outline-offset-[-0.50px] outline-white/10"
-                                            >
-                                                <i className="pi pi-twitter text-base text-white"></i>
-                                            </Link>
+                                            {item.twitter && (
+                                                <Link
+                                                    href={item.twitter}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    aria-label={`${item.name} on X`}
+                                                    className="backdrop-blur-xs flex w-14 items-center justify-center gap-2 overflow-hidden rounded-full bg-white/5 px-4 py-2 outline outline-[0.50px] outline-offset-[-0.50px] outline-white/10"
+                                                >
+                                                    <i className="pi pi-twitter text-base text-white"></i>
+                                                </Link>
+                                            )}
                                         </div>
                                         <div className="flex flex-col items-start justify-start gap-1 self-stretch">
                                             <div className="justify-start self-stretch text-2xl font-semibold leading-normal text-white">{item.name}</div>
                                             <div className="justify-start self-stretch text-lg font-normal leading-normal text-white">{item.role}</div>
                                         </div>
                                     </div>
-                                </AnimatedContainer>
+                                </div>
                             ))}
                         </div>
                     </div>
@@ -116,29 +146,47 @@ const Team = () => {
 
 export default Team;
 
-const startupTeamData = [
+type TeamMember = {
+    image: string;
+    name: string;
+    role: string;
+    linkedin: string;
+    twitter?: string;
+};
+
+const startupTeamData: TeamMember[] = [
     {
         image: '/images/team-1.jpg',
-        name: 'Serhat Tozburun, PhD',
-        role: 'Founder',
-        twitter: 'https://x.com/SerhatTozburun',
-        facebook: 'https://www.linkedin.com/in/serhat-tozburun-39627946/',
-        github: 'x'
+        name: 'Çağatay Çivici',
+        role: 'CEO & Co-Founder',
+        twitter: 'https://x.com/cagataycivici',
+        linkedin: 'https://www.linkedin.com/in/%C3%A7a%C4%9Fatay-%C3%A7ivici-1579b0129/'
     },
     {
         image: '/images/team-2.jpg',
-        name: 'Semih Burhan',
-        role: 'COO & Data Scientist',
-        twitter: 'https://x.com/smhburhan',
-        facebook: ' https://www.linkedin.com/in/smhhburhan/',
-        github: 'x'
+        name: 'Canan Altay, MD',
+        role: 'CSO',
+        linkedin: 'https://www.linkedin.com/in/canan-altay-228b6467/'
     },
     {
         image: '/images/team-3.jpg',
+        name: 'Serhat Tozburun, PhD',
+        role: 'Co-Founder & CTO',
+        twitter: 'https://x.com/SerhatTozburun',
+        linkedin: 'https://www.linkedin.com/in/serhat-tozburun-39627946/'
+    },
+    {
+        image: '/images/team-4.jpg',
+        name: 'Semih Burhan',
+        role: 'COO & Data Scientist',
+        twitter: 'https://x.com/smhburhan',
+        linkedin: 'https://www.linkedin.com/in/smhhburhan/'
+    },
+    {
+        image: '/images/team-5.jpg',
         name: 'Berkay Durmuş',
         role: 'AI Engineer',
         twitter: 'https://x.com/bdurrmus',
-        facebook: 'https://www.linkedin.com/in/berkayahmetdurmus/',
-        github: 'x'
+        linkedin: 'https://www.linkedin.com/in/berkayahmetdurmus/'
     }
 ];

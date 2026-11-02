@@ -3,7 +3,7 @@ import AnimatedContainer from '@/components/AnimatedContainer';
 import Link from 'next/link';
 
 const Publications = () => {
-    const publications = [
+    const publications: { number: number; citation: string; link?: string }[] = [
         {
             number: 1,
             citation:
@@ -21,6 +21,20 @@ const Publications = () => {
             citation:
                 'Giray Nuri Mavis, Berkay Ahmet Durmus, Semih Burhan, Dilek Nazli, Gunes Ozhan, and Serhat Tozburun "Conditional generative adversarial network-based image enhancement model for confocal microscopy", Proc. SPIE 13865, Computational Optical Imaging and Artificial Intelligence in Biomedical Sciences III, 138650C (5 March 2026); https://doi.org/10.1117/12.3079178',
             link: 'https://doi.org/10.1117/12.3079178'
+        },
+        {
+            number: 4,
+            citation: 'C. Arikan, O.D. Koygun, S.A. Kurnaz, C. Altay, H. Ellidokuz, and F. Cosgun "Diagnostic Performance of a Deep Learning Model for Acute Appendicitis on Abdominal CT in the Emergency Department", Sci. Rep. (Under Revision)'
+        },
+        {
+            number: 5,
+            citation:
+                'M.E. Oguzturk, B.N. Yildirim, C. Altay, I. Basara-Akin, F. Barlik, and A. Balci "The Relationship of Abdominal Aortic Calcification Volume with Age, Gender, Hepatic Steatosis, and Subcutaneous Adipose Tissue Thickness", 30th Annual Meeting of the Turkish Magnetic Resonance Society 4231 (15-18 April 2026)'
+        },
+        {
+            number: 6,
+            citation:
+                'C. Arikan, Ö.D. Koygun, S.A. Kurnaz, C. Altay, B.M. Sonmez, H. Ellidokuz, and F. Cosgun "Validation of an AI-Based Model (APPENDIXPERT) for the Detection of Acute Appendicitis on Abdominal CT in the Emergency Department", 13th International Critical Care and Emergency Medicine Congress (23-26 April 2026)'
         }
     ];
 
@@ -77,18 +91,25 @@ const Publications = () => {
                 <AnimatedContainer delay={200}>
                     <div className="relative max-w-4xl overflow-hidden rounded-[28px] bg-gradient-to-b from-violet-600 to-violet-500 p-6 shadow-blue-card sm:p-8">
                         <div className="flex flex-col gap-5">
-                            {publications.map((pub, index) => (
-                                <Link
-                                    key={pub.number}
-                                    href={pub.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={`group flex gap-3 transition-opacity hover:opacity-80 ${index !== publications.length - 1 ? 'border-b border-white/10 pb-5' : ''}`}
-                                >
-                                    <span className="shrink-0 font-semibold text-white">{pub.number}.</span>
-                                    <p className="text-sm leading-relaxed text-white/80 sm:text-base">{pub.citation}</p>
-                                </Link>
-                            ))}
+                            {publications.map((pub, index) => {
+                                const className = `group flex gap-3 ${index !== publications.length - 1 ? 'border-b border-white/10 pb-5' : ''}`;
+                                const content = (
+                                    <>
+                                        <span className="shrink-0 font-semibold text-white">{pub.number}.</span>
+                                        <p className="text-sm leading-relaxed text-white/80 sm:text-base">{pub.citation}</p>
+                                    </>
+                                );
+                                // entries without a public link yet (under revision / congress abstracts) are plain text
+                                return pub.link ? (
+                                    <Link key={pub.number} href={pub.link} target="_blank" rel="noopener noreferrer" className={`${className} transition-opacity hover:opacity-80`}>
+                                        {content}
+                                    </Link>
+                                ) : (
+                                    <div key={pub.number} className={className}>
+                                        {content}
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
                 </AnimatedContainer>

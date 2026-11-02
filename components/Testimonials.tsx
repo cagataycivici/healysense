@@ -11,10 +11,10 @@ const Testimonials = () => {
             avatar: '/images/avatar-canan.jpg'
         },
         {
-            quote: "What excites me most about Healysense is its potential to transform healthcare at scale. It's not just another digital tool, it's a sustainable, data-driven solution built for real impact.",
-            name: 'Cagatay Civici',
-            role: 'Investor',
-            avatar: '/images/avatar-cagatay.jpg'
+            quote: 'In abdominal imaging, every minute and every detail counts. Healysense flags critical findings early and keeps my reading workflow organized, so I can report with greater confidence even on the busiest shifts.',
+            name: 'Işıl Başara Akın, MD',
+            role: 'Radiologist',
+            avatar: '/images/avatar-isil.jpg'
         },
         {
             quote: 'Healysense provides an invaluable layer of decision support. Its ability to process complex clinical data and highlight what truly matters empowers me to deliver more precise and personalized care.',
@@ -25,7 +25,7 @@ const Testimonials = () => {
         {
             quote: 'We created Healysense with a simple vision: to empower doctors and healthcare providers through hybrid AI solutions. Seeing it now improving patient outcomes and saving time for experts is the best validation of that mission.',
             name: 'Serhat Tozburun, PhD',
-            role: 'Founder',
+            role: 'Co-Founder',
             avatar: '/images/avatar-serhat.jpg'
         },
         {
