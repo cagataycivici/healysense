@@ -20,6 +20,34 @@ const News = () => {
 
     const newsData = [
         {
+            image: '/images/news-hello-tomorrow-summit-2026.jpg',
+            title: `Hello Tomorrow Türkiye Summit 2026: That's a Wrap!`,
+            description: `On 16 October, Hello Tomorrow Türkiye brought together the science, technology and investment communities at DotsHub Istanbul. Explore the highlights from the Summit and discover the winners of the Türkiye Deep Tech Pioneers competition.`,
+            source: 'Hello Tomorrow Türkiye',
+            link: 'https://drive.google.com/file/d/1FmPNoJ37oKsEmMChnnfUzGSV0KSWOF0N/view'
+        },
+        {
+            image: '/images/news-hello-tomorrow-2026.jpg',
+            title: `DEPARK Girişimi HEALYSENSE, Hello Tomorrow Türkiye Challenge 2026’da Birinci!`,
+            description: `Healysense, Hello Tomorrow Türkiye Summit 2026 kapsamında düzenlenen Hello Tomorrow Türkiye Challenge 2026 yarışmasında “Dijital Sağlık ve Tıbbi Cihazlar” kategorisinde birincilik elde etti.`,
+            source: 'DEPARK',
+            link: 'https://www.depark.com/depark-girisimi-healysense-hello-tomorrow-turkiye-challenge-2026da-birinci/'
+        },
+        {
+            image: '/images/news-hello-tomorrow-turkiye-summit-2026.jpg',
+            title: `Hello Tomorrow Türkiye Summit 2026`,
+            description: `Türkiye's most prestigious deep tech event brought together startups, investors and technology leaders in İstanbul on 16 October 2026. Healysense Co-Founder Serhat Tozburun took the stage among the summit's speakers.`,
+            source: 'Hello Tomorrow Türkiye',
+            link: 'https://hello-tomorrow.org.tr/en/hello-tomorrow-turkiye-summit-26'
+        },
+        {
+            image: '/images/news-novartis-tenity-2026.jpg',
+            title: `Novartis Türkiye Health Innovation Program 2026`,
+            description: `Healysense was one of the 10 startups selected to pitch at the Challenge Day of the Novartis Türkiye Health Innovation Program, delivered by Tenity with the Swiss Embassy in Ankara, Swissnex and MEXT.`,
+            source: 'Tenity',
+            link: 'https://www.tenity.com/program/novartis-turkiye-health-innovation-program/'
+        },
+        {
             image: '/images/shift-day.png',
             title: `Siemens Healthineers SHIFT Innovation Day 2025`,
             description: `SHIFT Innovation Day 2025 took place at the Innovation Center. Finalists including INCEPTO, M2Call, ScanLab, Healysense, Voximetry, RFiD Discovery | A Paragon ID company, Sweepin, Harness and @Medcase also showcased powerful solutions tackling real healthcare challenges. `,

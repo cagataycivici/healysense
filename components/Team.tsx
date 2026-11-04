@@ -188,5 +188,11 @@ const startupTeamData: TeamMember[] = [
         role: 'AI Engineer',
         twitter: 'https://x.com/bdurrmus',
         linkedin: 'https://www.linkedin.com/in/berkayahmetdurmus/'
+    },
+    {
+        image: '/images/team-6.jpg',
+        name: 'Işıl Başara Akın, MD',
+        role: 'Radiologist',
+        linkedin: 'https://www.linkedin.com/in/isil-basara-8b1768bb/'
     }
 ];

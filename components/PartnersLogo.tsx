@@ -5,6 +5,7 @@ interface Partner {
     name: string;
     image: string;
     link: string;
+    heightClass?: string;
 }
 
 const PartnersLogo = ({ className = '' }: { className?: string }) => {
@@ -15,7 +16,9 @@ const PartnersLogo = ({ className = '' }: { className?: string }) => {
         { name: 'Depark', image: '/images/logo-depark.png', link: 'https://www.depark.com/firmalar/healysense/' },
         { name: 'Workup', image: '/images/logo-workup.png', link: 'https://www.youtube.com/watch?v=EItbhiyksTg' },
         { name: 'Technology Initiative Badge', image: '/images/logo-technology-initiative-badge.png', link: 'https://drive.google.com/file/d/1BlD9aEL5iwoH_WliHQ1MOX8-8BUw4kyM/view' },
-        { name: 'National Technology Initiative ', image: '/images/logo-national-technology-initiative.png', link: 'https://teknogirisim.sanayi.gov.tr/' }
+        { name: 'National Technology Initiative ', image: '/images/logo-national-technology-initiative.png', link: 'https://teknogirisim.sanayi.gov.tr/' },
+        { name: 'Novartis Türkiye & Tenity', image: '/images/logo-novartis-tenity.png', link: 'https://www.tenity.com/program/novartis-turkiye-health-innovation-program/', heightClass: 'h-8' },
+        { name: 'Hello Tomorrow', image: '/images/logo-hello-tomorrow.png', link: 'https://www.depark.com/depark-girisimi-healysense-hello-tomorrow-turkiye-challenge-2026da-birinci/' }
     ];
 
     return (
@@ -71,7 +74,7 @@ const PartnersLogo = ({ className = '' }: { className?: string }) => {
                                     width={0}
                                     height={0}
                                     sizes="100vw"
-                                    className="h-14 w-auto object-contain transition-all duration-300 [filter:brightness(0)_invert(0.78)_sepia(0)_saturate(0)] group-hover:filter-none"
+                                    className={`${partner.heightClass ?? 'h-14'} w-auto object-contain transition-all duration-300 [filter:brightness(0)_invert(0.78)_sepia(0)_saturate(0)] group-hover:filter-none`}
                                 />
                             </a>
                         ))}
@@ -85,7 +88,7 @@ const PartnersLogo = ({ className = '' }: { className?: string }) => {
                                     width={0}
                                     height={0}
                                     sizes="100vw"
-                                    className="h-14 w-auto object-contain transition-all duration-300 [filter:brightness(0)_invert(0.78)_sepia(0)_saturate(0)] group-hover:filter-none"
+                                    className={`${partner.heightClass ?? 'h-14'} w-auto object-contain transition-all duration-300 [filter:brightness(0)_invert(0.78)_sepia(0)_saturate(0)] group-hover:filter-none`}
                                 />
                             </a>
                         ))}
