@@ -28,16 +28,16 @@ const NotFoundPage = () => {
                                 />
                                 <defs>
                                     <linearGradient id="paint0_linear_notFound" x1="198" y1="0" x2="198" y2="396.004" gradientUnits="userSpaceOnUse">
-                                        <stop stopColor="#F37021" />
-                                        <stop offset="1" stopColor="#FF8C42" stopOpacity="0" />
+                                        <stop stopColor="#4A1AC4" />
+                                        <stop offset="1" stopColor="#5A23E7" stopOpacity="0" />
                                     </linearGradient>
                                     <linearGradient id="paint1_linear_notFound" x1="198" y1="0" x2="198" y2="396.004" gradientUnits="userSpaceOnUse">
-                                        <stop stopColor="#F37021" />
-                                        <stop offset="1" stopColor="#FF8C42" stopOpacity="0" />
+                                        <stop stopColor="#4A1AC4" />
+                                        <stop offset="1" stopColor="#5A23E7" stopOpacity="0" />
                                     </linearGradient>
                                     <linearGradient id="paint2_linear_notFound" x1="198" y1="0" x2="198" y2="396.004" gradientUnits="userSpaceOnUse">
-                                        <stop stopColor="#F37021" />
-                                        <stop offset="1" stopColor="#FF8C42" stopOpacity="0" />
+                                        <stop stopColor="#4A1AC4" />
+                                        <stop offset="1" stopColor="#5A23E7" stopOpacity="0" />
                                     </linearGradient>
                                 </defs>
                             </svg>

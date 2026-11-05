@@ -1,3 +1,4 @@
+import { LogoMark } from '@/components/Logo';
 import AnimatedContainer from '@/components/AnimatedContainer';
 import Image from 'next/image';
 
@@ -28,27 +29,13 @@ const Products = () => {
         <div className="container pb-8 pt-16">
             <div className="flex flex-col items-center gap-6">
                 <div
-                    className="relative flex h-[72px] w-[72px] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-b from-[#F37021] to-[#FF8C42]"
+                    className="relative flex h-[72px] w-[72px] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-b from-[#4A1AC4] to-[#5A23E7]"
                     style={{
                         boxShadow:
                             '0px 1px 2px 0px rgba(0,0,0,0.10), 0px 3px 3px 0px rgba(0,0,0,0.09), 0px 7px 4px 0px rgba(0,0,0,0.05), 0px 12px 5px 0px rgba(0,0,0,0.01), 0px 19px 5px 0px rgba(0,0,0,0.00), inset 0px 2px 3px 0px rgba(255,255,255,0.25)'
                     }}
                 >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="40" viewBox="0 0 24 40" fill="none">
-                        <g clipPath="url(#clip0_7009_11660)">
-                            <path d="M0.499817 6.66717V19.999L12.0465 13.3342V0.00012207L0.499817 6.66717Z" fill="white" />
-                            <path d="M0.499817 33.3331L12.0465 26.6661V13.3343L0.499817 19.999V33.3331Z" fill="#FFE8D6" />
-                            <path d="M23.5932 19.9988L12.0466 13.3341L0.499878 19.9988L12.0466 26.6659L23.5932 19.9988Z" fill="#F37021" />
-                            <path d="M23.5932 19.9988L12.0466 13.3341L0.499878 19.9988L12.0466 26.6659L23.5932 19.9988Z" fill="white" fillOpacity="0.6" style={{ mixBlendMode: 'screen' }} />
-                            <path d="M23.5932 6.66718L12.0466 13.3342V26.666L23.5932 19.999V6.66718Z" fill="#FFE8D6" />
-                            <path d="M23.5932 33.3331V19.999L12.0466 26.6661V40.0002L23.5932 33.3331Z" fill="white" />
-                        </g>
-                        <defs>
-                            <clipPath id="clip0_7009_11660">
-                                <rect width="23.0934" height="40" fill="white" transform="translate(0.5)" />
-                            </clipPath>
-                        </defs>
-                    </svg>
+                    <LogoMark />
                 </div>
                 <div className="flex flex-col items-center gap-4">
                     <h1 className="text-center text-3xl font-semibold leading-tight text-surface-950 lg:text-6xl lg:leading-tight">

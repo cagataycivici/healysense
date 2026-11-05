@@ -27,7 +27,7 @@ const Integration = () => {
         <div className="container flex flex-col items-start justify-end gap-16 pb-8 pt-16">
             <div className="flex w-full flex-col items-center justify-start gap-4">
                 <div
-                    className="relative flex h-[72px] w-[72px] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-b from-[#F37021] to-[#FF8C42]"
+                    className="relative flex h-[72px] w-[72px] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-b from-[#4A1AC4] to-[#5A23E7]"
                     style={{
                         boxShadow:
                             '0px 1px 2px 0px rgba(0,0,0,0.10), 0px 3px 3px 0px rgba(0,0,0,0.09), 0px 7px 4px 0px rgba(0,0,0,0.05), 0px 12px 5px 0px rgba(0,0,0,0.01), 0px 19px 5px 0px rgba(0,0,0,0.00), inset 0px 2px 3px 0px rgba(255,255,255,0.25)'
@@ -94,7 +94,7 @@ const Integration = () => {
                         <div
                             className="relative flex h-[370px] w-full flex-col overflow-hidden rounded-[28px] bg-gradient-to-b from-primary-600 to-primary-500"
                             style={{
-                                boxShadow: '0px 2px 5px 0px rgba(243,112,33,0.08), 0px 9px 9px -4px rgba(243,112,33,0.07), 0px 21px 13px -8px rgba(243,112,33,0.04), 0px 38px 15px -8px rgba(243,112,33,0.01), 0px 59px 16px -8px rgba(243,112,33,0.00)'
+                                boxShadow: '0px 2px 5px 0px rgba(90,35,231,0.08), 0px 9px 9px -4px rgba(90,35,231,0.07), 0px 21px 13px -8px rgba(90,35,231,0.04), 0px 38px 15px -8px rgba(90,35,231,0.01), 0px 59px 16px -8px rgba(90,35,231,0.00)'
                             }}
                         >
                             <div className="relative z-10 flex justify-center p-4">

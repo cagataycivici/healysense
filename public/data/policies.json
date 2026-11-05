@@ -10,7 +10,14 @@
           "title": "Regulatory Standards & Certifications We are committed to the highest global standards for medical device safety and compliance:",
           "items": [
             "ISO 13485:2016 Certified: Meeting the global standard for medical device quality management systems.",
-            "Certified to EU 2017/745 (MDR): CE Marked in accordance with the European Medical Device Regulation (EU) 2017/745.",
+            {
+              "text": "Certified to EU 2017/745 (MDR): CE Marked in accordance with the European Medical Device Regulation (EU) 2017/745.",
+              "details": [
+                { "label": "Single Registration Number (SRN)", "value": "TR-MF-000052518" },
+                { "label": "Certificate Number", "value": "MDR.2292-2026/0061" },
+                { "label": "Device / Device Group Name", "value": ["AortaSense Pro", "AbdoXpert Suite"] }
+              ]
+            },
             "Standards Adherence: Fully compliant with ISO 14971 (Application of risk management to medical devices) and IEC 62304 (Medical device software – Software life cycle processes)."
           ],
           "footer": "Our Regulatory Team ensures that all Healysense™ products are properly registered and authorized for marketing in every region where we operate"

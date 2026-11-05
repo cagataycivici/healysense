@@ -18,7 +18,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, React.InputHTMLAttributes<HT
                     {...props}
                     style={{ boxShadow: '0 1px 2px 0 rgba(164, 172, 185, 0.24), 0 0 0 1px rgba(18, 55, 105, 0.08)' }}
                 />
-                <i className="pi pi-check absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-xs leading-none text-[#8B5CF6] opacity-0 transition-all duration-100 peer-checked:opacity-100"></i>
+                <i className="pi pi-check absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-xs leading-none text-[#5A23E7] opacity-0 transition-all duration-100 peer-checked:opacity-100"></i>
             </div>
             {label && <span className="text-white/90">{label}</span>}
         </label>

@@ -1,5 +1,6 @@
 'use client';
 import { cn } from '@/lib/utils';
+import { Logo } from '@/components/Logo';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import React from 'react';
@@ -60,27 +61,7 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement> & FooterProps> = ({ cla
                     <div className="relative z-10 flex flex-col items-start justify-between gap-8 self-stretch lg:flex-row">
                         <div></div>
                         <div className="flex flex-col items-start justify-start gap-6">
-                            <div className="inline-flex items-center justify-center gap-[6.27px]">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="40" viewBox="0 0 24 40" fill="none">
-                                    <g clipPath="url(#clip0_7009_11660)">
-                                        <path d="M0.499817 6.66717V19.999L12.0465 13.3342V0.00012207L0.499817 6.66717Z" fill="white" />
-                                        <path d="M0.499817 33.3331L12.0465 26.6661V13.3343L0.499817 19.999V33.3331Z" fill="#FFE8D6" />
-                                        <path d="M23.5932 19.9988L12.0466 13.3341L0.499878 19.9988L12.0466 26.6659L23.5932 19.9988Z" fill="#F37021" />
-                                        <path d="M23.5932 19.9988L12.0466 13.3341L0.499878 19.9988L12.0466 26.6659L23.5932 19.9988Z" fill="white" fillOpacity="0.6" style={{ mixBlendMode: 'screen' }} />
-                                        <path d="M23.5932 6.66718L12.0466 13.3342V26.666L23.5932 19.999V6.66718Z" fill="#FFE8D6" />
-                                        <path d="M23.5932 33.3331V19.999L12.0466 26.6661V40.0002L23.5932 33.3331Z" fill="white" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_7009_11660">
-                                            <rect width="23.0934" height="40" fill="white" transform="translate(0.5)" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                                <div className="justify-center">
-                                    <span className="text-base font-extrabold uppercase tracking-wide text-white/60">healy</span>
-                                    <span className="text-base font-extrabold uppercase tracking-wide text-white">sense</span>
-                                </div>
-                            </div>
+                            <Logo size="md" />
                             <div className="flex flex-col items-start justify-start gap-2">
                                 <div className="max-w-md justify-start self-stretch text-base font-normal leading-normal text-white">İnciraltı Mah., Mithatpaşa Cad., No:56-20/Z 35330 İzmir/TÜRKİYE</div>
                                 <Link href="mailto:info@healysense.ai" className="justify-start self-stretch text-base font-normal leading-normal text-white transition-colors hover:text-white/70">

@@ -15,12 +15,39 @@ interface PolicyData {
         sections: Array<{
             title: string;
             content?: string;
-            items?: string[];
+            items?: PolicyItem[];
             listStyle?: 'bullets' | 'none';
             footer?: string;
         }>;
     };
 }
+
+type PolicyItemDetail = { label: string; value: string | string[] };
+type PolicyItem = string | { text: string; details?: PolicyItemDetail[] };
+
+const itemText = (item: PolicyItem) => (typeof item === 'string' ? item : item.text);
+
+const renderItemDetails = (item: PolicyItem) => {
+    if (typeof item === 'string' || !item.details?.length) return null;
+    return (
+        <dl className="mt-3 grid grid-cols-1 gap-x-6 gap-y-2 rounded-xl border border-purple-100 bg-purple-50 p-4 text-base sm:grid-cols-[auto_1fr]">
+            {item.details.map((detail) => (
+                <div key={detail.label} className="contents">
+                    <dt className="font-semibold text-gray-900">{detail.label}</dt>
+                    <dd className="mb-2 text-gray-800 sm:mb-0">
+                        {Array.isArray(detail.value)
+                            ? detail.value.map((v) => (
+                                  <span key={v} className="block">
+                                      {v}
+                                  </span>
+                              ))
+                            : detail.value}
+                    </dd>
+                </div>
+            ))}
+        </dl>
+    );
+};
 
 const renderTextWithBold = (text: string) => {
     const parts = text.split(/(\*\*[^*]+\*\*)/g);
@@ -111,9 +138,10 @@ const PolicyPage = () => {
                                         (section.listStyle === 'none' ? (
                                             <div className="mb-6 space-y-4">
                                                 {section.items.map((item, itemIndex) => (
-                                                    <p key={itemIndex} className="leading-relaxed">
-                                                        {renderTextWithBold(item)}
-                                                    </p>
+                                                    <div key={itemIndex}>
+                                                        <p className="leading-relaxed">{renderTextWithBold(itemText(item))}</p>
+                                                        {renderItemDetails(item)}
+                                                    </div>
                                                 ))}
                                             </div>
                                         ) : (
@@ -121,7 +149,10 @@ const PolicyPage = () => {
                                                 {section.items.map((item, itemIndex) => (
                                                     <li key={itemIndex} className="flex items-start">
                                                         <span className="mr-3 mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-purple-600"></span>
-                                                        <span className="leading-relaxed">{renderTextWithBold(item)}</span>
+                                                        <div className="min-w-0 flex-1">
+                                                            <span className="leading-relaxed">{renderTextWithBold(itemText(item))}</span>
+                                                            {renderItemDetails(item)}
+                                                        </div>
                                                     </li>
                                                 ))}
                                             </ul>
